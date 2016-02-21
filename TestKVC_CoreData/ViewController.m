@@ -35,7 +35,6 @@
     NSLog(@"%f",[[person valueForKey:@"weight"] doubleValue]);
     NSLog(@"%zi",[[person valueForKey:@"age"] integerValue]);
     NSLog(@"%zi",[[person valueForKeyPath:@"personJob.money"] integerValue]);
-    
     [self loadObserver];
     
     
