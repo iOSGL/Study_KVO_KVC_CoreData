@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		813FF018F3B35A61EE532362 /* libPods-TestKVC_CoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063979419D7C68BFC0089328 /* libPods-TestKVC_CoreData.a */; };
 		A975AA161C799E2C00CACA14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA151C799E2C00CACA14 /* main.m */; };
 		A975AA191C799E2C00CACA14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA181C799E2C00CACA14 /* AppDelegate.m */; };
 		A975AA1C1C799E2C00CACA14 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA1B1C799E2C00CACA14 /* ViewController.m */; };
@@ -40,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		063979419D7C68BFC0089328 /* libPods-TestKVC_CoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestKVC_CoreData.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67E672119099E08C054FE353 /* Pods-TestKVC_CoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreData.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData.debug.xcconfig"; sourceTree = "<group>"; };
+		93EBAFA40ACBDEAB5954E606 /* Pods-TestKVC_CoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreData.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData.release.xcconfig"; sourceTree = "<group>"; };
 		A975AA111C799E2C00CACA14 /* TestKVC_CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestKVC_CoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A975AA151C799E2C00CACA14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A975AA171C799E2C00CACA14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				813FF018F3B35A61EE532362 /* libPods-TestKVC_CoreData.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C8C7E9209E5B1B03EA4DF5E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67E672119099E08C054FE353 /* Pods-TestKVC_CoreData.debug.xcconfig */,
+				93EBAFA40ACBDEAB5954E606 /* Pods-TestKVC_CoreData.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A975AA081C799E2C00CACA14 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +114,8 @@
 				A975AA2D1C799E2C00CACA14 /* TestKVC_CoreDataTests */,
 				A975AA381C799E2C00CACA14 /* TestKVC_CoreDataUITests */,
 				A975AA121C799E2C00CACA14 /* Products */,
+				6C8C7E9209E5B1B03EA4DF5E /* Pods */,
+				D3FF3C3900890BE9007C94A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,6 +181,14 @@
 			path = TestKVC_CoreDataUITests;
 			sourceTree = "<group>";
 		};
+		D3FF3C3900890BE9007C94A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				063979419D7C68BFC0089328 /* libPods-TestKVC_CoreData.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,9 +196,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A975AA3E1C799E2C00CACA14 /* Build configuration list for PBXNativeTarget "TestKVC_CoreData" */;
 			buildPhases = (
+				3388EF30C34616DFA1647E22 /* Check Pods Manifest.lock */,
 				A975AA0D1C799E2C00CACA14 /* Sources */,
 				A975AA0E1C799E2C00CACA14 /* Frameworks */,
 				A975AA0F1C799E2C00CACA14 /* Resources */,
+				5E3030536458A6470B501C2D /* Embed Pods Frameworks */,
+				437A1A31EE453FFE5DB56F35 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -289,6 +316,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3388EF30C34616DFA1647E22 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		437A1A31EE453FFE5DB56F35 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E3030536458A6470B501C2D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A975AA0D1C799E2C00CACA14 /* Sources */ = {
@@ -420,6 +495,7 @@
 		};
 		A975AA3F1C799E2C00CACA14 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67E672119099E08C054FE353 /* Pods-TestKVC_CoreData.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestKVC_CoreData/Info.plist;
@@ -431,6 +507,7 @@
 		};
 		A975AA401C799E2C00CACA14 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93EBAFA40ACBDEAB5954E606 /* Pods-TestKVC_CoreData.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestKVC_CoreData/Info.plist;
@@ -507,6 +584,7 @@
 				A975AA401C799E2C00CACA14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A975AA411C799E2C00CACA14 /* Build configuration list for PBXNativeTarget "TestKVC_CoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +593,7 @@
 				A975AA431C799E2C00CACA14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A975AA441C799E2C00CACA14 /* Build configuration list for PBXNativeTarget "TestKVC_CoreDataUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +602,7 @@
 				A975AA461C799E2C00CACA14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
