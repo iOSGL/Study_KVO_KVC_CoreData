@@ -10,11 +10,16 @@
 		A975AA161C799E2C00CACA14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA151C799E2C00CACA14 /* main.m */; };
 		A975AA191C799E2C00CACA14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA181C799E2C00CACA14 /* AppDelegate.m */; };
 		A975AA1C1C799E2C00CACA14 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA1B1C799E2C00CACA14 /* ViewController.m */; };
-		A975AA1F1C799E2C00CACA14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A975AA1D1C799E2C00CACA14 /* Main.storyboard */; };
 		A975AA211C799E2C00CACA14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A975AA201C799E2C00CACA14 /* Assets.xcassets */; };
-		A975AA241C799E2C00CACA14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A975AA221C799E2C00CACA14 /* LaunchScreen.storyboard */; };
 		A975AA2F1C799E2C00CACA14 /* TestKVC_CoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA2E1C799E2C00CACA14 /* TestKVC_CoreDataTests.m */; };
 		A975AA3A1C799E2C00CACA14 /* TestKVC_CoreDataUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA391C799E2C00CACA14 /* TestKVC_CoreDataUITests.m */; };
+		A975AA491C79A16B00CACA14 /* TestPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA481C79A16B00CACA14 /* TestPerson.m */; };
+		A975AA4C1C79A32100CACA14 /* TestKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA4B1C79A32100CACA14 /* TestKVOViewController.m */; };
+		A975AA541C79A5D400CACA14 /* TestKVOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A975AA531C79A5D400CACA14 /* TestKVOViewController.xib */; };
+		A975AA561C79A6DD00CACA14 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A975AA551C79A6DD00CACA14 /* ViewController.xib */; };
+		A975AA591C79AE4D00CACA14 /* PersonJob.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA581C79AE4D00CACA14 /* PersonJob.m */; };
+		A975AA5C1C79B14600CACA14 /* PersonObServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA5B1C79B14600CACA14 /* PersonObServer.m */; };
+		A975AA5F1C79B51A00CACA14 /* TestColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA5E1C79B51A00CACA14 /* TestColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +46,7 @@
 		A975AA181C799E2C00CACA14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A975AA1A1C799E2C00CACA14 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A975AA1B1C799E2C00CACA14 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A975AA1E1C799E2C00CACA14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A975AA201C799E2C00CACA14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A975AA231C799E2C00CACA14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A975AA251C799E2C00CACA14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A975AA2A1C799E2C00CACA14 /* TestKVC_CoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestKVC_CoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A975AA2E1C799E2C00CACA14 /* TestKVC_CoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestKVC_CoreDataTests.m; sourceTree = "<group>"; };
@@ -51,6 +54,18 @@
 		A975AA351C799E2C00CACA14 /* TestKVC_CoreDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestKVC_CoreDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A975AA391C799E2C00CACA14 /* TestKVC_CoreDataUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestKVC_CoreDataUITests.m; sourceTree = "<group>"; };
 		A975AA3B1C799E2C00CACA14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A975AA471C79A16B00CACA14 /* TestPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPerson.h; sourceTree = "<group>"; };
+		A975AA481C79A16B00CACA14 /* TestPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPerson.m; sourceTree = "<group>"; };
+		A975AA4A1C79A32100CACA14 /* TestKVOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestKVOViewController.h; sourceTree = "<group>"; };
+		A975AA4B1C79A32100CACA14 /* TestKVOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestKVOViewController.m; sourceTree = "<group>"; };
+		A975AA531C79A5D400CACA14 /* TestKVOViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestKVOViewController.xib; sourceTree = "<group>"; };
+		A975AA551C79A6DD00CACA14 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		A975AA571C79AE4D00CACA14 /* PersonJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonJob.h; sourceTree = "<group>"; };
+		A975AA581C79AE4D00CACA14 /* PersonJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonJob.m; sourceTree = "<group>"; };
+		A975AA5A1C79B14600CACA14 /* PersonObServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonObServer.h; sourceTree = "<group>"; };
+		A975AA5B1C79B14600CACA14 /* PersonObServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonObServer.m; sourceTree = "<group>"; };
+		A975AA5D1C79B51A00CACA14 /* TestColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestColor.h; sourceTree = "<group>"; };
+		A975AA5E1C79B51A00CACA14 /* TestColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestColor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +120,19 @@
 				A975AA181C799E2C00CACA14 /* AppDelegate.m */,
 				A975AA1A1C799E2C00CACA14 /* ViewController.h */,
 				A975AA1B1C799E2C00CACA14 /* ViewController.m */,
-				A975AA1D1C799E2C00CACA14 /* Main.storyboard */,
+				A975AA551C79A6DD00CACA14 /* ViewController.xib */,
+				A975AA4A1C79A32100CACA14 /* TestKVOViewController.h */,
+				A975AA4B1C79A32100CACA14 /* TestKVOViewController.m */,
+				A975AA531C79A5D400CACA14 /* TestKVOViewController.xib */,
+				A975AA471C79A16B00CACA14 /* TestPerson.h */,
+				A975AA481C79A16B00CACA14 /* TestPerson.m */,
+				A975AA571C79AE4D00CACA14 /* PersonJob.h */,
+				A975AA581C79AE4D00CACA14 /* PersonJob.m */,
+				A975AA5A1C79B14600CACA14 /* PersonObServer.h */,
+				A975AA5B1C79B14600CACA14 /* PersonObServer.m */,
+				A975AA5D1C79B51A00CACA14 /* TestColor.h */,
+				A975AA5E1C79B51A00CACA14 /* TestColor.m */,
 				A975AA201C799E2C00CACA14 /* Assets.xcassets */,
-				A975AA221C799E2C00CACA14 /* LaunchScreen.storyboard */,
 				A975AA251C799E2C00CACA14 /* Info.plist */,
 				A975AA141C799E2C00CACA14 /* Supporting Files */,
 			);
@@ -243,9 +268,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A975AA241C799E2C00CACA14 /* LaunchScreen.storyboard in Resources */,
+				A975AA541C79A5D400CACA14 /* TestKVOViewController.xib in Resources */,
+				A975AA561C79A6DD00CACA14 /* ViewController.xib in Resources */,
 				A975AA211C799E2C00CACA14 /* Assets.xcassets in Resources */,
-				A975AA1F1C799E2C00CACA14 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +297,12 @@
 			files = (
 				A975AA1C1C799E2C00CACA14 /* ViewController.m in Sources */,
 				A975AA191C799E2C00CACA14 /* AppDelegate.m in Sources */,
+				A975AA591C79AE4D00CACA14 /* PersonJob.m in Sources */,
+				A975AA491C79A16B00CACA14 /* TestPerson.m in Sources */,
+				A975AA5C1C79B14600CACA14 /* PersonObServer.m in Sources */,
+				A975AA5F1C79B51A00CACA14 /* TestColor.m in Sources */,
 				A975AA161C799E2C00CACA14 /* main.m in Sources */,
+				A975AA4C1C79A32100CACA14 /* TestKVOViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,25 +336,6 @@
 			targetProxy = A975AA361C799E2C00CACA14 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		A975AA1D1C799E2C00CACA14 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A975AA1E1C799E2C00CACA14 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A975AA221C799E2C00CACA14 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A975AA231C799E2C00CACA14 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A975AA3C1C799E2C00CACA14 /* Debug */ = {
