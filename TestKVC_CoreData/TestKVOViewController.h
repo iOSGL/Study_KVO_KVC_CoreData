@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void(^changColor)(UIColor *color);
 
 @interface TestKVOViewController : UIViewController
+
+@property (nonatomic, copy) changColor color;
 
 @end

@@ -37,6 +37,18 @@
     NSLog(@"%zi",[[person valueForKeyPath:@"personJob.money"] integerValue]);
     [self loadObserver];
     
+   [self func:^(NSString *name) {
+       NSLog(@"test block %@",name);
+   }];
+    
+   int number = [self sumBlcok:^int(int a, int b) {
+        return a + b;
+    }];
+    
+    NSLog(@"%d",number);
+    
+   
+    
     
 }
 
@@ -46,6 +58,12 @@
 }
 - (IBAction)nextBtn:(id)sender {
     TestKVOViewController *control = [[TestKVOViewController alloc]init];
+    
+    __weak ViewController *wself = self;
+    control.color = ^(UIColor *color){
+        wself.view.backgroundColor = color;
+    };
+    
     [self.navigationController pushViewController:control animated:YES];
 //    [self testMethod];
 }
@@ -73,6 +91,21 @@
     NSLog(@"%@",[change objectForKey:NSKeyValueChangeNewKey]);
     self.view.backgroundColor = [change objectForKey:NSKeyValueChangeNewKey];
     NSLog(@"%@",context);
+}
+
+- (void)func:(blo)blockPro {
+    blockPro(@"耿磊");
+}
+
+- (int)sumBlcok:(sum)block {
+   __block int sum = 0;
+    if (block) {
+        
+       sum =  block (2,3);
+        
+    }
+    return sum;
+   
 }
 
 @end

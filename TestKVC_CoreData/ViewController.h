@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^blo)(NSString *name);
+
+typedef int(^sum)(int a, int b);
+
 @interface ViewController : UIViewController
 
+- (void)func:(blo)blockPro;
+
+- (int)sumBlcok:(sum)block;
 
 @end
 

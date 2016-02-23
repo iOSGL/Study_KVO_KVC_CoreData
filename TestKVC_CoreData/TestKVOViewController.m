@@ -38,6 +38,7 @@
 - (IBAction)redBtn:(id)sender {
     self.view.backgroundColor = [UIColor redColor];
     [self colorNotifatcion];
+//    self.color([UIColor redColor]);
 }
 
 - (IBAction)yellowBtn:(id)sender {
