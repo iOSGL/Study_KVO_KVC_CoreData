@@ -18,5 +18,10 @@ typedef int(^sum)(int a, int b);
 
 - (int)sumBlcok:(sum)block;
 
+/**
+ *  navigation View
+ */
+@property (nonatomic, copy) NSInteger(^block)(NSInteger a, NSInteger b);
+
 @end
 

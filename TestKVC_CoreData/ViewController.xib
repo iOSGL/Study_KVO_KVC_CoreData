@@ -16,10 +16,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UG2-7x-fu4">
-                    <rect key="frame" x="119" y="211" width="82" height="30"/>
+                    <rect key="frame" x="106" y="213" width="82" height="30"/>
                     <state key="normal" title="next control"/>
                     <connections>
                         <action selector="nextBtn:" destination="-1" eventType="touchUpInside" id="Rwa-Dg-6ZO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RF6-Z6-nEv">
+                    <rect key="frame" x="106" y="277" width="109" height="30"/>
+                    <state key="normal" title="study ScollView"/>
+                    <connections>
+                        <action selector="studyScrollView:" destination="-1" eventType="touchUpInside" id="YC3-Zx-Cyl"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cC1-cL-rXq">
+                    <rect key="frame" x="104" y="328" width="112" height="30"/>
+                    <state key="normal" title="study TableView"/>
+                    <connections>
+                        <action selector="studyTableView:" destination="-1" eventType="touchUpInside" id="1EI-4W-Vuv"/>
                     </connections>
                 </button>
             </subviews>

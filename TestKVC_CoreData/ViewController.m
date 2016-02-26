@@ -12,8 +12,16 @@
 #import "PersonJob.h"
 #import "TestColor.h"
 #import "PersonObServer.h"
+#import "PropeScroViewViewController.h"
+#import "PropeTableViewViewController.h"
+
 
 @interface ViewController ()
+
+/**
+ *
+ */
+@property (nonatomic, strong) TestKVOViewController *nextController;
 
 @end
 
@@ -47,6 +55,13 @@
     
     NSLog(@"%d",number);
     
+    _block = ^(NSInteger a, NSInteger b) {
+        
+        return a +b;
+    };
+    
+   
+    
    
     
     
@@ -57,16 +72,36 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)nextBtn:(id)sender {
-    TestKVOViewController *control = [[TestKVOViewController alloc]init];
-    
+//    TestKVOViewController *control = [[TestKVOViewController alloc]init];
+//    
     __weak ViewController *wself = self;
-    control.color = ^(UIColor *color){
-        wself.view.backgroundColor = color;
-    };
-    
-    [self.navigationController pushViewController:control animated:YES];
+//    control.color = ^(UIColor *color){
+//        wself.view.backgroundColor = color;
+//    };
+//    
+//    [self.navigationController pushViewController:control animated:YES];
 //    [self testMethod];
+  
+  NSMutableArray * dataArray = [wself.nextController testSum:^NSMutableArray *(NSArray *dataArray) {
+       NSMutableArray * data = [NSMutableArray new];
+       [data addObject:dataArray];
+       return data;
+   }];
+    
+    NSLog(@"++++%@",[[dataArray lastObject] lastObject]);
 }
+
+
+- (IBAction)studyScrollView:(id)sender {
+    PropeScroViewViewController *control = [[PropeScroViewViewController alloc]init];
+    [self.navigationController pushViewController:control animated:YES];
+}
+
+- (IBAction)studyTableView:(id)sender {
+    PropeTableViewViewController *control = [[PropeTableViewViewController alloc]init];
+    [self.navigationController pushViewController:control animated:YES];
+}
+
 
 - (void)testMethod {
     
@@ -95,6 +130,7 @@
 
 - (void)func:(blo)blockPro {
     blockPro(@"耿磊");
+
 }
 
 - (int)sumBlcok:(sum)block {
@@ -105,7 +141,17 @@
         
     }
     return sum;
-   
+}
+
+- (TestKVOViewController *)nextController {
+    if (_nextController == nil) {
+        _nextController = [[TestKVOViewController alloc]init];
+    }
+    return _nextController;
+}
+
+- (void)setBlock:(NSInteger (^)(NSInteger, NSInteger))block {
+    
 }
 
 @end

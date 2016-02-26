@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 typedef void(^changColor)(UIColor *color);
 
+typedef NSMutableArray *(^testSum)(NSArray *dataArray);
+
 @interface TestKVOViewController : UIViewController
 
 @property (nonatomic, copy) changColor color;
+
+- (NSMutableArray *)testSum:(testSum)sum;
 
 @end

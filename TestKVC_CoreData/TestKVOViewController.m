@@ -53,6 +53,15 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (NSMutableArray *)testSum:(testSum)sum {
+  __block  NSMutableArray *array = [NSMutableArray new];
+    if (sum) {
+      array = sum(@[@"耿磊"]);
+    }
+    return array;
+    
+}
+
 /*
 #pragma mark - Navigation
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		746ACDD41C7FE92500803FF9 /* PropeScroViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746ACDD31C7FE92500803FF9 /* PropeScroViewViewController.m */; };
+		746ACDD71C7FFA4800803FF9 /* PropeTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746ACDD61C7FFA4800803FF9 /* PropeTableViewViewController.m */; };
 		813FF018F3B35A61EE532362 /* libPods-TestKVC_CoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063979419D7C68BFC0089328 /* libPods-TestKVC_CoreData.a */; };
 		A975AA161C799E2C00CACA14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA151C799E2C00CACA14 /* main.m */; };
 		A975AA191C799E2C00CACA14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA181C799E2C00CACA14 /* AppDelegate.m */; };
@@ -43,6 +45,10 @@
 /* Begin PBXFileReference section */
 		063979419D7C68BFC0089328 /* libPods-TestKVC_CoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestKVC_CoreData.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E672119099E08C054FE353 /* Pods-TestKVC_CoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreData.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData.debug.xcconfig"; sourceTree = "<group>"; };
+		746ACDD21C7FE92500803FF9 /* PropeScroViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropeScroViewViewController.h; sourceTree = "<group>"; };
+		746ACDD31C7FE92500803FF9 /* PropeScroViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropeScroViewViewController.m; sourceTree = "<group>"; };
+		746ACDD51C7FFA4800803FF9 /* PropeTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropeTableViewViewController.h; sourceTree = "<group>"; };
+		746ACDD61C7FFA4800803FF9 /* PropeTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropeTableViewViewController.m; sourceTree = "<group>"; };
 		93EBAFA40ACBDEAB5954E606 /* Pods-TestKVC_CoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreData.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData.release.xcconfig"; sourceTree = "<group>"; };
 		A975AA111C799E2C00CACA14 /* TestKVC_CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestKVC_CoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A975AA151C799E2C00CACA14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,6 +143,10 @@
 				A975AA1A1C799E2C00CACA14 /* ViewController.h */,
 				A975AA1B1C799E2C00CACA14 /* ViewController.m */,
 				A975AA551C79A6DD00CACA14 /* ViewController.xib */,
+				746ACDD21C7FE92500803FF9 /* PropeScroViewViewController.h */,
+				746ACDD31C7FE92500803FF9 /* PropeScroViewViewController.m */,
+				746ACDD51C7FFA4800803FF9 /* PropeTableViewViewController.h */,
+				746ACDD61C7FFA4800803FF9 /* PropeTableViewViewController.m */,
 				A975AA4A1C79A32100CACA14 /* TestKVOViewController.h */,
 				A975AA4B1C79A32100CACA14 /* TestKVOViewController.m */,
 				A975AA531C79A5D400CACA14 /* TestKVOViewController.xib */,
@@ -259,6 +269,7 @@
 				TargetAttributes = {
 					A975AA101C799E2C00CACA14 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 4TZ6FQ35UY;
 					};
 					A975AA291C799E2C00CACA14 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -374,10 +385,12 @@
 				A975AA191C799E2C00CACA14 /* AppDelegate.m in Sources */,
 				A975AA591C79AE4D00CACA14 /* PersonJob.m in Sources */,
 				A975AA491C79A16B00CACA14 /* TestPerson.m in Sources */,
+				746ACDD41C7FE92500803FF9 /* PropeScroViewViewController.m in Sources */,
 				A975AA5C1C79B14600CACA14 /* PersonObServer.m in Sources */,
 				A975AA5F1C79B51A00CACA14 /* TestColor.m in Sources */,
 				A975AA161C799E2C00CACA14 /* main.m in Sources */,
 				A975AA4C1C79A32100CACA14 /* TestKVOViewController.m in Sources */,
+				746ACDD71C7FFA4800803FF9 /* PropeTableViewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,9 +511,10 @@
 			baseConfigurationReference = 67E672119099E08C054FE353 /* Pods-TestKVC_CoreData.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TestKVC_CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fengche.com.TestKVC-CoreData";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fengche.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -510,9 +524,10 @@
 			baseConfigurationReference = 93EBAFA40ACBDEAB5954E606 /* Pods-TestKVC_CoreData.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TestKVC_CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fengche.com.TestKVC-CoreData";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fengche.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
