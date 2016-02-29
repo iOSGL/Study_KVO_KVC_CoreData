@@ -14,14 +14,17 @@
 #import "PersonObServer.h"
 #import "PropeScroViewViewController.h"
 #import "PropeTableViewViewController.h"
+#import "StudyViewController.h"
 
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 /**
  *
  */
 @property (nonatomic, strong) TestKVOViewController *nextController;
+
+@property (nonatomic, copy) NSArray *dataSourceArray;
 
 @end
 
@@ -60,46 +63,73 @@
         return a +b;
     };
     
-   
-    
-   
-    
-    
+    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)nextBtn:(id)sender {
-//    TestKVOViewController *control = [[TestKVOViewController alloc]init];
-//    
-    __weak ViewController *wself = self;
-//    control.color = ^(UIColor *color){
-//        wself.view.backgroundColor = color;
-//    };
-//    
-//    [self.navigationController pushViewController:control animated:YES];
-//    [self testMethod];
-  
-  NSMutableArray * dataArray = [wself.nextController testSum:^NSMutableArray *(NSArray *dataArray) {
-       NSMutableArray * data = [NSMutableArray new];
-       [data addObject:dataArray];
-       return data;
-   }];
-    
-    NSLog(@"++++%@",[[dataArray lastObject] lastObject]);
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataSourceArray.count;
 }
 
-
-- (IBAction)studyScrollView:(id)sender {
-    PropeScroViewViewController *control = [[PropeScroViewViewController alloc]init];
-    [self.navigationController pushViewController:control animated:YES];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifiers = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifiers];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifiers];
+    }
+    cell.textLabel.text = self.dataSourceArray[indexPath.row];
+    return cell;
 }
 
-- (IBAction)studyTableView:(id)sender {
-    PropeTableViewViewController *control = [[PropeTableViewViewController alloc]init];
-    [self.navigationController pushViewController:control animated:YES];
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case 0:{
+            //    TestKVOViewController *control = [[TestKVOViewController alloc]init];
+            //
+            __weak ViewController *wself = self;
+            //    control.color = ^(UIColor *color){
+            //        wself.view.backgroundColor = color;
+            //    };
+            //
+            //    [self.navigationController pushViewController:control animated:YES];
+            //    [self testMethod];
+            
+            NSMutableArray * dataArray = [wself.nextController testSum:^NSMutableArray *(NSArray *dataArray) {
+                NSMutableArray * data = [NSMutableArray new];
+                [data addObject:dataArray];
+                return data;
+            }];
+            
+            NSLog(@"++++%@",[[dataArray lastObject] lastObject]);
+        }
+            break;
+        case 1:{
+            PropeScroViewViewController *control = [[PropeScroViewViewController alloc]init];
+            [self.navigationController pushViewController:control animated:YES];
+        }
+            break;
+        case 2:{
+            PropeTableViewViewController *control = [[PropeTableViewViewController alloc]init];
+            [self.navigationController pushViewController:control animated:YES];
+        }
+            break;
+        case 3:{
+            StudyViewController *control = [[StudyViewController alloc]init];
+            [self.navigationController pushViewController:control animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 

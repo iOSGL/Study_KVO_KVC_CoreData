@@ -5,6 +5,7 @@
 
 target 'TestKVC_CoreData' do
 pod 'Masonry'
+pod 'RealReachability', '~> 1.1.1'
 end
 
 target 'TestKVC_CoreDataTests' do

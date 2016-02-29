@@ -17,6 +17,7 @@ typedef int(^sum)(int a, int b);
 - (void)func:(blo)blockPro;
 
 - (int)sumBlcok:(sum)block;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 /**
  *  navigation View

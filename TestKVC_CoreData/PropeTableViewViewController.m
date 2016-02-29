@@ -14,7 +14,6 @@
 /**
  *
  */
-@property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, assign) BOOL userDragging;
 
@@ -26,6 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view addSubview:self.tableView];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -106,15 +106,6 @@
 }
 
 #pragma mark - Setter Getter
-
-- (UITableView *)tableView {
-    if (_tableView == nil) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-    }
-    return _tableView;
-}
 
 
 @end
