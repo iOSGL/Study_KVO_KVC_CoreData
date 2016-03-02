@@ -10,12 +10,14 @@
 		746ACDD41C7FE92500803FF9 /* PropeScroViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746ACDD31C7FE92500803FF9 /* PropeScroViewViewController.m */; };
 		746ACDD71C7FFA4800803FF9 /* PropeTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746ACDD61C7FFA4800803FF9 /* PropeTableViewViewController.m */; };
 		749025011C858EA800DDE102 /* TestThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 749025001C858EA800DDE102 /* TestThreadViewController.m */; };
+		74B85CDB1C86C93000CEF778 /* CornerRadiusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B85CDA1C86C93000CEF778 /* CornerRadiusViewController.m */; };
+		74B85CDE1C86C9F100CEF778 /* CornerRadiusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B85CDD1C86C9F100CEF778 /* CornerRadiusTableViewCell.m */; };
 		813FF018F3B35A61EE532362 /* libPods-TestKVC_CoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063979419D7C68BFC0089328 /* libPods-TestKVC_CoreData.a */; };
 		A94BAFD71C829A0C00FC7D4D /* StudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94BAFD61C829A0C00FC7D4D /* StudyViewController.m */; };
 		A975AA161C799E2C00CACA14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA151C799E2C00CACA14 /* main.m */; };
 		A975AA191C799E2C00CACA14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA181C799E2C00CACA14 /* AppDelegate.m */; };
 		A975AA1C1C799E2C00CACA14 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA1B1C799E2C00CACA14 /* ViewController.m */; };
-		A975AA211C799E2C00CACA14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A975AA201C799E2C00CACA14 /* Assets.xcassets */; };
+		A975AA211C799E2C00CACA14 /* image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A975AA201C799E2C00CACA14 /* image.xcassets */; };
 		A975AA2F1C799E2C00CACA14 /* TestKVC_CoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA2E1C799E2C00CACA14 /* TestKVC_CoreDataTests.m */; };
 		A975AA3A1C799E2C00CACA14 /* TestKVC_CoreDataUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA391C799E2C00CACA14 /* TestKVC_CoreDataUITests.m */; };
 		A975AA491C79A16B00CACA14 /* TestPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA481C79A16B00CACA14 /* TestPerson.m */; };
@@ -53,6 +55,10 @@
 		746ACDD61C7FFA4800803FF9 /* PropeTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropeTableViewViewController.m; sourceTree = "<group>"; };
 		749024FF1C858EA800DDE102 /* TestThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestThreadViewController.h; sourceTree = "<group>"; };
 		749025001C858EA800DDE102 /* TestThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestThreadViewController.m; sourceTree = "<group>"; };
+		74B85CD91C86C93000CEF778 /* CornerRadiusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CornerRadiusViewController.h; sourceTree = "<group>"; };
+		74B85CDA1C86C93000CEF778 /* CornerRadiusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CornerRadiusViewController.m; sourceTree = "<group>"; };
+		74B85CDC1C86C9F100CEF778 /* CornerRadiusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CornerRadiusTableViewCell.h; sourceTree = "<group>"; };
+		74B85CDD1C86C9F100CEF778 /* CornerRadiusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CornerRadiusTableViewCell.m; sourceTree = "<group>"; };
 		93EBAFA40ACBDEAB5954E606 /* Pods-TestKVC_CoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreData.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData.release.xcconfig"; sourceTree = "<group>"; };
 		A94BAFD51C829A0C00FC7D4D /* StudyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyViewController.h; sourceTree = "<group>"; };
 		A94BAFD61C829A0C00FC7D4D /* StudyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyViewController.m; sourceTree = "<group>"; };
@@ -62,7 +68,7 @@
 		A975AA181C799E2C00CACA14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A975AA1A1C799E2C00CACA14 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A975AA1B1C799E2C00CACA14 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A975AA201C799E2C00CACA14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A975AA201C799E2C00CACA14 /* image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = image.xcassets; sourceTree = "<group>"; };
 		A975AA251C799E2C00CACA14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A975AA2A1C799E2C00CACA14 /* TestKVC_CoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestKVC_CoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A975AA2E1C799E2C00CACA14 /* TestKVC_CoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestKVC_CoreDataTests.m; sourceTree = "<group>"; };
@@ -155,6 +161,10 @@
 				746ACDD61C7FFA4800803FF9 /* PropeTableViewViewController.m */,
 				A94BAFD51C829A0C00FC7D4D /* StudyViewController.h */,
 				A94BAFD61C829A0C00FC7D4D /* StudyViewController.m */,
+				74B85CD91C86C93000CEF778 /* CornerRadiusViewController.h */,
+				74B85CDA1C86C93000CEF778 /* CornerRadiusViewController.m */,
+				74B85CDC1C86C9F100CEF778 /* CornerRadiusTableViewCell.h */,
+				74B85CDD1C86C9F100CEF778 /* CornerRadiusTableViewCell.m */,
 				749024FF1C858EA800DDE102 /* TestThreadViewController.h */,
 				749025001C858EA800DDE102 /* TestThreadViewController.m */,
 				A975AA4A1C79A32100CACA14 /* TestKVOViewController.h */,
@@ -168,7 +178,7 @@
 				A975AA5B1C79B14600CACA14 /* PersonObServer.m */,
 				A975AA5D1C79B51A00CACA14 /* TestColor.h */,
 				A975AA5E1C79B51A00CACA14 /* TestColor.m */,
-				A975AA201C799E2C00CACA14 /* Assets.xcassets */,
+				A975AA201C799E2C00CACA14 /* image.xcassets */,
 				A975AA251C799E2C00CACA14 /* Info.plist */,
 				A975AA141C799E2C00CACA14 /* Supporting Files */,
 			);
@@ -318,7 +328,7 @@
 			files = (
 				A975AA541C79A5D400CACA14 /* TestKVOViewController.xib in Resources */,
 				A975AA561C79A6DD00CACA14 /* ViewController.xib in Resources */,
-				A975AA211C799E2C00CACA14 /* Assets.xcassets in Resources */,
+				A975AA211C799E2C00CACA14 /* image.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,8 +407,10 @@
 				A975AA591C79AE4D00CACA14 /* PersonJob.m in Sources */,
 				A975AA491C79A16B00CACA14 /* TestPerson.m in Sources */,
 				746ACDD41C7FE92500803FF9 /* PropeScroViewViewController.m in Sources */,
+				74B85CDE1C86C9F100CEF778 /* CornerRadiusTableViewCell.m in Sources */,
 				A975AA5C1C79B14600CACA14 /* PersonObServer.m in Sources */,
 				A975AA5F1C79B51A00CACA14 /* TestColor.m in Sources */,
+				74B85CDB1C86C93000CEF778 /* CornerRadiusViewController.m in Sources */,
 				A975AA161C799E2C00CACA14 /* main.m in Sources */,
 				A94BAFD71C829A0C00FC7D4D /* StudyViewController.m in Sources */,
 				A975AA4C1C79A32100CACA14 /* TestKVOViewController.m in Sources */,

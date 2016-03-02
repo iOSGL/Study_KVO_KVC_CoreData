@@ -33,7 +33,6 @@
     UILabel *lab = [[UILabel alloc]initWithFrame:CGRectMake(100, 400, 50, 50)];
     lab.text = @"测试";
     lab.backgroundColor = [UIColor whiteColor];
-    lab.layer.shouldRasterize = YES;
     [self.view addSubview:lab];
     
 }
