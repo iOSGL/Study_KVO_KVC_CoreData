@@ -23,6 +23,19 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.layerView];
+    NSLog(@"--1");
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"--2");
+    });
+    NSLog(@"--3");
+    
+    UILabel *lab = [[UILabel alloc]initWithFrame:CGRectMake(100, 400, 50, 50)];
+    lab.text = @"测试";
+    lab.backgroundColor = [UIColor whiteColor];
+    lab.layer.shouldRasterize = YES;
+    [self.view addSubview:lab];
+    
 }
 
 - (void)viewWillLayoutSubviews {

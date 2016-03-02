@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		746ACDD41C7FE92500803FF9 /* PropeScroViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746ACDD31C7FE92500803FF9 /* PropeScroViewViewController.m */; };
 		746ACDD71C7FFA4800803FF9 /* PropeTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746ACDD61C7FFA4800803FF9 /* PropeTableViewViewController.m */; };
+		749025011C858EA800DDE102 /* TestThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 749025001C858EA800DDE102 /* TestThreadViewController.m */; };
 		813FF018F3B35A61EE532362 /* libPods-TestKVC_CoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063979419D7C68BFC0089328 /* libPods-TestKVC_CoreData.a */; };
 		A94BAFD71C829A0C00FC7D4D /* StudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94BAFD61C829A0C00FC7D4D /* StudyViewController.m */; };
 		A975AA161C799E2C00CACA14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA151C799E2C00CACA14 /* main.m */; };
@@ -50,6 +51,8 @@
 		746ACDD31C7FE92500803FF9 /* PropeScroViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropeScroViewViewController.m; sourceTree = "<group>"; };
 		746ACDD51C7FFA4800803FF9 /* PropeTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropeTableViewViewController.h; sourceTree = "<group>"; };
 		746ACDD61C7FFA4800803FF9 /* PropeTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropeTableViewViewController.m; sourceTree = "<group>"; };
+		749024FF1C858EA800DDE102 /* TestThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestThreadViewController.h; sourceTree = "<group>"; };
+		749025001C858EA800DDE102 /* TestThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestThreadViewController.m; sourceTree = "<group>"; };
 		93EBAFA40ACBDEAB5954E606 /* Pods-TestKVC_CoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreData.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData.release.xcconfig"; sourceTree = "<group>"; };
 		A94BAFD51C829A0C00FC7D4D /* StudyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyViewController.h; sourceTree = "<group>"; };
 		A94BAFD61C829A0C00FC7D4D /* StudyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyViewController.m; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				746ACDD61C7FFA4800803FF9 /* PropeTableViewViewController.m */,
 				A94BAFD51C829A0C00FC7D4D /* StudyViewController.h */,
 				A94BAFD61C829A0C00FC7D4D /* StudyViewController.m */,
+				749024FF1C858EA800DDE102 /* TestThreadViewController.h */,
+				749025001C858EA800DDE102 /* TestThreadViewController.m */,
 				A975AA4A1C79A32100CACA14 /* TestKVOViewController.h */,
 				A975AA4B1C79A32100CACA14 /* TestKVOViewController.m */,
 				A975AA531C79A5D400CACA14 /* TestKVOViewController.xib */,
@@ -386,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				749025011C858EA800DDE102 /* TestThreadViewController.m in Sources */,
 				A975AA1C1C799E2C00CACA14 /* ViewController.m in Sources */,
 				A975AA191C799E2C00CACA14 /* AppDelegate.m in Sources */,
 				A975AA591C79AE4D00CACA14 /* PersonJob.m in Sources */,

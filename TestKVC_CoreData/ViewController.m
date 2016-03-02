@@ -15,6 +15,7 @@
 #import "PropeScroViewViewController.h"
 #import "PropeTableViewViewController.h"
 #import "StudyViewController.h"
+#import "TestThreadViewController.h"
 
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -48,6 +49,7 @@
     NSLog(@"%zi",[[person valueForKeyPath:@"personJob.money"] integerValue]);
     [self loadObserver];
     
+    
    [self func:^(NSString *name) {
        NSLog(@"test block %@",name);
    }];
@@ -63,7 +65,47 @@
         return a +b;
     };
     
-    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面"];
+    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread"];
+    
+    dispatch_queue_t queue = dispatch_queue_create("com.fengche.com", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_group_t group = dispatch_group_create();
+    
+    __block NSString *str = @"";
+    
+   dispatch_group_async(group, queue, ^{
+//       double afterTime = 2.f;
+//       dispatch_time_t tiem = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(afterTime * NSEC_PER_MSEC));
+//       dispatch_after(tiem, dispatch_get_main_queue(), ^{
+           str = @"123";
+           NSLog(@"1result === %@",str);
+//       });
+   });
+    
+    dispatch_group_async(group, queue, ^{
+//        double afterTime = 2.f;
+//        dispatch_time_t tiem = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(afterTime * NSEC_PER_MSEC));
+//        dispatch_after(tiem, dispatch_get_main_queue(), ^{
+            str = [str stringByAppendingString:@"456"];
+            NSLog(@"2result === %@",str);
+//        });
+    });
+    
+    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+    
+   dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"3result === %@",str);
+   });
+    
+    dispatch_group_notify(group, queue, ^{
+        NSLog(@"4result === %@",str);
+    });
+    
+   
+
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -126,6 +168,10 @@
             [self.navigationController pushViewController:control animated:YES];
         }
             break;
+        case 4:{
+            TestThreadViewController *control = [[TestThreadViewController alloc]init];
+            [self.navigationController pushViewController:control animated:YES];
+        }
             
         default:
             break;
