@@ -10,6 +10,8 @@
 		746ACDD41C7FE92500803FF9 /* PropeScroViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746ACDD31C7FE92500803FF9 /* PropeScroViewViewController.m */; };
 		746ACDD71C7FFA4800803FF9 /* PropeTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746ACDD61C7FFA4800803FF9 /* PropeTableViewViewController.m */; };
 		749025011C858EA800DDE102 /* TestThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 749025001C858EA800DDE102 /* TestThreadViewController.m */; };
+		7495A9DA1C925E6D005CD95B /* CoreAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7495A9D91C925E6D005CD95B /* CoreAnimationViewController.m */; };
+		7495A9DC1C9262F8005CD95B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7495A9DB1C9262F8005CD95B /* QuartzCore.framework */; };
 		74B85CDB1C86C93000CEF778 /* CornerRadiusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B85CDA1C86C93000CEF778 /* CornerRadiusViewController.m */; };
 		74B85CDE1C86C9F100CEF778 /* CornerRadiusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B85CDD1C86C9F100CEF778 /* CornerRadiusTableViewCell.m */; };
 		813FF018F3B35A61EE532362 /* libPods-TestKVC_CoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063979419D7C68BFC0089328 /* libPods-TestKVC_CoreData.a */; };
@@ -55,6 +57,9 @@
 		746ACDD61C7FFA4800803FF9 /* PropeTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropeTableViewViewController.m; sourceTree = "<group>"; };
 		749024FF1C858EA800DDE102 /* TestThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestThreadViewController.h; sourceTree = "<group>"; };
 		749025001C858EA800DDE102 /* TestThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestThreadViewController.m; sourceTree = "<group>"; };
+		7495A9D81C925E6D005CD95B /* CoreAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAnimationViewController.h; sourceTree = "<group>"; };
+		7495A9D91C925E6D005CD95B /* CoreAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreAnimationViewController.m; sourceTree = "<group>"; };
+		7495A9DB1C9262F8005CD95B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		74B85CD91C86C93000CEF778 /* CornerRadiusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CornerRadiusViewController.h; sourceTree = "<group>"; };
 		74B85CDA1C86C93000CEF778 /* CornerRadiusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CornerRadiusViewController.m; sourceTree = "<group>"; };
 		74B85CDC1C86C9F100CEF778 /* CornerRadiusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CornerRadiusTableViewCell.h; sourceTree = "<group>"; };
@@ -95,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7495A9DC1C9262F8005CD95B /* QuartzCore.framework in Frameworks */,
 				813FF018F3B35A61EE532362 /* libPods-TestKVC_CoreData.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,6 +173,8 @@
 				74B85CDD1C86C9F100CEF778 /* CornerRadiusTableViewCell.m */,
 				749024FF1C858EA800DDE102 /* TestThreadViewController.h */,
 				749025001C858EA800DDE102 /* TestThreadViewController.m */,
+				7495A9D81C925E6D005CD95B /* CoreAnimationViewController.h */,
+				7495A9D91C925E6D005CD95B /* CoreAnimationViewController.m */,
 				A975AA4A1C79A32100CACA14 /* TestKVOViewController.h */,
 				A975AA4B1C79A32100CACA14 /* TestKVOViewController.m */,
 				A975AA531C79A5D400CACA14 /* TestKVOViewController.xib */,
@@ -214,6 +222,7 @@
 		D3FF3C3900890BE9007C94A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7495A9DB1C9262F8005CD95B /* QuartzCore.framework */,
 				063979419D7C68BFC0089328 /* libPods-TestKVC_CoreData.a */,
 			);
 			name = Frameworks;
@@ -408,6 +417,7 @@
 				A975AA491C79A16B00CACA14 /* TestPerson.m in Sources */,
 				746ACDD41C7FE92500803FF9 /* PropeScroViewViewController.m in Sources */,
 				74B85CDE1C86C9F100CEF778 /* CornerRadiusTableViewCell.m in Sources */,
+				7495A9DA1C925E6D005CD95B /* CoreAnimationViewController.m in Sources */,
 				A975AA5C1C79B14600CACA14 /* PersonObServer.m in Sources */,
 				A975AA5F1C79B51A00CACA14 /* TestColor.m in Sources */,
 				74B85CDB1C86C93000CEF778 /* CornerRadiusViewController.m in Sources */,

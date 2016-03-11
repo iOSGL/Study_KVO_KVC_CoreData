@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) UIView *layerView;
 
+@property (nonatomic, strong) UIImageView *drawRectImage;
+
 @end
 
 @implementation StudyViewController
@@ -34,6 +36,13 @@
     lab.text = @"测试";
     lab.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:lab];
+    [self.view addSubview:self.drawRectImage];
+    
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(0, 0), NO, 0);
+//    CGContextRef ref = cgcontextgetc
+    
+
+    
     
 }
 
@@ -43,6 +52,14 @@
         make.centerX.equalTo(self.view.mas_centerX);
         make.size.mas_equalTo(CGSizeMake(200, 200));
     }];
+    
+    [self.drawRectImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.top.equalTo(self.view).with.offset(10);
+        make.size.mas_equalTo(CGSizeMake(100, 100));
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +88,13 @@
         _layerView.layer.borderColor = [UIColor blackColor].CGColor;
     }
     return _layerView;
+}
+
+- (UIImageView *)drawRectImage {
+    if (_drawRectImage == nil) {
+        _drawRectImage = [UIImageView new];
+    }
+    return _drawRectImage;
 }
 
 @end
