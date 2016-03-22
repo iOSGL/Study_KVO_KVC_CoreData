@@ -17,6 +17,10 @@
 
 @property (nonatomic, strong) CALayer *blueLayer;
 
+@property (nonatomic, strong) CALayer *colorLayer;
+
+@property (nonatomic, strong) UIButton *touchActionBtn;
+
 @end
 
 @implementation CoreAnimationViewController
@@ -27,35 +31,38 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"Core Animation";
     [self.view addSubview:self.layerView];
-    UIImage *chestImage = [UIImage imageNamed:@"girl"];
-    [self.layerView.layer addSublayer:self.blueLayer];
-    self.layerView.layer.contents = (__bridge id)chestImage.CGImage;
-    self.layerView.layer.contentsGravity = kCAGravityResizeAspect;
-    self.layerView.layer.contentsRect = CGRectMake(0, 0, 1, 1);
-    self.layerView.layer.shadowOpacity = 0.5;
-    // 阴影
-    CGMutablePathRef circlePath = CGPathCreateMutable();
-    CGPathAddEllipseInRect(circlePath, NULL, self.layerView.bounds);
-    self.layerView.layer.shadowPath = circlePath; CGPathRelease(circlePath);
-    
-//    CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI_4);
-//    self.layerView.layer.affineTransform = transform;
-//    CGAffineTransform transform = CGAffineTransformIdentity;
-//    transform = CGAffineTransformScale(transform, 0.1, 0.1);
-//    transform = CGAffineTransformRotate(transform, M_PI / 180.0 * 30.0);
-////    transform = CGAffineTransformTranslate(transform, 200, 0);
-//   [UIView animateWithDuration:1 animations:^{
-//       self.layerView.layer.affineTransform = transform;
-//   } completion:^(BOOL finished) {
-//       self.layerView.hidden = YES;
-//   }];
-    
-    CATransform3D transform3D = CATransform3DIdentity;
-     transform3D.m34 = - 1.0 / 500.0;
-    transform3D = CATransform3DRotate(transform3D, M_PI_4, 0, 1, 0);
-    self.layerView.layer.transform = transform3D;
-    
-    [self shapLayer];
+    [self.view addSubview:self.touchActionBtn];
+    [self clearAnimation];
+//    [self baseAnimation];
+//    UIImage *chestImage = [UIImage imageNamed:@"girl"];
+//    [self.layerView.layer addSublayer:self.blueLayer];
+//    self.layerView.layer.contents = (__bridge id)chestImage.CGImage;
+//    self.layerView.layer.contentsGravity = kCAGravityResizeAspect;
+//    self.layerView.layer.contentsRect = CGRectMake(0, 0, 1, 1);
+//    self.layerView.layer.shadowOpacity = 0.5;
+//    // 阴影
+//    CGMutablePathRef circlePath = CGPathCreateMutable();
+//    CGPathAddEllipseInRect(circlePath, NULL, self.layerView.bounds);
+//    self.layerView.layer.shadowPath = circlePath; CGPathRelease(circlePath);
+//    
+////    CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI_4);
+////    self.layerView.layer.affineTransform = transform;
+////    CGAffineTransform transform = CGAffineTransformIdentity;
+////    transform = CGAffineTransformScale(transform, 0.1, 0.1);
+////    transform = CGAffineTransformRotate(transform, M_PI / 180.0 * 30.0);
+//////    transform = CGAffineTransformTranslate(transform, 200, 0);
+////   [UIView animateWithDuration:1 animations:^{
+////       self.layerView.layer.affineTransform = transform;
+////   } completion:^(BOOL finished) {
+////       self.layerView.hidden = YES;
+////   }];
+//    
+//    CATransform3D transform3D = CATransform3DIdentity;
+//     transform3D.m34 = - 1.0 / 500.0;
+//    transform3D = CATransform3DRotate(transform3D, M_PI_4, 0, 1, 0);
+//    self.layerView.layer.transform = transform3D;
+//    
+//    [self shapLayer];
     
     
     
@@ -67,6 +74,11 @@
         make.centerY.equalTo(self.view.mas_centerY);
         make.size.mas_equalTo(CGSizeMake(200, 200));
     }];
+    [self.touchActionBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.top.equalTo(self.view).with.offset(60);
+        make.size.mas_equalTo(CGSizeMake(100, 60));
+    }];
     
 }
 
@@ -75,15 +87,58 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Example
+// 隐式动画
+- (void)baseAnimation {
+    self.colorLayer = [CALayer layer];
+    self.colorLayer.frame = CGRectMake(0, 0, 200, 200);
+    self.colorLayer.backgroundColor = [UIColor orangeColor].CGColor;
+    CATransition *transition = [CATransition animation];
+    transition.type = kCATransitionPush;
+    transition.subtype = kCATransitionFromLeft;
+    self.colorLayer.actions = @{@"backgroundColor":transition};
+    [self.layerView.layer addSublayer:self.colorLayer];
 }
-*/
+
+- (void)clearAnimation {
+    self.colorLayer = [CALayer layer];
+    self.colorLayer.frame = CGRectMake(0, 0, 200, 200);
+    self.colorLayer.backgroundColor = [UIColor orangeColor].CGColor;
+    [self.layerView.layer addSublayer:self.colorLayer];
+}
+
+#pragma mark - Button Event
+
+- (void)touchToDo:(UIButton *)sender {
+//    [CATransaction begin];
+//    [CATransaction setAnimationDuration:2];
+////    [CATransaction setCompletionBlock:^{
+////        CGAffineTransform transform = self.colorLayer.affineTransform;
+////        transform = CGAffineTransformRotate(transform, M_PI_2);
+////        self.colorLayer.affineTransform = transform;
+////    }];
+    CGFloat red = arc4random() / (CGFloat)INT_MAX;
+    CGFloat green = arc4random() / (CGFloat)INT_MAX;
+    CGFloat blue = arc4random() / (CGFloat)INT_MAX;
+    UIColor *color = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+    CABasicAnimation *animation = [CABasicAnimation animation];
+    animation.keyPath = @"backgroundColor";
+    animation.toValue = (__bridge id)color.CGColor;
+    animation.delegate = self;
+    
+    [self.colorLayer addAnimation:animation forKey:nil];
+//    self.colorLayer.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0].CGColor;
+//    [CATransaction commit];
+    
+}
+
+- (void)animationDidStop:(CABasicAnimation *)anim finished:(BOOL)flag {
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    self.colorLayer.backgroundColor = (__bridge CGColorRef)anim.toValue;
+    [CATransaction commit];
+}
 
 #pragma mark - Private Method
 
@@ -138,5 +193,17 @@
     }
     return _blueLayer;
 }
+
+- (UIButton *)touchActionBtn {
+    if (_touchActionBtn == nil) {
+        _touchActionBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_touchActionBtn setTitle:@"点击按钮" forState:UIControlStateNormal];
+        [_touchActionBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        [_touchActionBtn addTarget:self action:@selector(touchToDo:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _touchActionBtn;
+}
+
+
 
 @end
