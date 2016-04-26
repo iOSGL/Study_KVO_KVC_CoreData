@@ -1,13 +1,18 @@
 PODS:
   - Masonry (0.6.4)
+  - pop (1.0.9)
   - RealReachability (1.1.1)
 
 DEPENDENCIES:
   - Masonry
+  - pop (~> 1.0)
   - RealReachability (~> 1.1.1)
 
 SPEC CHECKSUMS:
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   RealReachability: 0b0f7d686a75466680d452d3fad00e1a1388b923
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 854cd579ab2dc41a8251f673d82924b2e3b0d1d9
+
+COCOAPODS: 1.0.0.beta.8

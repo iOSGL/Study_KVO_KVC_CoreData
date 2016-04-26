@@ -19,6 +19,7 @@
 #import "CornerRadiusViewController.h"
 #import "CoreAnimationViewController.h"
 #import "TransitionsViewController.h"
+#import "GJ_AnimationViewController.h"
 
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -68,7 +69,7 @@
         return a +b;
     };
     
-    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions"];
+    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions", @"66_Transition"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.fengche.com", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();
@@ -188,6 +189,11 @@
             break;
         case 7:{
             TransitionsViewController *control = [[TransitionsViewController alloc]init];
+            [self.navigationController pushViewController:control animated:YES];
+        }
+            break;
+        case 8:{
+            GJ_AnimationViewController *control = [[GJ_AnimationViewController alloc]init];
             [self.navigationController pushViewController:control animated:YES];
         }
             break;

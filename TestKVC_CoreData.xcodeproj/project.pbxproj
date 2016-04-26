@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5310A1E5D5E3A7DBDADFFC07 /* libPods-TestKVC_CoreDataTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F40ACE2C612CB9FB757926B2 /* libPods-TestKVC_CoreDataTests.a */; };
+		5358C93571CBCBF0505BF117 /* libPods-TestKVC_CoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC0AB6CC0048585FADDE1AA /* libPods-TestKVC_CoreData.a */; };
 		746ACDD41C7FE92500803FF9 /* PropeScroViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746ACDD31C7FE92500803FF9 /* PropeScroViewViewController.m */; };
 		746ACDD71C7FFA4800803FF9 /* PropeTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746ACDD61C7FFA4800803FF9 /* PropeTableViewViewController.m */; };
 		748C19441CA1281B0003D172 /* TransitionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 748C19431CA1281B0003D172 /* TransitionsViewController.m */; };
@@ -17,7 +19,9 @@
 		7495A9DC1C9262F8005CD95B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7495A9DB1C9262F8005CD95B /* QuartzCore.framework */; };
 		74B85CDB1C86C93000CEF778 /* CornerRadiusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B85CDA1C86C93000CEF778 /* CornerRadiusViewController.m */; };
 		74B85CDE1C86C9F100CEF778 /* CornerRadiusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B85CDD1C86C9F100CEF778 /* CornerRadiusTableViewCell.m */; };
-		813FF018F3B35A61EE532362 /* libPods-TestKVC_CoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063979419D7C68BFC0089328 /* libPods-TestKVC_CoreData.a */; };
+		87DD2B9C1CCF0BA8005FA670 /* GJ_AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2B9B1CCF0BA8005FA670 /* GJ_AnimationViewController.m */; };
+		87DD2B9F1CCF0D70005FA670 /* GJ_TransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2B9E1CCF0D70005FA670 /* GJ_TransitionViewController.m */; };
+		87DD2BA21CCF16C7005FA670 /* GJTransitionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2BA11CCF16C7005FA670 /* GJTransitionModel.m */; };
 		A94BAFD71C829A0C00FC7D4D /* StudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94BAFD61C829A0C00FC7D4D /* StudyViewController.m */; };
 		A975AA161C799E2C00CACA14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA151C799E2C00CACA14 /* main.m */; };
 		A975AA191C799E2C00CACA14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA181C799E2C00CACA14 /* AppDelegate.m */; };
@@ -32,6 +36,7 @@
 		A975AA591C79AE4D00CACA14 /* PersonJob.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA581C79AE4D00CACA14 /* PersonJob.m */; };
 		A975AA5C1C79B14600CACA14 /* PersonObServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA5B1C79B14600CACA14 /* PersonObServer.m */; };
 		A975AA5F1C79B51A00CACA14 /* TestColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA5E1C79B51A00CACA14 /* TestColor.m */; };
+		F794545914DE61A0A708D66F /* libPods-TestKVC_CoreDataUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF6029E70C4CA7B3AA382CF6 /* libPods-TestKVC_CoreDataUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		063979419D7C68BFC0089328 /* libPods-TestKVC_CoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestKVC_CoreData.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		67E672119099E08C054FE353 /* Pods-TestKVC_CoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreData.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData.debug.xcconfig"; sourceTree = "<group>"; };
+		0474A2375ED30E4182E2611D /* Pods-TestKVC_CoreDataUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreDataUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreDataUITests/Pods-TestKVC_CoreDataUITests.release.xcconfig"; sourceTree = "<group>"; };
 		746ACDD21C7FE92500803FF9 /* PropeScroViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropeScroViewViewController.h; sourceTree = "<group>"; };
 		746ACDD31C7FE92500803FF9 /* PropeScroViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropeScroViewViewController.m; sourceTree = "<group>"; };
 		746ACDD51C7FFA4800803FF9 /* PropeTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropeTableViewViewController.h; sourceTree = "<group>"; };
@@ -73,7 +77,14 @@
 		74B85CDA1C86C93000CEF778 /* CornerRadiusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CornerRadiusViewController.m; sourceTree = "<group>"; };
 		74B85CDC1C86C9F100CEF778 /* CornerRadiusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CornerRadiusTableViewCell.h; sourceTree = "<group>"; };
 		74B85CDD1C86C9F100CEF778 /* CornerRadiusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CornerRadiusTableViewCell.m; sourceTree = "<group>"; };
-		93EBAFA40ACBDEAB5954E606 /* Pods-TestKVC_CoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreData.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData.release.xcconfig"; sourceTree = "<group>"; };
+		87DD2B9A1CCF0BA8005FA670 /* GJ_AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJ_AnimationViewController.h; sourceTree = "<group>"; };
+		87DD2B9B1CCF0BA8005FA670 /* GJ_AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJ_AnimationViewController.m; sourceTree = "<group>"; };
+		87DD2B9D1CCF0D70005FA670 /* GJ_TransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJ_TransitionViewController.h; sourceTree = "<group>"; };
+		87DD2B9E1CCF0D70005FA670 /* GJ_TransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJ_TransitionViewController.m; sourceTree = "<group>"; };
+		87DD2BA01CCF16C7005FA670 /* GJTransitionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJTransitionModel.h; sourceTree = "<group>"; };
+		87DD2BA11CCF16C7005FA670 /* GJTransitionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJTransitionModel.m; sourceTree = "<group>"; };
+		88B241A3C1209D00EAD9FAFE /* Pods-TestKVC_CoreDataUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreDataUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreDataUITests/Pods-TestKVC_CoreDataUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E4838B72DF92360462E2E8E /* Pods-TestKVC_CoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreData.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData.debug.xcconfig"; sourceTree = "<group>"; };
 		A94BAFD51C829A0C00FC7D4D /* StudyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyViewController.h; sourceTree = "<group>"; };
 		A94BAFD61C829A0C00FC7D4D /* StudyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyViewController.m; sourceTree = "<group>"; };
 		A975AA111C799E2C00CACA14 /* TestKVC_CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestKVC_CoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +113,12 @@
 		A975AA5B1C79B14600CACA14 /* PersonObServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonObServer.m; sourceTree = "<group>"; };
 		A975AA5D1C79B51A00CACA14 /* TestColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestColor.h; sourceTree = "<group>"; };
 		A975AA5E1C79B51A00CACA14 /* TestColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestColor.m; sourceTree = "<group>"; };
+		BDF7346C15F90A4F04F74D44 /* Pods-TestKVC_CoreDataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreDataTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreDataTests/Pods-TestKVC_CoreDataTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CBC0AB6CC0048585FADDE1AA /* libPods-TestKVC_CoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestKVC_CoreData.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF6029E70C4CA7B3AA382CF6 /* libPods-TestKVC_CoreDataUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestKVC_CoreDataUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B713F31FA70D93C5DB46E1 /* Pods-TestKVC_CoreDataTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreDataTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreDataTests/Pods-TestKVC_CoreDataTests.release.xcconfig"; sourceTree = "<group>"; };
+		F40ACE2C612CB9FB757926B2 /* libPods-TestKVC_CoreDataTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestKVC_CoreDataTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF9793CE0DCE4D0D2FD5EA67 /* Pods-TestKVC_CoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreData.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7495A9DC1C9262F8005CD95B /* QuartzCore.framework in Frameworks */,
-				813FF018F3B35A61EE532362 /* libPods-TestKVC_CoreData.a in Frameworks */,
+				5358C93571CBCBF0505BF117 /* libPods-TestKVC_CoreData.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5310A1E5D5E3A7DBDADFFC07 /* libPods-TestKVC_CoreDataTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,17 +143,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F794545914DE61A0A708D66F /* libPods-TestKVC_CoreDataUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6C8C7E9209E5B1B03EA4DF5E /* Pods */ = {
+		A22A29A9D6C2EC824136E84F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				67E672119099E08C054FE353 /* Pods-TestKVC_CoreData.debug.xcconfig */,
-				93EBAFA40ACBDEAB5954E606 /* Pods-TestKVC_CoreData.release.xcconfig */,
+				8E4838B72DF92360462E2E8E /* Pods-TestKVC_CoreData.debug.xcconfig */,
+				FF9793CE0DCE4D0D2FD5EA67 /* Pods-TestKVC_CoreData.release.xcconfig */,
+				BDF7346C15F90A4F04F74D44 /* Pods-TestKVC_CoreDataTests.debug.xcconfig */,
+				F3B713F31FA70D93C5DB46E1 /* Pods-TestKVC_CoreDataTests.release.xcconfig */,
+				88B241A3C1209D00EAD9FAFE /* Pods-TestKVC_CoreDataUITests.debug.xcconfig */,
+				0474A2375ED30E4182E2611D /* Pods-TestKVC_CoreDataUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -147,8 +170,8 @@
 				A975AA2D1C799E2C00CACA14 /* TestKVC_CoreDataTests */,
 				A975AA381C799E2C00CACA14 /* TestKVC_CoreDataUITests */,
 				A975AA121C799E2C00CACA14 /* Products */,
-				6C8C7E9209E5B1B03EA4DF5E /* Pods */,
 				D3FF3C3900890BE9007C94A8 /* Frameworks */,
+				A22A29A9D6C2EC824136E84F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +213,12 @@
 				748C19491CA1315D0003D172 /* TransitionModel.m */,
 				748C19451CA12C290003D172 /* ModelViewController.h */,
 				748C19461CA12C290003D172 /* ModelViewController.m */,
+				87DD2B9A1CCF0BA8005FA670 /* GJ_AnimationViewController.h */,
+				87DD2B9B1CCF0BA8005FA670 /* GJ_AnimationViewController.m */,
+				87DD2BA01CCF16C7005FA670 /* GJTransitionModel.h */,
+				87DD2BA11CCF16C7005FA670 /* GJTransitionModel.m */,
+				87DD2B9D1CCF0D70005FA670 /* GJ_TransitionViewController.h */,
+				87DD2B9E1CCF0D70005FA670 /* GJ_TransitionViewController.m */,
 				A975AA4A1C79A32100CACA14 /* TestKVOViewController.h */,
 				A975AA4B1C79A32100CACA14 /* TestKVOViewController.m */,
 				A975AA531C79A5D400CACA14 /* TestKVOViewController.xib */,
@@ -238,7 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				7495A9DB1C9262F8005CD95B /* QuartzCore.framework */,
-				063979419D7C68BFC0089328 /* libPods-TestKVC_CoreData.a */,
+				CBC0AB6CC0048585FADDE1AA /* libPods-TestKVC_CoreData.a */,
+				F40ACE2C612CB9FB757926B2 /* libPods-TestKVC_CoreDataTests.a */,
+				EF6029E70C4CA7B3AA382CF6 /* libPods-TestKVC_CoreDataUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -250,12 +281,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A975AA3E1C799E2C00CACA14 /* Build configuration list for PBXNativeTarget "TestKVC_CoreData" */;
 			buildPhases = (
-				3388EF30C34616DFA1647E22 /* Check Pods Manifest.lock */,
+				3A1196E50CC3949233E8C976 /* 📦 Check Pods Manifest.lock */,
 				A975AA0D1C799E2C00CACA14 /* Sources */,
 				A975AA0E1C799E2C00CACA14 /* Frameworks */,
 				A975AA0F1C799E2C00CACA14 /* Resources */,
-				5E3030536458A6470B501C2D /* Embed Pods Frameworks */,
-				437A1A31EE453FFE5DB56F35 /* Copy Pods Resources */,
+				E0A4948E3AA8A8645DC0306B /* 📦 Embed Pods Frameworks */,
+				1BB5D2BCFCA2EDAD08C31DBB /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,9 +301,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A975AA411C799E2C00CACA14 /* Build configuration list for PBXNativeTarget "TestKVC_CoreDataTests" */;
 			buildPhases = (
+				C281A15AE4209A47E42E968C /* 📦 Check Pods Manifest.lock */,
 				A975AA261C799E2C00CACA14 /* Sources */,
 				A975AA271C799E2C00CACA14 /* Frameworks */,
 				A975AA281C799E2C00CACA14 /* Resources */,
+				9EDE81C0880B18B0DC9AD136 /* 📦 Embed Pods Frameworks */,
+				190CDA0DB8554CA9A3F22F2C /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,9 +322,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A975AA441C799E2C00CACA14 /* Build configuration list for PBXNativeTarget "TestKVC_CoreDataUITests" */;
 			buildPhases = (
+				85A9B9087870BF5614CD42E0 /* 📦 Check Pods Manifest.lock */,
 				A975AA311C799E2C00CACA14 /* Sources */,
 				A975AA321C799E2C00CACA14 /* Frameworks */,
 				A975AA331C799E2C00CACA14 /* Resources */,
+				75F5ECD3B21C776DA9AF4407 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -373,29 +409,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3388EF30C34616DFA1647E22 /* Check Pods Manifest.lock */ = {
+		190CDA0DB8554CA9A3F22F2C /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestKVC_CoreDataTests/Pods-TestKVC_CoreDataTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		437A1A31EE453FFE5DB56F35 /* Copy Pods Resources */ = {
+		1BB5D2BCFCA2EDAD08C31DBB /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,14 +439,89 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5E3030536458A6470B501C2D /* Embed Pods Frameworks */ = {
+		3A1196E50CC3949233E8C976 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		75F5ECD3B21C776DA9AF4407 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestKVC_CoreDataUITests/Pods-TestKVC_CoreDataUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85A9B9087870BF5614CD42E0 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9EDE81C0880B18B0DC9AD136 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestKVC_CoreDataTests/Pods-TestKVC_CoreDataTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C281A15AE4209A47E42E968C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E0A4948E3AA8A8645DC0306B /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,11 +549,14 @@
 				A975AA5C1C79B14600CACA14 /* PersonObServer.m in Sources */,
 				A975AA5F1C79B51A00CACA14 /* TestColor.m in Sources */,
 				74B85CDB1C86C93000CEF778 /* CornerRadiusViewController.m in Sources */,
+				87DD2B9F1CCF0D70005FA670 /* GJ_TransitionViewController.m in Sources */,
 				A975AA161C799E2C00CACA14 /* main.m in Sources */,
 				A94BAFD71C829A0C00FC7D4D /* StudyViewController.m in Sources */,
+				87DD2B9C1CCF0BA8005FA670 /* GJ_AnimationViewController.m in Sources */,
 				A975AA4C1C79A32100CACA14 /* TestKVOViewController.m in Sources */,
 				748C194A1CA1315D0003D172 /* TransitionModel.m in Sources */,
 				746ACDD71C7FFA4800803FF9 /* PropeTableViewViewController.m in Sources */,
+				87DD2BA21CCF16C7005FA670 /* GJTransitionModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,7 +674,7 @@
 		};
 		A975AA3F1C799E2C00CACA14 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67E672119099E08C054FE353 /* Pods-TestKVC_CoreData.debug.xcconfig */;
+			baseConfigurationReference = 8E4838B72DF92360462E2E8E /* Pods-TestKVC_CoreData.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -573,7 +687,7 @@
 		};
 		A975AA401C799E2C00CACA14 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93EBAFA40ACBDEAB5954E606 /* Pods-TestKVC_CoreData.release.xcconfig */;
+			baseConfigurationReference = FF9793CE0DCE4D0D2FD5EA67 /* Pods-TestKVC_CoreData.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -586,6 +700,7 @@
 		};
 		A975AA421C799E2C00CACA14 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDF7346C15F90A4F04F74D44 /* Pods-TestKVC_CoreDataTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TestKVC_CoreDataTests/Info.plist;
@@ -598,6 +713,7 @@
 		};
 		A975AA431C799E2C00CACA14 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3B713F31FA70D93C5DB46E1 /* Pods-TestKVC_CoreDataTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TestKVC_CoreDataTests/Info.plist;
@@ -610,6 +726,7 @@
 		};
 		A975AA451C799E2C00CACA14 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88B241A3C1209D00EAD9FAFE /* Pods-TestKVC_CoreDataUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TestKVC_CoreDataUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -622,6 +739,7 @@
 		};
 		A975AA461C799E2C00CACA14 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0474A2375ED30E4182E2611D /* Pods-TestKVC_CoreDataUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TestKVC_CoreDataUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
