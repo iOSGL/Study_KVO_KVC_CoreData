@@ -8,6 +8,7 @@
 
 #import <YYImage.h>
 #import <YYCategories.h>
+#import <CoreImage/CoreImage.h>
 
 #import "GJ_TransitionViewController.h"
 
@@ -35,12 +36,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"transition";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(touchBack)];
+    
     [self.view addSubview:self.backGroundImage];
     [UIView animateWithDuration:0.3 animations:^{
         self.backGroundImage.alpha = 1;
     }];
-    [self.view addSubview:self.toImageView];
     
+    [self.view addSubview:self.toImageView];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
          [self.view addSubview:self.transitionView];
@@ -67,15 +69,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Private Method
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)createBlurBackGround:(UIImage *)image view:(UIView *)view Radius:(CGFloat)blurRadius {
+    CIImage *originImage = [CIImage imageWithCGImage:image.CGImage];
+    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
+    [filter setValue:originImage forKey:kCIInputImageKey];
+    [filter setValue:[NSNumber numberWithFloat:blurRadius] forKey:@"inputRadius"];
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIImage *result = [filter valueForKey:kCIOutputImageKey];
+
+    UIImage *blurImage = [UIImage imageWithCGImage:[context createCGImage:result fromRect:result.extent]];
+    CGFloat w = self.view.frame.size.width;
+    CGFloat h = self.view.frame.size.height;
+    UIImageView *blurImageview = [[UIImageView alloc]initWithFrame:CGRectMake(-w / 2, - h /2, 2 * w, 2 * h)];
+    blurImageview.contentMode = UIViewContentModeScaleAspectFill;
+    blurImageview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    blurImageview.image = blurImage;
+    [self.view insertSubview:blurImageview belowSubview:view];
 }
-*/
 
 #pragma mark - Button Events
 

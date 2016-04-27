@@ -37,8 +37,8 @@
         
         [containerView addSubview:toNav.view];
         [containerView addSubview:snapShotView];
-        
-        [UIView animateWithDuration:self.animationDuration animations:^{
+ 
+        [UIView animateWithDuration:self.animationDuration delay:0 usingSpringWithDamping:0.9 initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:^{
             snapShotView.frame = toVC.toImageView.frame;
             snapShotView.transform = CGAffineTransformMakeScale(0.9, 0.9);
             toVC.view.alpha = 1;
@@ -60,16 +60,15 @@
         UIView *snapShotView = [baseImage snapshotViewAfterScreenUpdates:NO];
         snapShotView.frame = [containerView convertRect:baseImage.frame fromView:baseImage.superview];
         baseImage.hidden = YES;
-        
         toVC.view.alpha = 0;
     
         [containerView addSubview:snapShotView];
         
-        [UIView animateWithDuration:self.animationDuration animations:^{
-            snapShotView.frame = toVC.girlImageView.frame;
-            snapShotView.transform = CGAffineTransformMakeScale(1, 1);
-            toVC.view.alpha = 1;
-            fromVC.view.alpha = 0;
+        [UIView animateWithDuration:self.animationDuration delay:0 usingSpringWithDamping:0.7 initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:^{
+             snapShotView.frame = toVC.girlImageView.frame;
+             snapShotView.transform = CGAffineTransformMakeScale(1, 1);
+             toVC.view.alpha = 1;
+             fromVC.view.alpha = 0;
         } completion:^(BOOL finished) {
             [snapShotView removeFromSuperview];
             [fromVC.view removeFromSuperview];
