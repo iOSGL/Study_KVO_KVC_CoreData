@@ -2,17 +2,27 @@ PODS:
   - Masonry (0.6.4)
   - pop (1.0.9)
   - RealReachability (1.1.1)
+  - YYCategories (1.0.2):
+    - YYCategories/no-arc (= 1.0.2)
+  - YYCategories/no-arc (1.0.2)
+  - YYImage (1.0.1):
+    - YYImage/Core (= 1.0.1)
+  - YYImage/Core (1.0.1)
 
 DEPENDENCIES:
   - Masonry
   - pop (~> 1.0)
   - RealReachability (~> 1.1.1)
+  - YYCategories
+  - YYImage
 
 SPEC CHECKSUMS:
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   RealReachability: 0b0f7d686a75466680d452d3fad00e1a1388b923
+  YYCategories: 7319e4ba4f4d4dbcec0094abaab540e98f04a65f
+  YYImage: b41b45bc5f32bfcdf67bdfb9c09da9e9832357c0
 
-PODFILE CHECKSUM: 854cd579ab2dc41a8251f673d82924b2e3b0d1d9
+PODFILE CHECKSUM: ae2bb0588dea68ffe3842387e51920addc732c2f
 
 COCOAPODS: 1.0.0.beta.8

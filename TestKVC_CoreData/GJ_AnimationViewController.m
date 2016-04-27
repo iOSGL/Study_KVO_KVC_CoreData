@@ -18,7 +18,7 @@
  */
 @property (nonatomic, strong) UIButton *startBtn;
 /**
- *  transition model
+ *  transitnonatomic, ion model
  */
 @property (nonatomic, strong) GJTransitionModel *model;
 
@@ -57,7 +57,7 @@
 }
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    self.model.animationDuration = 0.2;
+    self.model.animationDuration = 0.5;
     self.model.modeType = dismiss;
     return self.model;
 }
@@ -70,16 +70,10 @@
     GJ_TransitionViewController *control = [[GJ_TransitionViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:control];
     nav.transitioningDelegate = self;
-    control.modalPresentationStyle = UIModalPresentationCustom;
+    nav.modalPresentationStyle = UIModalPresentationCustom;
     [self presentViewController:nav animated:YES completion:^{
         
     }];
-    
-//    POPSpringAnimation *anSpring = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-//    anSpring.toValue = @(self.startBtn.center.y - 100);
-//    anSpring.beginTime = CACurrentMediaTime();
-//    anSpring.springBounciness = 15.0f;
-//    [self.startBtn pop_addAnimation:anSpring forKey:@"position"];
 
 }
 
@@ -105,11 +99,11 @@
 - (UIImageView *)girlImageView {
     if (_girlImageView == nil) {
         _girlImageView = [UIImageView new];
-        _girlImageView.image = [UIImage imageNamed:@"timg1"];
+        _girlImageView.image = [UIImage imageNamed:@"girl"];
         CGRect rect = [UIScreen mainScreen].bounds;
-        rect.origin.x = (rect.size.width - 100) / 2;
-        rect.origin.y = (rect.size.height - 100) / 2;
-        rect.size = CGSizeMake(100, 100);
+        rect.origin.x = (rect.size.width - 110) / 2;
+        rect.origin.y = (rect.size.height - 110) / 2;
+        rect.size = CGSizeMake(110, 110);
         _girlImageView.frame = rect;
     }
     return _girlImageView;

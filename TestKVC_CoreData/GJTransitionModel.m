@@ -21,60 +21,65 @@
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     
+    if (self.modeType == present) {
+        UINavigationController *fromNav = (UINavigationController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+        GJ_AnimationViewController *fromVC = (GJ_AnimationViewController *)[[fromNav viewControllers]lastObject];
+        UINavigationController *toNav = (UINavigationController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+        GJ_TransitionViewController *toVC = (GJ_TransitionViewController *)[[toNav viewControllers] firstObject];
+        UIView *containerView = [transitionContext containerView];
+        UIImageView *baseImage = fromVC.girlImageView;
+        UIView *snapShotView = [baseImage snapshotViewAfterScreenUpdates:NO];
+        snapShotView.frame = [containerView convertRect:baseImage.frame fromView:baseImage.superview];
+        baseImage.hidden = YES;
+        
+        toVC.view.frame = [transitionContext finalFrameForViewController:toVC];
+        toVC.view.alpha = 0;
+        
+        [containerView addSubview:toNav.view];
+        [containerView addSubview:snapShotView];
+        
+        [UIView animateWithDuration:self.animationDuration animations:^{
+            snapShotView.frame = toVC.toImageView.frame;
+            snapShotView.transform = CGAffineTransformMakeScale(0.9, 0.9);
+            toVC.view.alpha = 1;
+        } completion:^(BOOL finished) {
+            [snapShotView removeFromSuperview];
+            toVC.toImageView.image = toVC.girlImage;
+            [transitionContext completeTransition:YES];
+        }];
+        
+    } else if (self.modeType == dismiss) {
+        
+        UINavigationController *fromNav = (UINavigationController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+        GJ_TransitionViewController *fromVC = (GJ_TransitionViewController *)[[fromNav viewControllers]firstObject];
+        UINavigationController *toNav = (UINavigationController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+        GJ_AnimationViewController *toVC = (GJ_AnimationViewController *)[[toNav viewControllers] lastObject];
+
+        UIView *containerView = [transitionContext containerView];
+        UIImageView *baseImage = fromVC.toImageView;
+        UIView *snapShotView = [baseImage snapshotViewAfterScreenUpdates:NO];
+        snapShotView.frame = [containerView convertRect:baseImage.frame fromView:baseImage.superview];
+        baseImage.hidden = YES;
+        
+        toVC.view.alpha = 0;
     
-     UINavigationController *fromNav = (UINavigationController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    GJ_AnimationViewController *fromVC = (GJ_AnimationViewController *)[[fromNav viewControllers]lastObject];
+        [containerView addSubview:snapShotView];
+        
+        [UIView animateWithDuration:self.animationDuration animations:^{
+            snapShotView.frame = toVC.girlImageView.frame;
+            snapShotView.transform = CGAffineTransformMakeScale(1, 1);
+            toVC.view.alpha = 1;
+            fromVC.view.alpha = 0;
+        } completion:^(BOOL finished) {
+            [snapShotView removeFromSuperview];
+            [fromVC.view removeFromSuperview];
+            toVC.girlImageView.hidden = NO;
+            [transitionContext completeTransition:YES];
+        }];
+   
+    }
     
-    UINavigationController *toNav = (UINavigationController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    GJ_TransitionViewController *toVC = (GJ_TransitionViewController *)[[toNav viewControllers] firstObject];
-    UIView *containerView = [transitionContext containerView];
-    
-    UIImageView *baseImage = fromVC.girlImageView;
-    UIView *snapShotView = [baseImage snapshotViewAfterScreenUpdates:NO];
-    snapShotView.frame = [containerView convertRect:baseImage.frame fromView:baseImage.superview];
-    baseImage.hidden = YES;
-    
-    toVC.view.frame = [transitionContext finalFrameForViewController:toVC];
-    
-    toVC.view.alpha = 0;
-    
-    [containerView addSubview:snapShotView];
-    [containerView addSubview:toVC.view];
-    
-    [UIView animateWithDuration:self.animationDuration animations:^{
-        toVC.view.alpha = 1;
-        snapShotView.frame = [containerView convertRect:toVC.toImageView.frame fromView:toVC.view];
-        snapShotView.transform = CGAffineTransformMakeScale(0.5, 0.5);
-    } completion:^(BOOL finished) {
-        snapShotView.hidden  = YES;
-        [transitionContext completeTransition:YES];
-    }];
-    
-    
-    
-//    UIView *substituteView = [UIView new];
-//    substituteView.frame = [containerView convertRect:toVC.toImageView.frame fromView:toVC.view];
-//    POPSpringAnimation *anSpring = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-//    anSpring.toValue = @(substituteView.center.y);
-//    anSpring.beginTime = CACurrentMediaTime();
-//    anSpring.springBounciness = 5.0f;
-//    [snapShotView pop_addAnimation:anSpring forKey:@"position"];
-    
-    
-    
-//    [UIView animateWithDuration:self.animationDuration delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0 options:nil animations:^{
-//        toVC.view.alpha = 1;
-//        snapShotView.frame = [containerView convertRect:toVC.toImageView.frame fromView:toVC.view];
-//        snapShotView.transform = CGAffineTransformMakeScale(0.5, 0.5);
-//    } completion:^(BOOL finished) {
-//        snapShotView.hidden  = YES;
-//        [transitionContext completeTransition:YES];
-//    }];
-    
-    
-    
-    
-    
+
     
 }
 

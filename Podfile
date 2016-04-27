@@ -7,6 +7,8 @@ target 'TestKVC_CoreData' do
 pod 'Masonry'
 pod 'RealReachability', '~> 1.1.1'
 pod 'pop', '~> 1.0'
+pod 'YYImage'
+pod 'YYCategories'
 end
 
 target 'TestKVC_CoreDataTests' do

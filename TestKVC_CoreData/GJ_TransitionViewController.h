@@ -12,4 +12,9 @@
 
 @property (nonatomic, strong) UIImageView *toImageView;
 
+/**
+ *  实例image
+ */
+@property (nonatomic, strong) UIImage *girlImage;
+
 @end
