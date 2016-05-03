@@ -84,8 +84,37 @@
 
 - (UIImage *)filterFromGPUImage:(UIImage *)image {
     UIImage *resultImage = nil;
-    GPUImageSepiaFilter *filter = [[GPUImageSepiaFilter alloc]init];
-    resultImage = [filter imageByFilteringImage:image];
+//    GPUImageSepiaFilter *filter = [[GPUImageSepiaFilter alloc]init];
+//    resultImage = [filter imageByFilteringImage:image];
+    
+    GPUImagePicture *stillImageSource = [[GPUImagePicture alloc]initWithImage:image];
+    
+    GPUImageFilterGroup *groupFilter = [[GPUImageFilterGroup alloc]init];
+    
+    GPUImageSepiaFilter *stillImageFilter = [[GPUImageSepiaFilter alloc] init];
+    GPUImageSketchFilter *SketchFilter = [[GPUImageSketchFilter alloc]init];
+    GPUImageSaturationFilter *SaturationFilter = [[GPUImageSaturationFilter alloc]init];
+    SaturationFilter.saturation = 2.f;
+    GPUImagePixellateFilter *mosaicFilter = [[GPUImagePixellateFilter alloc]init];
+    
+    
+    [groupFilter addTarget:stillImageFilter];
+    [groupFilter addTarget:stillImageFilter];
+    [groupFilter addTarget:SaturationFilter];
+    [groupFilter addTarget:mosaicFilter];
+    
+    [stillImageFilter addTarget:SketchFilter];
+    [SketchFilter addTarget:SaturationFilter];
+    [SaturationFilter addTarget:mosaicFilter];
+    
+    [(GPUImageFilterGroup *) groupFilter setInitialFilters:[NSArray arrayWithObject:stillImageFilter]];
+    [(GPUImageFilterGroup *) groupFilter setTerminalFilter:mosaicFilter];
+
+    [stillImageSource addTarget:groupFilter];
+    [stillImageSource processImage];
+    [groupFilter useNextFrameForImageCapture];
+    
+    resultImage = [groupFilter imageFromCurrentFramebuffer];
     return resultImage;
 }
 

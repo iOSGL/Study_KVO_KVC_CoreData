@@ -80,7 +80,7 @@
 		74B85CDC1C86C9F100CEF778 /* CornerRadiusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CornerRadiusTableViewCell.h; sourceTree = "<group>"; };
 		74B85CDD1C86C9F100CEF778 /* CornerRadiusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CornerRadiusTableViewCell.m; sourceTree = "<group>"; };
 		871D92A51CD851BC009DF42C /* GJFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJFiltersViewController.h; sourceTree = "<group>"; };
-		871D92A61CD851BC009DF42C /* GJFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJFiltersViewController.m; sourceTree = "<group>"; };
+		871D92A61CD851BC009DF42C /* GJFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJFiltersViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		871D92AB1CD897E3009DF42C /* Shader1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader1.fsh; sourceTree = "<group>"; };
 		87DD2B9A1CCF0BA8005FA670 /* GJ_AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJ_AnimationViewController.h; sourceTree = "<group>"; };
 		87DD2B9B1CCF0BA8005FA670 /* GJ_AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJ_AnimationViewController.m; sourceTree = "<group>"; };
