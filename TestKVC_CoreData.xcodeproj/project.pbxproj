@@ -19,6 +19,8 @@
 		7495A9DC1C9262F8005CD95B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7495A9DB1C9262F8005CD95B /* QuartzCore.framework */; };
 		74B85CDB1C86C93000CEF778 /* CornerRadiusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B85CDA1C86C93000CEF778 /* CornerRadiusViewController.m */; };
 		74B85CDE1C86C9F100CEF778 /* CornerRadiusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B85CDD1C86C9F100CEF778 /* CornerRadiusTableViewCell.m */; };
+		871D92A71CD851BC009DF42C /* GJFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871D92A61CD851BC009DF42C /* GJFiltersViewController.m */; };
+		871D92AC1CD897E3009DF42C /* Shader1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 871D92AB1CD897E3009DF42C /* Shader1.fsh */; };
 		87DD2B9C1CCF0BA8005FA670 /* GJ_AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2B9B1CCF0BA8005FA670 /* GJ_AnimationViewController.m */; };
 		87DD2B9F1CCF0D70005FA670 /* GJ_TransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2B9E1CCF0D70005FA670 /* GJ_TransitionViewController.m */; };
 		87DD2BA21CCF16C7005FA670 /* GJTransitionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2BA11CCF16C7005FA670 /* GJTransitionModel.m */; };
@@ -77,6 +79,9 @@
 		74B85CDA1C86C93000CEF778 /* CornerRadiusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CornerRadiusViewController.m; sourceTree = "<group>"; };
 		74B85CDC1C86C9F100CEF778 /* CornerRadiusTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CornerRadiusTableViewCell.h; sourceTree = "<group>"; };
 		74B85CDD1C86C9F100CEF778 /* CornerRadiusTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CornerRadiusTableViewCell.m; sourceTree = "<group>"; };
+		871D92A51CD851BC009DF42C /* GJFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJFiltersViewController.h; sourceTree = "<group>"; };
+		871D92A61CD851BC009DF42C /* GJFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJFiltersViewController.m; sourceTree = "<group>"; };
+		871D92AB1CD897E3009DF42C /* Shader1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader1.fsh; sourceTree = "<group>"; };
 		87DD2B9A1CCF0BA8005FA670 /* GJ_AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJ_AnimationViewController.h; sourceTree = "<group>"; };
 		87DD2B9B1CCF0BA8005FA670 /* GJ_AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJ_AnimationViewController.m; sourceTree = "<group>"; };
 		87DD2B9D1CCF0D70005FA670 /* GJ_TransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJ_TransitionViewController.h; sourceTree = "<group>"; };
@@ -188,6 +193,7 @@
 		A975AA131C799E2C00CACA14 /* TestKVC_CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				871D92AB1CD897E3009DF42C /* Shader1.fsh */,
 				A975AA171C799E2C00CACA14 /* AppDelegate.h */,
 				A975AA181C799E2C00CACA14 /* AppDelegate.m */,
 				A975AA1A1C799E2C00CACA14 /* ViewController.h */,
@@ -219,6 +225,8 @@
 				87DD2BA11CCF16C7005FA670 /* GJTransitionModel.m */,
 				87DD2B9D1CCF0D70005FA670 /* GJ_TransitionViewController.h */,
 				87DD2B9E1CCF0D70005FA670 /* GJ_TransitionViewController.m */,
+				871D92A51CD851BC009DF42C /* GJFiltersViewController.h */,
+				871D92A61CD851BC009DF42C /* GJFiltersViewController.m */,
 				A975AA4A1C79A32100CACA14 /* TestKVOViewController.h */,
 				A975AA4B1C79A32100CACA14 /* TestKVOViewController.m */,
 				A975AA531C79A5D400CACA14 /* TestKVOViewController.xib */,
@@ -388,6 +396,7 @@
 			files = (
 				A975AA541C79A5D400CACA14 /* TestKVOViewController.xib in Resources */,
 				A975AA561C79A6DD00CACA14 /* ViewController.xib in Resources */,
+				871D92AC1CD897E3009DF42C /* Shader1.fsh in Resources */,
 				A975AA211C799E2C00CACA14 /* image.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,6 +554,7 @@
 				A975AA491C79A16B00CACA14 /* TestPerson.m in Sources */,
 				746ACDD41C7FE92500803FF9 /* PropeScroViewViewController.m in Sources */,
 				74B85CDE1C86C9F100CEF778 /* CornerRadiusTableViewCell.m in Sources */,
+				871D92A71CD851BC009DF42C /* GJFiltersViewController.m in Sources */,
 				7495A9DA1C925E6D005CD95B /* CoreAnimationViewController.m in Sources */,
 				A975AA5C1C79B14600CACA14 /* PersonObServer.m in Sources */,
 				A975AA5F1C79B51A00CACA14 /* TestColor.m in Sources */,

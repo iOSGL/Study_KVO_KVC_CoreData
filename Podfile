@@ -9,6 +9,7 @@ pod 'RealReachability', '~> 1.1.1'
 pod 'pop', '~> 1.0'
 pod 'YYImage'
 pod 'YYCategories'
+pod 'GPUImage', '~> 0.1.7'
 end
 
 target 'TestKVC_CoreDataTests' do

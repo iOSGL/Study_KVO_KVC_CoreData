@@ -20,6 +20,7 @@
 #import "CoreAnimationViewController.h"
 #import "TransitionsViewController.h"
 #import "GJ_AnimationViewController.h"
+#import "GJFiltersViewController.h"
 
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -69,7 +70,7 @@
         return a +b;
     };
     
-    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions", @"66_Transition"];
+    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions", @"66_Transition", @"Filters"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.fengche.com", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();
@@ -195,6 +196,12 @@
         case 8:{
             GJ_AnimationViewController *control = [[GJ_AnimationViewController alloc]init];
             [self.navigationController pushViewController:control animated:YES];
+        }
+            break;
+        case 9:{
+            GJFiltersViewController *control = [[GJFiltersViewController alloc]init];
+            [self.navigationController pushViewController:control animated:YES];
+    
         }
             break;
             
