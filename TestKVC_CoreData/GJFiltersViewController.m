@@ -33,13 +33,6 @@
     [self.view addSubview:self.GPUinage];
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-       UIImage *image = [self filterFromCoreImage:[UIImage imageNamed:@"girl"]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.filterImage.image = image;
-        });
-    });
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         UIImage *image = [self filterFromGPUImage:[UIImage imageNamed:@"girl"]];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.GPUinage.image = image;
@@ -89,26 +82,37 @@
     
     GPUImagePicture *stillImageSource = [[GPUImagePicture alloc]initWithImage:image];
     
+    
+    
     GPUImageFilterGroup *groupFilter = [[GPUImageFilterGroup alloc]init];
     
-    GPUImageSepiaFilter *stillImageFilter = [[GPUImageSepiaFilter alloc] init];
-    GPUImageSketchFilter *SketchFilter = [[GPUImageSketchFilter alloc]init];
-    GPUImageSaturationFilter *SaturationFilter = [[GPUImageSaturationFilter alloc]init];
-    SaturationFilter.saturation = 2.f;
-    GPUImagePixellateFilter *mosaicFilter = [[GPUImagePixellateFilter alloc]init];
+    GPUImageBrightnessFilter *brightnessFilter = [[GPUImageBrightnessFilter alloc]init];
+    GPUImageHighlightShadowFilter *overlayBlendFilter = [[GPUImageHighlightShadowFilter alloc]init];
+    overlayBlendFilter.shadows = 0.5;
+    overlayBlendFilter.highlights = 0.5;
+    GPUImageContrastFilter *contrastFilter = [[GPUImageContrastFilter alloc]init];
+    GPUImageSaturationFilter *saturationFilter = [[GPUImageSaturationFilter alloc]init];
+    saturationFilter.saturation =  - 0.04f;
+    GPUImageHueFilter *hueFilter = [[GPUImageHueFilter alloc]init];
+    hueFilter.hue = 1.0f;
+    GPUImageFilter *filter = [[GPUImageFilter alloc]initWithFragmentShaderFromFile:@"Shader1"];
     
+    [groupFilter addTarget:brightnessFilter];
+    [groupFilter addTarget:overlayBlendFilter];
+    [groupFilter addTarget:contrastFilter];
+    [groupFilter addTarget:saturationFilter];
+    [groupFilter addTarget:hueFilter];
+    [groupFilter addTarget:filter];
     
-    [groupFilter addTarget:stillImageFilter];
-    [groupFilter addTarget:stillImageFilter];
-    [groupFilter addTarget:SaturationFilter];
-    [groupFilter addTarget:mosaicFilter];
+    [brightnessFilter addTarget:overlayBlendFilter];
+    [overlayBlendFilter addTarget:contrastFilter];
+    [contrastFilter addTarget:saturationFilter];
+    [saturationFilter addTarget:hueFilter];
+    [hueFilter addTarget:filter];
+
     
-    [stillImageFilter addTarget:SketchFilter];
-    [SketchFilter addTarget:SaturationFilter];
-    [SaturationFilter addTarget:mosaicFilter];
-    
-    [(GPUImageFilterGroup *) groupFilter setInitialFilters:[NSArray arrayWithObject:stillImageFilter]];
-    [(GPUImageFilterGroup *) groupFilter setTerminalFilter:mosaicFilter];
+    [(GPUImageFilterGroup *) groupFilter setInitialFilters:[NSArray arrayWithObject:brightnessFilter]];
+    [(GPUImageFilterGroup *) groupFilter setTerminalFilter:filter];
 
     [stillImageSource addTarget:groupFilter];
     [stillImageSource processImage];
@@ -123,6 +127,7 @@
 - (UIImageView *)filterImage {
     if (_filterImage == nil) {
         _filterImage = [UIImageView new];
+        _filterImage.image = [UIImage imageNamed:@"girl"];
     }
     return _filterImage;
 }
