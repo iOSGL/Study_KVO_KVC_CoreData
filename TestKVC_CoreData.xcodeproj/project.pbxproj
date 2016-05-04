@@ -21,9 +21,12 @@
 		74B85CDE1C86C9F100CEF778 /* CornerRadiusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B85CDD1C86C9F100CEF778 /* CornerRadiusTableViewCell.m */; };
 		871D92A71CD851BC009DF42C /* GJFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871D92A61CD851BC009DF42C /* GJFiltersViewController.m */; };
 		871D92AC1CD897E3009DF42C /* Shader1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 871D92AB1CD897E3009DF42C /* Shader1.fsh */; };
+		872AA3CD1CDA0C2E009988DC /* shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 872AA3CC1CDA0C2E009988DC /* shader.vsh */; };
 		87DD2B9C1CCF0BA8005FA670 /* GJ_AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2B9B1CCF0BA8005FA670 /* GJ_AnimationViewController.m */; };
 		87DD2B9F1CCF0D70005FA670 /* GJ_TransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2B9E1CCF0D70005FA670 /* GJ_TransitionViewController.m */; };
 		87DD2BA21CCF16C7005FA670 /* GJTransitionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2BA11CCF16C7005FA670 /* GJTransitionModel.m */; };
+		87F847701CD9A297004FB431 /* shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 87F8476F1CD9A297004FB431 /* shader.fsh */; };
+		87F847721CD9A3CA004FB431 /* GPUImageCustomFilter.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 87F847711CD9A3CA004FB431 /* GPUImageCustomFilter.fsh */; };
 		A94BAFD71C829A0C00FC7D4D /* StudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94BAFD61C829A0C00FC7D4D /* StudyViewController.m */; };
 		A975AA161C799E2C00CACA14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA151C799E2C00CACA14 /* main.m */; };
 		A975AA191C799E2C00CACA14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA181C799E2C00CACA14 /* AppDelegate.m */; };
@@ -82,12 +85,15 @@
 		871D92A51CD851BC009DF42C /* GJFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJFiltersViewController.h; sourceTree = "<group>"; };
 		871D92A61CD851BC009DF42C /* GJFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJFiltersViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		871D92AB1CD897E3009DF42C /* Shader1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader1.fsh; sourceTree = "<group>"; };
+		872AA3CC1CDA0C2E009988DC /* shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vsh; sourceTree = "<group>"; };
 		87DD2B9A1CCF0BA8005FA670 /* GJ_AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJ_AnimationViewController.h; sourceTree = "<group>"; };
 		87DD2B9B1CCF0BA8005FA670 /* GJ_AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJ_AnimationViewController.m; sourceTree = "<group>"; };
 		87DD2B9D1CCF0D70005FA670 /* GJ_TransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJ_TransitionViewController.h; sourceTree = "<group>"; };
 		87DD2B9E1CCF0D70005FA670 /* GJ_TransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJ_TransitionViewController.m; sourceTree = "<group>"; };
 		87DD2BA01CCF16C7005FA670 /* GJTransitionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJTransitionModel.h; sourceTree = "<group>"; };
 		87DD2BA11CCF16C7005FA670 /* GJTransitionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJTransitionModel.m; sourceTree = "<group>"; };
+		87F8476F1CD9A297004FB431 /* shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.fsh; sourceTree = "<group>"; };
+		87F847711CD9A3CA004FB431 /* GPUImageCustomFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GPUImageCustomFilter.fsh; sourceTree = "<group>"; };
 		88B241A3C1209D00EAD9FAFE /* Pods-TestKVC_CoreDataUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreDataUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreDataUITests/Pods-TestKVC_CoreDataUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E4838B72DF92360462E2E8E /* Pods-TestKVC_CoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreData.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData.debug.xcconfig"; sourceTree = "<group>"; };
 		A94BAFD51C829A0C00FC7D4D /* StudyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyViewController.h; sourceTree = "<group>"; };
@@ -194,6 +200,9 @@
 			isa = PBXGroup;
 			children = (
 				871D92AB1CD897E3009DF42C /* Shader1.fsh */,
+				87F8476F1CD9A297004FB431 /* shader.fsh */,
+				872AA3CC1CDA0C2E009988DC /* shader.vsh */,
+				87F847711CD9A3CA004FB431 /* GPUImageCustomFilter.fsh */,
 				A975AA171C799E2C00CACA14 /* AppDelegate.h */,
 				A975AA181C799E2C00CACA14 /* AppDelegate.m */,
 				A975AA1A1C799E2C00CACA14 /* ViewController.h */,
@@ -357,7 +366,7 @@
 				TargetAttributes = {
 					A975AA101C799E2C00CACA14 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 4TZ6FQ35UY;
+						DevelopmentTeam = DMLGJX6EPE;
 					};
 					A975AA291C799E2C00CACA14 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -394,10 +403,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F847701CD9A297004FB431 /* shader.fsh in Resources */,
 				A975AA541C79A5D400CACA14 /* TestKVOViewController.xib in Resources */,
 				A975AA561C79A6DD00CACA14 /* ViewController.xib in Resources */,
 				871D92AC1CD897E3009DF42C /* Shader1.fsh in Resources */,
+				872AA3CD1CDA0C2E009988DC /* shader.vsh in Resources */,
 				A975AA211C799E2C00CACA14 /* image.xcassets in Resources */,
+				87F847721CD9A3CA004FB431 /* GPUImageCustomFilter.fsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,7 +702,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TestKVC_CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fengche.com;
+				PRODUCT_BUNDLE_IDENTIFIER = fengche.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -703,7 +715,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TestKVC_CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.fengche.com;
+				PRODUCT_BUNDLE_IDENTIFIER = fengche.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

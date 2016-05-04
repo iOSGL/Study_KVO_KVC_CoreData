@@ -4,7 +4,7 @@
 //
 //  Created by 66 on 16/5/3.
 //  Copyright © 2016年 genglei. All rights reserved.
-//
+// 发动机号 153540363 车架号 LSGGA53E7GH079392
 
 #import <Masonry.h>
 #import <CoreImage/CoreImage.h>
@@ -17,6 +17,8 @@
 @property (nonatomic, strong) UIImageView *filterImage;
 
 @property (nonatomic, strong) UIImageView *GPUinage;
+
+@property (nonatomic, strong) UIImageView *shaderImage;
 
 @end
 
@@ -31,11 +33,19 @@
     
     [self.view addSubview:self.filterImage];
     [self.view addSubview:self.GPUinage];
+    [self.view addSubview:self.shaderImage];
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         UIImage *image = [self filterFromGPUImage:[UIImage imageNamed:@"girl"]];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.GPUinage.image = image;
+        });
+    });
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIImage *image = [self filterFromGPUImageShader:[UIImage imageNamed:@"girl"]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.shaderImage.image = image;
         });
     });
     
@@ -51,6 +61,12 @@
     [self.GPUinage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_centerX);
         make.top.equalTo(self.view).with.offset(100);
+        make.size.mas_equalTo(CGSizeMake(110, 110));
+    }];
+    
+    [self.shaderImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.bottom.equalTo(self.view).with.offset(-100);
         make.size.mas_equalTo(CGSizeMake(110, 110));
     }];
 }
@@ -76,16 +92,10 @@
 }
 
 - (UIImage *)filterFromGPUImage:(UIImage *)image {
+    
     UIImage *resultImage = nil;
-//    GPUImageSepiaFilter *filter = [[GPUImageSepiaFilter alloc]init];
-//    resultImage = [filter imageByFilteringImage:image];
-    
     GPUImagePicture *stillImageSource = [[GPUImagePicture alloc]initWithImage:image];
-    
-    
-    
     GPUImageFilterGroup *groupFilter = [[GPUImageFilterGroup alloc]init];
-    
     GPUImageBrightnessFilter *brightnessFilter = [[GPUImageBrightnessFilter alloc]init];
     GPUImageHighlightShadowFilter *overlayBlendFilter = [[GPUImageHighlightShadowFilter alloc]init];
     overlayBlendFilter.shadows = 0.5;
@@ -122,6 +132,24 @@
     return resultImage;
 }
 
+- (UIImage *)filterFromGPUImageShader:(UIImage *)image {
+    
+        //    NSString *vertexStringPath = [[NSBundle mainBundle]pathForResource:@"shader" ofType:@"vsh"];
+    NSString *fragmentStringPath = [[NSBundle mainBundle]pathForResource:@"GPUImageCustomFilter" ofType:@"fsh"];
+    NSString *fragmentShaderString = [NSString stringWithContentsOfFile:fragmentStringPath encoding:NSUTF8StringEncoding error:nil];
+    
+    UIImage *reslutImage = nil;
+    GPUImagePicture *imageSource = [[GPUImagePicture alloc]initWithImage:image];
+    GPUImageFilter *filter = [[GPUImageFilter alloc]initWithFragmentShaderFromString:fragmentShaderString];
+
+//    GPUImageFilter *filter = [[GPUImageFilter alloc]initWithVertexShaderFromString:nil fragmentShaderFromString:fragmentStringPath];
+    [imageSource addTarget:filter];
+    [imageSource processImage];
+    [filter useNextFrameForImageCapture];
+    reslutImage = [filter imageFromCurrentFramebuffer];
+    return reslutImage;;
+}
+
 #pragma mark - Setter Getter 
 
 - (UIImageView *)filterImage {
@@ -137,6 +165,13 @@
         _GPUinage = [UIImageView new];
     }
     return _GPUinage;
+}
+
+- (UIImageView *)shaderImage {
+    if (_shaderImage == nil) {
+        _shaderImage = [UIImageView new];
+    }
+    return _shaderImage;
 }
 
 @end
