@@ -21,6 +21,7 @@
 #import "TransitionsViewController.h"
 #import "GJ_AnimationViewController.h"
 #import "GJFiltersViewController.h"
+#import "InstagramViewController.h"
 
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -70,7 +71,7 @@
         return a +b;
     };
     
-    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions", @"66_Transition", @"Filters"];
+    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions", @"66_Transition", @"Filters", @"Instagram"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.fengche.com", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();
@@ -202,6 +203,12 @@
             GJFiltersViewController *control = [[GJFiltersViewController alloc]init];
             [self.navigationController pushViewController:control animated:YES];
     
+        }
+            break;
+        case 10:{
+            InstagramViewController *control = [[InstagramViewController alloc]init];
+            [self.navigationController pushViewController:control animated:YES];
+
         }
             break;
             

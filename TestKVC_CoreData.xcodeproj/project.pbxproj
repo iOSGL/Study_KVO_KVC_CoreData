@@ -22,6 +22,7 @@
 		871D92A71CD851BC009DF42C /* GJFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871D92A61CD851BC009DF42C /* GJFiltersViewController.m */; };
 		871D92AC1CD897E3009DF42C /* Shader1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 871D92AB1CD897E3009DF42C /* Shader1.fsh */; };
 		872AA3CD1CDA0C2E009988DC /* shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 872AA3CC1CDA0C2E009988DC /* shader.vsh */; };
+		878032431CDB337200278B85 /* InstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 878032421CDB337200278B85 /* InstagramViewController.m */; };
 		87DD2B9C1CCF0BA8005FA670 /* GJ_AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2B9B1CCF0BA8005FA670 /* GJ_AnimationViewController.m */; };
 		87DD2B9F1CCF0D70005FA670 /* GJ_TransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2B9E1CCF0D70005FA670 /* GJ_TransitionViewController.m */; };
 		87DD2BA21CCF16C7005FA670 /* GJTransitionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2BA11CCF16C7005FA670 /* GJTransitionModel.m */; };
@@ -109,6 +110,8 @@
 		871D92A61CD851BC009DF42C /* GJFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJFiltersViewController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		871D92AB1CD897E3009DF42C /* Shader1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader1.fsh; sourceTree = "<group>"; };
 		872AA3CC1CDA0C2E009988DC /* shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vsh; sourceTree = "<group>"; };
+		878032411CDB337200278B85 /* InstagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramViewController.h; sourceTree = "<group>"; };
+		878032421CDB337200278B85 /* InstagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramViewController.m; sourceTree = "<group>"; };
 		87DD2B9A1CCF0BA8005FA670 /* GJ_AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJ_AnimationViewController.h; sourceTree = "<group>"; };
 		87DD2B9B1CCF0BA8005FA670 /* GJ_AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJ_AnimationViewController.m; sourceTree = "<group>"; };
 		87DD2B9D1CCF0D70005FA670 /* GJ_TransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJ_TransitionViewController.h; sourceTree = "<group>"; };
@@ -360,6 +363,8 @@
 				87DD2B9E1CCF0D70005FA670 /* GJ_TransitionViewController.m */,
 				871D92A51CD851BC009DF42C /* GJFiltersViewController.h */,
 				871D92A61CD851BC009DF42C /* GJFiltersViewController.m */,
+				878032411CDB337200278B85 /* InstagramViewController.h */,
+				878032421CDB337200278B85 /* InstagramViewController.m */,
 				A975AA4A1C79A32100CACA14 /* TestKVOViewController.h */,
 				A975AA4B1C79A32100CACA14 /* TestKVOViewController.m */,
 				A975AA531C79A5D400CACA14 /* TestKVOViewController.xib */,
@@ -696,6 +701,7 @@
 				746ACDD41C7FE92500803FF9 /* PropeScroViewViewController.m in Sources */,
 				87E42C101CDAF2E30018F3CA /* IFSutroFilter.m in Sources */,
 				87E42C0D1CDAF2E30018F3CA /* IFNormalFilter.m in Sources */,
+				878032431CDB337200278B85 /* InstagramViewController.m in Sources */,
 				87E42C051CDAF2E30018F3CA /* IFEarlybirdFilter.m in Sources */,
 				74B85CDE1C86C9F100CEF778 /* CornerRadiusTableViewCell.m in Sources */,
 				871D92A71CD851BC009DF42C /* GJFiltersViewController.m in Sources */,
@@ -846,7 +852,8 @@
 			baseConfigurationReference = 8E4838B72DF92360462E2E8E /* Pods-TestKVC_CoreData.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 171973956@qq.com (8NE3C8SJX4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 171973956@qq.com (8NE3C8SJX4)";
 				INFOPLIST_FILE = TestKVC_CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fengche.com;
@@ -859,7 +866,8 @@
 			baseConfigurationReference = FF9793CE0DCE4D0D2FD5EA67 /* Pods-TestKVC_CoreData.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 171973956@qq.com (8NE3C8SJX4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 171973956@qq.com (8NE3C8SJX4)";
 				INFOPLIST_FILE = TestKVC_CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fengche.com;
