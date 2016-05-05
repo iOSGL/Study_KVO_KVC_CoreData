@@ -22,35 +22,46 @@ precision lowp float;
 varying highp vec2 textureCoordinate;
 
 uniform sampler2D inputImageTexture;
-uniform sampler2D inputImageTexture2; //map
-uniform sampler2D inputImageTexture3; //vigMap
+uniform sampler2D inputImageTexture2;
 
 void main()
 {
-    
     vec3 texel = texture2D(inputImageTexture, textureCoordinate).rgb;
-    
-    vec2 tc = (2.0 * textureCoordinate) - 1.0;
-    float d = dot(tc, tc);
-    vec2 lookup = vec2(d, texel.r);
-    texel.r = texture2D(inputImageTexture3, lookup).r;
-    lookup.y = texel.g;
-    texel.g = texture2D(inputImageTexture3, lookup).g;
-    lookup.y = texel.b;
-    texel.b	= texture2D(inputImageTexture3, lookup).b;
-    
-    vec2 red = vec2(texel.r, 0.16666);
-    vec2 green = vec2(texel.g, 0.5);
-    vec2 blue = vec2(texel.b, .83333);
-    texel.r = texture2D(inputImageTexture2, red).r;
-    texel.g = texture2D(inputImageTexture2, green).g;
-    texel.b = texture2D(inputImageTexture2, blue).b;
-    
+    texel = vec3(dot(vec3(0.3, 0.6, 0.1), texel));
+    texel = vec3(texture2D(inputImageTexture2, vec2(texel.r, .16666)).r);
     gl_FragColor = vec4(texel, 1.0);
-    
 }
 
 
+    /*
+precision lowp float;
+
+varying highp vec2 textureCoordinate;
+
+uniform sampler2D inputImageTexture;
+uniform sampler2D inputImageTexture2; //blowout;
+uniform sampler2D inputImageTexture3; //overlay;
+uniform sampler2D inputImageTexture4; //map
+
+void main()
+{
+
+    vec4 texel = texture2D(inputImageTexture, textureCoordinate);
+    vec3 bbTexel = texture2D(inputImageTexture2, textureCoordinate).rgb;
+
+    texel.r = texture2D(inputImageTexture3, vec2(bbTexel.r, texel.r)).r;
+    texel.g = texture2D(inputImageTexture3, vec2(bbTexel.g, texel.g)).g;
+    texel.b = texture2D(inputImageTexture3, vec2(bbTexel.b, texel.b)).b;
+
+    vec4 mapped;
+    mapped.r = texture2D(inputImageTexture4, vec2(texel.r, .16666)).r;
+    mapped.g = texture2D(inputImageTexture4, vec2(texel.g, .5)).g;
+    mapped.b = texture2D(inputImageTexture4, vec2(texel.b, .83333)).b;
+    mapped.a = 1.0;
+
+    gl_FragColor = mapped;
+}
+*/
 
 /*
  void – 用于没有返回值的函式
