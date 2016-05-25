@@ -10,4 +10,16 @@
 
 @implementation TestPerson
 
+- (void)setAnimatableValue:(CGFloat)animatableValue {
+    _animatableValue = animatableValue;
+    NSLog(@"%zi", animatableValue);
+    
+}
+
+- (NSString *)showMessageName; {
+    return @"runtime";
+}
+
+
+
 @end

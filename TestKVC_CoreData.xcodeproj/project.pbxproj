@@ -22,6 +22,7 @@
 		871D92A71CD851BC009DF42C /* GJFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871D92A61CD851BC009DF42C /* GJFiltersViewController.m */; };
 		871D92AC1CD897E3009DF42C /* Shader1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 871D92AB1CD897E3009DF42C /* Shader1.fsh */; };
 		872AA3CD1CDA0C2E009988DC /* shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 872AA3CC1CDA0C2E009988DC /* shader.vsh */; };
+		872BA6FC1CF2EACA00006CE1 /* LocalNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 872BA6FB1CF2EACA00006CE1 /* LocalNotificationViewController.m */; };
 		878032431CDB337200278B85 /* InstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 878032421CDB337200278B85 /* InstagramViewController.m */; };
 		87DD2B9C1CCF0BA8005FA670 /* GJ_AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2B9B1CCF0BA8005FA670 /* GJ_AnimationViewController.m */; };
 		87DD2B9F1CCF0D70005FA670 /* GJ_TransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2B9E1CCF0D70005FA670 /* GJ_TransitionViewController.m */; };
@@ -49,8 +50,14 @@
 		87E42C121CDAF2E30018F3CA /* IFValenciaFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E42BFA1CDAF2E30018F3CA /* IFValenciaFilter.m */; };
 		87E42C131CDAF2E30018F3CA /* IFWaldenFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E42BFC1CDAF2E30018F3CA /* IFWaldenFilter.m */; };
 		87E42C141CDAF2E30018F3CA /* IFXproIIFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E42BFE1CDAF2E30018F3CA /* IFXproIIFilter.m */; };
+		87E55B181CF5521C000C5EE4 /* ContentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E55B171CF5521C000C5EE4 /* ContentScrollView.m */; };
+		87E55B1B1CF5524B000C5EE4 /* CommentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E55B1A1CF5524B000C5EE4 /* CommentScrollView.m */; };
+		87EEFECA1CF4382800A6A429 /* ScrollVIewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87EEFEC91CF4382800A6A429 /* ScrollVIewViewController.m */; };
+		87EEFECD1CF4552900A6A429 /* firstScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87EEFECC1CF4552900A6A429 /* firstScrollView.m */; };
+		87EEFED01CF4563800A6A429 /* SecondScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87EEFECF1CF4563800A6A429 /* SecondScrollView.m */; };
 		87F847701CD9A297004FB431 /* shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 87F8476F1CD9A297004FB431 /* shader.fsh */; };
 		87F847721CD9A3CA004FB431 /* GPUImageCustomFilter.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 87F847711CD9A3CA004FB431 /* GPUImageCustomFilter.fsh */; };
+		87F9611C1CEEAD1A00D3AE55 /* POPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F9611B1CEEAD1A00D3AE55 /* POPViewController.m */; };
 		A94BAFD71C829A0C00FC7D4D /* StudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94BAFD61C829A0C00FC7D4D /* StudyViewController.m */; };
 		A975AA161C799E2C00CACA14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA151C799E2C00CACA14 /* main.m */; };
 		A975AA191C799E2C00CACA14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A975AA181C799E2C00CACA14 /* AppDelegate.m */; };
@@ -110,6 +117,9 @@
 		871D92A61CD851BC009DF42C /* GJFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJFiltersViewController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		871D92AB1CD897E3009DF42C /* Shader1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader1.fsh; sourceTree = "<group>"; };
 		872AA3CC1CDA0C2E009988DC /* shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vsh; sourceTree = "<group>"; };
+		872BA6FA1CF2EACA00006CE1 /* LocalNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalNotificationViewController.h; sourceTree = "<group>"; };
+		872BA6FB1CF2EACA00006CE1 /* LocalNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationViewController.m; sourceTree = "<group>"; };
+		872BA6FF1CF2FB6400006CE1 /* TestKVC_CoreData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TestKVC_CoreData.entitlements; sourceTree = "<group>"; };
 		878032411CDB337200278B85 /* InstagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramViewController.h; sourceTree = "<group>"; };
 		878032421CDB337200278B85 /* InstagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramViewController.m; sourceTree = "<group>"; };
 		87DD2B9A1CCF0BA8005FA670 /* GJ_AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJ_AnimationViewController.h; sourceTree = "<group>"; };
@@ -164,8 +174,20 @@
 		87E42BFD1CDAF2E30018F3CA /* IFXproIIFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = IFXproIIFilter.h; sourceTree = "<group>"; };
 		87E42BFE1CDAF2E30018F3CA /* IFXproIIFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = IFXproIIFilter.m; sourceTree = "<group>"; };
 		87E42BFF1CDAF2E30018F3CA /* InstaFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = InstaFilters.h; sourceTree = "<group>"; };
+		87E55B161CF5521C000C5EE4 /* ContentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentScrollView.h; sourceTree = "<group>"; };
+		87E55B171CF5521C000C5EE4 /* ContentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentScrollView.m; sourceTree = "<group>"; };
+		87E55B191CF5524B000C5EE4 /* CommentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentScrollView.h; sourceTree = "<group>"; };
+		87E55B1A1CF5524B000C5EE4 /* CommentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentScrollView.m; sourceTree = "<group>"; };
+		87EEFEC81CF4382800A6A429 /* ScrollVIewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollVIewViewController.h; sourceTree = "<group>"; };
+		87EEFEC91CF4382800A6A429 /* ScrollVIewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollVIewViewController.m; sourceTree = "<group>"; };
+		87EEFECB1CF4552900A6A429 /* firstScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstScrollView.h; sourceTree = "<group>"; };
+		87EEFECC1CF4552900A6A429 /* firstScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstScrollView.m; sourceTree = "<group>"; };
+		87EEFECE1CF4563800A6A429 /* SecondScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondScrollView.h; sourceTree = "<group>"; };
+		87EEFECF1CF4563800A6A429 /* SecondScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondScrollView.m; sourceTree = "<group>"; };
 		87F8476F1CD9A297004FB431 /* shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.fsh; sourceTree = "<group>"; };
 		87F847711CD9A3CA004FB431 /* GPUImageCustomFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = GPUImageCustomFilter.fsh; sourceTree = "<group>"; };
+		87F9611A1CEEAD1A00D3AE55 /* POPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POPViewController.h; sourceTree = "<group>"; };
+		87F9611B1CEEAD1A00D3AE55 /* POPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POPViewController.m; sourceTree = "<group>"; };
 		88B241A3C1209D00EAD9FAFE /* Pods-TestKVC_CoreDataUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreDataUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreDataUITests/Pods-TestKVC_CoreDataUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E4838B72DF92360462E2E8E /* Pods-TestKVC_CoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestKVC_CoreData.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData.debug.xcconfig"; sourceTree = "<group>"; };
 		A94BAFD51C829A0C00FC7D4D /* StudyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyViewController.h; sourceTree = "<group>"; };
@@ -319,6 +341,7 @@
 		A975AA131C799E2C00CACA14 /* TestKVC_CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				872BA6FF1CF2FB6400006CE1 /* TestKVC_CoreData.entitlements */,
 				871D92AB1CD897E3009DF42C /* Shader1.fsh */,
 				87F8476F1CD9A297004FB431 /* shader.fsh */,
 				872AA3CC1CDA0C2E009988DC /* shader.vsh */,
@@ -368,6 +391,20 @@
 				A975AA4A1C79A32100CACA14 /* TestKVOViewController.h */,
 				A975AA4B1C79A32100CACA14 /* TestKVOViewController.m */,
 				A975AA531C79A5D400CACA14 /* TestKVOViewController.xib */,
+				87F9611A1CEEAD1A00D3AE55 /* POPViewController.h */,
+				87F9611B1CEEAD1A00D3AE55 /* POPViewController.m */,
+				872BA6FA1CF2EACA00006CE1 /* LocalNotificationViewController.h */,
+				872BA6FB1CF2EACA00006CE1 /* LocalNotificationViewController.m */,
+				87EEFEC81CF4382800A6A429 /* ScrollVIewViewController.h */,
+				87EEFEC91CF4382800A6A429 /* ScrollVIewViewController.m */,
+				87EEFECB1CF4552900A6A429 /* firstScrollView.h */,
+				87EEFECC1CF4552900A6A429 /* firstScrollView.m */,
+				87E55B161CF5521C000C5EE4 /* ContentScrollView.h */,
+				87E55B171CF5521C000C5EE4 /* ContentScrollView.m */,
+				87E55B191CF5524B000C5EE4 /* CommentScrollView.h */,
+				87E55B1A1CF5524B000C5EE4 /* CommentScrollView.m */,
+				87EEFECE1CF4563800A6A429 /* SecondScrollView.h */,
+				87EEFECF1CF4563800A6A429 /* SecondScrollView.m */,
 				A975AA471C79A16B00CACA14 /* TestPerson.h */,
 				A975AA481C79A16B00CACA14 /* TestPerson.m */,
 				A975AA571C79AE4D00CACA14 /* PersonJob.h */,
@@ -495,7 +532,15 @@
 				TargetAttributes = {
 					A975AA101C799E2C00CACA14 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = DMLGJX6EPE;
+						DevelopmentTeam = 5PNX76B54G;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					A975AA291C799E2C00CACA14 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -690,15 +735,18 @@
 				749025011C858EA800DDE102 /* TestThreadViewController.m in Sources */,
 				87E42C041CDAF2E30018F3CA /* IFBrannanFilter.m in Sources */,
 				87E42C081CDAF2E30018F3CA /* IFImageFilter.m in Sources */,
+				872BA6FC1CF2EACA00006CE1 /* LocalNotificationViewController.m in Sources */,
 				A975AA1C1C799E2C00CACA14 /* ViewController.m in Sources */,
 				A975AA191C799E2C00CACA14 /* AppDelegate.m in Sources */,
 				748C19441CA1281B0003D172 /* TransitionsViewController.m in Sources */,
+				87E55B1B1CF5524B000C5EE4 /* CommentScrollView.m in Sources */,
 				748C19471CA12C290003D172 /* ModelViewController.m in Sources */,
 				A975AA591C79AE4D00CACA14 /* PersonJob.m in Sources */,
 				87E42C021CDAF2E30018F3CA /* IF1977Filter.m in Sources */,
 				A975AA491C79A16B00CACA14 /* TestPerson.m in Sources */,
 				87E42C0A1CDAF2E30018F3CA /* IFLomofiFilter.m in Sources */,
 				746ACDD41C7FE92500803FF9 /* PropeScroViewViewController.m in Sources */,
+				87F9611C1CEEAD1A00D3AE55 /* POPViewController.m in Sources */,
 				87E42C101CDAF2E30018F3CA /* IFSutroFilter.m in Sources */,
 				87E42C0D1CDAF2E30018F3CA /* IFNormalFilter.m in Sources */,
 				878032431CDB337200278B85 /* InstagramViewController.m in Sources */,
@@ -721,16 +769,20 @@
 				74B85CDB1C86C93000CEF778 /* CornerRadiusViewController.m in Sources */,
 				87E42C0B1CDAF2E30018F3CA /* IFLordKelvinFilter.m in Sources */,
 				87DD2B9F1CCF0D70005FA670 /* GJ_TransitionViewController.m in Sources */,
+				87E55B181CF5521C000C5EE4 /* ContentScrollView.m in Sources */,
 				A975AA161C799E2C00CACA14 /* main.m in Sources */,
 				A94BAFD71C829A0C00FC7D4D /* StudyViewController.m in Sources */,
+				87EEFECD1CF4552900A6A429 /* firstScrollView.m in Sources */,
 				87DD2B9C1CCF0BA8005FA670 /* GJ_AnimationViewController.m in Sources */,
 				A975AA4C1C79A32100CACA14 /* TestKVOViewController.m in Sources */,
+				87EEFED01CF4563800A6A429 /* SecondScrollView.m in Sources */,
 				748C194A1CA1315D0003D172 /* TransitionModel.m in Sources */,
 				746ACDD71C7FFA4800803FF9 /* PropeTableViewViewController.m in Sources */,
 				87E42C141CDAF2E30018F3CA /* IFXproIIFilter.m in Sources */,
 				87DD2BA21CCF16C7005FA670 /* GJTransitionModel.m in Sources */,
 				87E42C111CDAF2E30018F3CA /* IFToasterFilter.m in Sources */,
 				87E42BD71CDAEF7D0018F3CA /* GPUImageSixInputFilter.m in Sources */,
+				87EEFECA1CF4382800A6A429 /* ScrollVIewViewController.m in Sources */,
 				87E42C091CDAF2E30018F3CA /* IFInkwellFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -852,12 +904,13 @@
 			baseConfigurationReference = 8E4838B72DF92360462E2E8E /* Pods-TestKVC_CoreData.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 171973956@qq.com (8NE3C8SJX4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 171973956@qq.com (8NE3C8SJX4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TestKVC_CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fengche.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.genju.66yxq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -866,12 +919,13 @@
 			baseConfigurationReference = FF9793CE0DCE4D0D2FD5EA67 /* Pods-TestKVC_CoreData.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: 171973956@qq.com (8NE3C8SJX4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 171973956@qq.com (8NE3C8SJX4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TestKVC_CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = fengche.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.genju.66yxq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

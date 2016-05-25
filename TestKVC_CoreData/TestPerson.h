@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <pop/POP.h>
 #import "PersonJob.h"
 
 @interface TestPerson : NSObject {
@@ -16,6 +18,8 @@
     double weight;
     PersonJob *personJob;
 }
+
+@property (nonatomic, assign) CGFloat animatableValue;
 
 
 @end

@@ -25,6 +25,16 @@
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:control];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
+
+    UIUserNotificationType types = (UIUserNotificationType) (UIUserNotificationTypeBadge |
+                                                             UIUserNotificationTypeSound | UIUserNotificationTypeAlert);
+
+    UIUserNotificationSettings *mySettings =
+    [UIUserNotificationSettings settingsForTypes:types categories:nil];
+
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+
+
     return YES;
 }
 
@@ -49,5 +59,36 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - application localNotification
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    application.applicationIconBadgeNumber -= 1;
+    [self reciveNotification:notification];
+}
+
+
+- (void)reciveNotification:(UILocalNotification *)notification {
+
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:notification.alertTitle message:notification.alertBody preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+
+    }];
+
+    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSArray *notificationArray = [[UIApplication sharedApplication]scheduledLocalNotifications];
+        for (UILocalNotification *localNotifi in notificationArray) {
+            if ([localNotifi.userInfo[@"id"]isEqualToString:@"notification1"]) {
+                [[UIApplication sharedApplication] cancelLocalNotification:localNotifi];
+            }
+        }
+    }];
+
+    [alertController addAction:cancleAction];
+    [alertController addAction:alertAction];
+
+    [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
+}
+
 
 @end

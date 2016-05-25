@@ -22,6 +22,9 @@
 #import "GJ_AnimationViewController.h"
 #import "GJFiltersViewController.h"
 #import "InstagramViewController.h"
+#import "POPViewController.h"
+#import "LocalNotificationViewController.h"
+#import "ScrollVIewViewController.h"
 
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -71,7 +74,7 @@
         return a +b;
     };
     
-    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions", @"66_Transition", @"Filters", @"Instagram"];
+    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions", @"66_Transition", @"Filters", @"Instagram", @"POP", @"LocalNotification", @"ScrollVIewViewController"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.fengche.com", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();
@@ -209,6 +212,21 @@
             InstagramViewController *control = [[InstagramViewController alloc]init];
             [self.navigationController pushViewController:control animated:YES];
 
+        }
+            break;
+        case 11: {
+            POPViewController *control = [[POPViewController alloc]init];
+            [self.navigationController pushViewController:control animated:YES];
+        }
+            break;
+        case 12: {
+            LocalNotificationViewController *control = [[LocalNotificationViewController alloc]init];
+            [self.navigationController pushViewController:control animated:YES];
+        }
+            break;
+        case 13: {
+            ScrollVIewViewController *control = [[ScrollVIewViewController alloc]init];
+            [self.navigationController pushViewController:control animated:YES];
         }
             break;
             
