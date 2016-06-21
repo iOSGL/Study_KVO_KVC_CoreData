@@ -36,6 +36,8 @@
 
 @property (nonatomic, copy) NSArray *dataSourceArray;
 
+@property (nonatomic, copy) NSArray *classNmaeArray;
+
 @end
 
 @implementation ViewController
@@ -73,8 +75,10 @@
         
         return a +b;
     };
+
+    self.classNmaeArray = @[@"TestKVOViewController", @"PropeScroViewViewController", @"PropeTableViewViewController", @"StudyViewController", @"TestThreadViewController", @"CornerRadiusViewController", @"CoreAnimationViewController", @"TransitionsViewController", @"GJ_AnimationViewController", @"GJFiltersViewController", @"InstagramViewController", @"POPViewController", @"LocalNotificationViewController", @"ScrollVIewViewController", @"WelcormeViewController"];
     
-    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions", @"66_Transition", @"Filters", @"Instagram", @"POP", @"LocalNotification", @"ScrollVIewViewController"];
+    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions", @"66_Transition", @"Filters", @"Instagram", @"POP", @"LocalNotification", @"ScrollVIewViewController", @"guideAnimation"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.fengche.com", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();
@@ -108,14 +112,45 @@
     dispatch_group_notify(group, queue, ^{
         NSLog(@"4result === %@",str);
     });
-    
-   
 
-    
-    
+
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    btn.frame = CGRectMake(200, 70, 50, 50);
+    [btn addTarget:self action:@selector(screenShot) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
     
     
 }
+
+
+- (void)screenShot {
+    CGPoint contentSet = self.tableView.contentOffset;
+//    self.tableView.height = self.tableView.contentSize.height;
+    CGRect rect = self.tableView.bounds;
+    rect.size.height = self.tableView.contentSize.height;
+    self.tableView.frame =rect;
+    NSLog(@"++++++++%@",self.tableView);
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.tableView.contentSize.width,self.tableView.contentSize.height), false, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    UIGraphicsPushContext(context);
+    UIGraphicsPopContext();
+    [self.tableView.layer renderInContext:context];
+    UIImage *shortImage = UIGraphicsGetImageFromCurrentImageContext();
+    NSLog(@"  ------>>>>%@  %f",shortImage,self.tableView.contentSize.height);
+    UIGraphicsEndImageContext();
+    self.tableView.bounds = self.view.bounds;
+    self.tableView.contentOffset = contentSet;
+    UIImageWriteToSavedPhotosAlbum(shortImage, self, @selector(image:didFinishSavingWithError:contextInfo:),nil);
+}
+
+-  (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error == nil) {
+        NSLog(@"保存成功");
+    } else {
+        NSLog(@"失败");
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -141,98 +176,14 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
-        case 0:{
-            //    TestKVOViewController *control = [[TestKVOViewController alloc]init];
-            //
-            __weak ViewController *wself = self;
-            //    control.color = ^(UIColor *color){
-            //        wself.view.backgroundColor = color;
-            //    };
-            //
-            //    [self.navigationController pushViewController:control animated:YES];
-            //    [self testMethod];
-            
-            NSMutableArray * dataArray = [wself.nextController testSum:^NSMutableArray *(NSArray *dataArray) {
-                NSMutableArray * data = [NSMutableArray new];
-                [data addObject:dataArray];
-                return data;
-            }];
-            
-            NSLog(@"++++%@",[[dataArray lastObject] lastObject]);
-        }
-            break;
-        case 1:{
-            PropeScroViewViewController *control = [[PropeScroViewViewController alloc]init];
-            [self.navigationController pushViewController:control animated:YES];
-        }
-            break;
-        case 2:{
-            PropeTableViewViewController *control = [[PropeTableViewViewController alloc]init];
-            [self.navigationController pushViewController:control animated:YES];
-        }
-            break;
-        case 3:{
-            StudyViewController *control = [[StudyViewController alloc]init];
-            [self.navigationController pushViewController:control animated:YES];
-        }
-            break;
-        case 4:{
-            TestThreadViewController *control = [[TestThreadViewController alloc]init];
-            [self.navigationController pushViewController:control animated:YES];
-        }
-            break;
-        case 5:{
-            CornerRadiusViewController *control = [[CornerRadiusViewController alloc]init];
-            [self.navigationController pushViewController:control animated:YES];
-        }
-            break;
-        case 6:{
-            CoreAnimationViewController *control = [[CoreAnimationViewController alloc]init];
-            [self.navigationController pushViewController:control animated:YES];
-        }
-            break;
-        case 7:{
-            TransitionsViewController *control = [[TransitionsViewController alloc]init];
-            [self.navigationController pushViewController:control animated:YES];
-        }
-            break;
-        case 8:{
-            GJ_AnimationViewController *control = [[GJ_AnimationViewController alloc]init];
-            [self.navigationController pushViewController:control animated:YES];
-        }
-            break;
-        case 9:{
-            GJFiltersViewController *control = [[GJFiltersViewController alloc]init];
-            [self.navigationController pushViewController:control animated:YES];
-    
-        }
-            break;
-        case 10:{
-            InstagramViewController *control = [[InstagramViewController alloc]init];
-            [self.navigationController pushViewController:control animated:YES];
-
-        }
-            break;
-        case 11: {
-            POPViewController *control = [[POPViewController alloc]init];
-            [self.navigationController pushViewController:control animated:YES];
-        }
-            break;
-        case 12: {
-            LocalNotificationViewController *control = [[LocalNotificationViewController alloc]init];
-            [self.navigationController pushViewController:control animated:YES];
-        }
-            break;
-        case 13: {
-            ScrollVIewViewController *control = [[ScrollVIewViewController alloc]init];
-            [self.navigationController pushViewController:control animated:YES];
-        }
-            break;
-            
-        default:
-            break;
+    NSString *className = self.classNmaeArray[indexPath.row];
+    Class targetClass = NSClassFromString(className);
+    if (targetClass) {
+        UIViewController *conteol = targetClass.new;
+        conteol.title = className;
+        [self.navigationController pushViewController:conteol animated:YES];
     }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

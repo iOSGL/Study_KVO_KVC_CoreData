@@ -10,6 +10,7 @@ pod 'pop', '~> 1.0'
 pod 'YYImage'
 pod 'YYCategories'
 pod 'GPUImage', '~> 0.1.7'
+pod 'DateTools'
 end
 
 target 'TestKVC_CoreDataTests' do

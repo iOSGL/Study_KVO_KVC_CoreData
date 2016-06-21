@@ -26,8 +26,9 @@
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
 
+    
     UIUserNotificationType types = (UIUserNotificationType) (UIUserNotificationTypeBadge |
-                                                             UIUserNotificationTypeSound | UIUserNotificationTypeAlert);
+                                                             UIUserNotificationTypeSound |UIUserNotificationTypeAlert);
 
     UIUserNotificationSettings *mySettings =
     [UIUserNotificationSettings settingsForTypes:types categories:nil];
@@ -78,7 +79,7 @@
     UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSArray *notificationArray = [[UIApplication sharedApplication]scheduledLocalNotifications];
         for (UILocalNotification *localNotifi in notificationArray) {
-            if ([localNotifi.userInfo[@"id"]isEqualToString:@"notification1"]) {
+            if ([localNotifi.userInfo[@"id"]isEqualToString:@"notification"]) {
                 [[UIApplication sharedApplication] cancelLocalNotification:localNotifi];
             }
         }
