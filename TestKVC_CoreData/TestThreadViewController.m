@@ -13,6 +13,8 @@
 
 @interface TestThreadViewController ()
 
+@property (nonatomic, strong) dispatch_semaphore_t lock;
+
 @end
 
 @implementation TestThreadViewController
@@ -48,6 +50,9 @@
 
 
     });
+
+    self.lock = dispatch_semaphore_create(1);
+    [self testSemaphore];
     
 }
 
@@ -97,6 +102,60 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Private Method
+
+- (void)testSemaphore {
+    __weak TestThreadViewController *wself = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [wself task_first:YES];
+    });
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [wself task_second:YES];
+    });
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [wself task_third:NO];
+    });
+}
+
+- (void)task_first:(BOOL)isSemaphore {
+    if (isSemaphore) {
+        dispatch_semaphore_wait(self.lock, DISPATCH_TIME_FOREVER);
+        NSLog(@"First task starting");
+        sleep(1);
+        NSLog(@"First task is done");
+        dispatch_semaphore_signal(self.lock);
+    }else {
+        NSLog(@"First task starting");
+    }
+
+
+}
+
+- (void)task_second:(BOOL)isSemaphore {
+    if (isSemaphore) {
+        dispatch_semaphore_wait(self.lock, DISPATCH_TIME_FOREVER);
+        NSLog(@"second task starting");
+        sleep(1);
+        NSLog(@"second task is done");
+        dispatch_semaphore_signal(self.lock);
+    } else {
+        NSLog(@"second task starting");
+    }
+
+}
+
+- (void)task_third:(BOOL)isSemaphore {
+    if (isSemaphore) {
+        dispatch_semaphore_wait(self.lock, DISPATCH_TIME_FOREVER);
+        NSLog(@"third task starting");
+        sleep(1);
+        NSLog(@"third task is done");
+        dispatch_semaphore_signal(self.lock);
+    } else {
+        NSLog(@"third task starting");
+    }
 }
 
 /*

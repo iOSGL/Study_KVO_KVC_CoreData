@@ -76,9 +76,9 @@
         return a +b;
     };
 
-    self.classNmaeArray = @[@"TestKVOViewController", @"PropeScroViewViewController", @"PropeTableViewViewController", @"StudyViewController", @"TestThreadViewController", @"CornerRadiusViewController", @"CoreAnimationViewController", @"TransitionsViewController", @"GJ_AnimationViewController", @"GJFiltersViewController", @"InstagramViewController", @"POPViewController", @"LocalNotificationViewController", @"ScrollVIewViewController", @"WelcormeViewController"];
+    self.classNmaeArray = @[@"TestKVOViewController", @"PropeScroViewViewController", @"PropeTableViewViewController", @"StudyViewController", @"TestThreadViewController", @"CornerRadiusViewController", @"CoreAnimationViewController", @"TransitionsViewController", @"GJ_AnimationViewController", @"GJFiltersViewController", @"InstagramViewController", @"POPViewController", @"LocalNotificationViewController", @"ScrollVIewViewController", @"WelcormeViewController", @"PictureEditorViewController"];
     
-    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions", @"66_Transition", @"Filters", @"Instagram", @"POP", @"LocalNotification", @"ScrollVIewViewController", @"guideAnimation"];
+    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions", @"66_Transition", @"Filters", @"Instagram", @"POP", @"LocalNotification", @"ScrollVIewViewController", @"guideAnimation", @"image Editor"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.fengche.com", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();

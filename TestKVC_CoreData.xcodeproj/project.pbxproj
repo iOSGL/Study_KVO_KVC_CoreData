@@ -60,6 +60,10 @@
 		87E55B181CF5521C000C5EE4 /* ContentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E55B171CF5521C000C5EE4 /* ContentScrollView.m */; };
 		87E55B1B1CF5524B000C5EE4 /* CommentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E55B1A1CF5524B000C5EE4 /* CommentScrollView.m */; };
 		87E573201CF6A571005F78F2 /* LocalNotificationViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E5731F1CF6A571005F78F2 /* LocalNotificationViewModel.m */; };
+		87E83A901D265880000EB07F /* PictureEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E83A8F1D265880000EB07F /* PictureEditorViewController.m */; };
+		87E83A931D265A38000EB07F /* EditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E83A921D265A38000EB07F /* EditorView.m */; };
+		87E83A991D2663B9000EB07F /* GCycleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E83A981D2663B9000EB07F /* GCycleLayer.m */; };
+		87E83A9C1D2663DB000EB07F /* GRectangleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E83A9B1D2663DB000EB07F /* GRectangleLayer.m */; };
 		87EEFECA1CF4382800A6A429 /* ScrollVIewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87EEFEC91CF4382800A6A429 /* ScrollVIewViewController.m */; };
 		87EEFECD1CF4552900A6A429 /* firstScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87EEFECC1CF4552900A6A429 /* firstScrollView.m */; };
 		87EEFED01CF4563800A6A429 /* SecondScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87EEFECF1CF4563800A6A429 /* SecondScrollView.m */; };
@@ -202,6 +206,14 @@
 		87E55B1A1CF5524B000C5EE4 /* CommentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentScrollView.m; sourceTree = "<group>"; };
 		87E5731E1CF6A571005F78F2 /* LocalNotificationViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalNotificationViewModel.h; sourceTree = "<group>"; };
 		87E5731F1CF6A571005F78F2 /* LocalNotificationViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationViewModel.m; sourceTree = "<group>"; };
+		87E83A8E1D265880000EB07F /* PictureEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureEditorViewController.h; sourceTree = "<group>"; };
+		87E83A8F1D265880000EB07F /* PictureEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureEditorViewController.m; sourceTree = "<group>"; };
+		87E83A911D265A38000EB07F /* EditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorView.h; sourceTree = "<group>"; };
+		87E83A921D265A38000EB07F /* EditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorView.m; sourceTree = "<group>"; };
+		87E83A971D2663B9000EB07F /* GCycleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCycleLayer.h; sourceTree = "<group>"; };
+		87E83A981D2663B9000EB07F /* GCycleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCycleLayer.m; sourceTree = "<group>"; };
+		87E83A9A1D2663DB000EB07F /* GRectangleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRectangleLayer.h; sourceTree = "<group>"; };
+		87E83A9B1D2663DB000EB07F /* GRectangleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRectangleLayer.m; sourceTree = "<group>"; };
 		87EEFEC81CF4382800A6A429 /* ScrollVIewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollVIewViewController.h; sourceTree = "<group>"; };
 		87EEFEC91CF4382800A6A429 /* ScrollVIewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollVIewViewController.m; sourceTree = "<group>"; };
 		87EEFECB1CF4552900A6A429 /* firstScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstScrollView.h; sourceTree = "<group>"; };
@@ -364,6 +376,21 @@
 			path = "../../GPUImage-Instagram/Sources/Filters/Instagram";
 			sourceTree = "<group>";
 		};
+		87E83A8D1D265850000EB07F /* PictureEditor */ = {
+			isa = PBXGroup;
+			children = (
+				87E83A8E1D265880000EB07F /* PictureEditorViewController.h */,
+				87E83A8F1D265880000EB07F /* PictureEditorViewController.m */,
+				87E83A911D265A38000EB07F /* EditorView.h */,
+				87E83A921D265A38000EB07F /* EditorView.m */,
+				87E83A971D2663B9000EB07F /* GCycleLayer.h */,
+				87E83A981D2663B9000EB07F /* GCycleLayer.m */,
+				87E83A9A1D2663DB000EB07F /* GRectangleLayer.h */,
+				87E83A9B1D2663DB000EB07F /* GRectangleLayer.m */,
+			);
+			path = PictureEditor;
+			sourceTree = "<group>";
+		};
 		A22A29A9D6C2EC824136E84F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +503,7 @@
 				A975AA5B1C79B14600CACA14 /* PersonObServer.m */,
 				A975AA5D1C79B51A00CACA14 /* TestColor.h */,
 				A975AA5E1C79B51A00CACA14 /* TestColor.m */,
+				87E83A8D1D265850000EB07F /* PictureEditor */,
 				8704122B1D18EFBB00E96D56 /* welcormeAnimation */,
 				A975AA201C799E2C00CACA14 /* image.xcassets */,
 				A975AA251C799E2C00CACA14 /* Info.plist */,
@@ -528,12 +556,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A975AA3E1C799E2C00CACA14 /* Build configuration list for PBXNativeTarget "TestKVC_CoreData" */;
 			buildPhases = (
-				3A1196E50CC3949233E8C976 /* 📦 Check Pods Manifest.lock */,
+				3A1196E50CC3949233E8C976 /* [CP] Check Pods Manifest.lock */,
 				A975AA0D1C799E2C00CACA14 /* Sources */,
 				A975AA0E1C799E2C00CACA14 /* Frameworks */,
 				A975AA0F1C799E2C00CACA14 /* Resources */,
-				E0A4948E3AA8A8645DC0306B /* 📦 Embed Pods Frameworks */,
-				1BB5D2BCFCA2EDAD08C31DBB /* 📦 Copy Pods Resources */,
+				E0A4948E3AA8A8645DC0306B /* [CP] Embed Pods Frameworks */,
+				1BB5D2BCFCA2EDAD08C31DBB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -548,12 +576,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A975AA411C799E2C00CACA14 /* Build configuration list for PBXNativeTarget "TestKVC_CoreDataTests" */;
 			buildPhases = (
-				C281A15AE4209A47E42E968C /* 📦 Check Pods Manifest.lock */,
+				C281A15AE4209A47E42E968C /* [CP] Check Pods Manifest.lock */,
 				A975AA261C799E2C00CACA14 /* Sources */,
 				A975AA271C799E2C00CACA14 /* Frameworks */,
 				A975AA281C799E2C00CACA14 /* Resources */,
-				9EDE81C0880B18B0DC9AD136 /* 📦 Embed Pods Frameworks */,
-				190CDA0DB8554CA9A3F22F2C /* 📦 Copy Pods Resources */,
+				9EDE81C0880B18B0DC9AD136 /* [CP] Embed Pods Frameworks */,
+				190CDA0DB8554CA9A3F22F2C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -569,11 +597,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A975AA441C799E2C00CACA14 /* Build configuration list for PBXNativeTarget "TestKVC_CoreDataUITests" */;
 			buildPhases = (
-				85A9B9087870BF5614CD42E0 /* 📦 Check Pods Manifest.lock */,
+				85A9B9087870BF5614CD42E0 /* [CP] Check Pods Manifest.lock */,
 				A975AA311C799E2C00CACA14 /* Sources */,
 				A975AA321C799E2C00CACA14 /* Frameworks */,
 				A975AA331C799E2C00CACA14 /* Resources */,
-				75F5ECD3B21C776DA9AF4407 /* 📦 Copy Pods Resources */,
+				75F5ECD3B21C776DA9AF4407 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -669,14 +697,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		190CDA0DB8554CA9A3F22F2C /* 📦 Copy Pods Resources */ = {
+		190CDA0DB8554CA9A3F22F2C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,14 +712,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestKVC_CoreDataTests/Pods-TestKVC_CoreDataTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1BB5D2BCFCA2EDAD08C31DBB /* 📦 Copy Pods Resources */ = {
+		1BB5D2BCFCA2EDAD08C31DBB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -699,14 +727,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestKVC_CoreData/Pods-TestKVC_CoreData-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3A1196E50CC3949233E8C976 /* 📦 Check Pods Manifest.lock */ = {
+		3A1196E50CC3949233E8C976 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -714,14 +742,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		75F5ECD3B21C776DA9AF4407 /* 📦 Copy Pods Resources */ = {
+		75F5ECD3B21C776DA9AF4407 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -729,14 +757,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestKVC_CoreDataUITests/Pods-TestKVC_CoreDataUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		85A9B9087870BF5614CD42E0 /* 📦 Check Pods Manifest.lock */ = {
+		85A9B9087870BF5614CD42E0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,14 +772,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		9EDE81C0880B18B0DC9AD136 /* 📦 Embed Pods Frameworks */ = {
+		9EDE81C0880B18B0DC9AD136 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,14 +787,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestKVC_CoreDataTests/Pods-TestKVC_CoreDataTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C281A15AE4209A47E42E968C /* 📦 Check Pods Manifest.lock */ = {
+		C281A15AE4209A47E42E968C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -774,14 +802,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E0A4948E3AA8A8645DC0306B /* 📦 Embed Pods Frameworks */ = {
+		E0A4948E3AA8A8645DC0306B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,6 +829,7 @@
 				87E42C041CDAF2E30018F3CA /* IFBrannanFilter.m in Sources */,
 				87E42C081CDAF2E30018F3CA /* IFImageFilter.m in Sources */,
 				872BA6FC1CF2EACA00006CE1 /* LocalNotificationViewController.m in Sources */,
+				87E83A9C1D2663DB000EB07F /* GRectangleLayer.m in Sources */,
 				A975AA1C1C799E2C00CACA14 /* ViewController.m in Sources */,
 				A975AA191C799E2C00CACA14 /* AppDelegate.m in Sources */,
 				748C19441CA1281B0003D172 /* TransitionsViewController.m in Sources */,
@@ -828,6 +857,7 @@
 				7495A9DA1C925E6D005CD95B /* CoreAnimationViewController.m in Sources */,
 				87E42C0E1CDAF2E30018F3CA /* IFRiseFilter.m in Sources */,
 				87E42C131CDAF2E30018F3CA /* IFWaldenFilter.m in Sources */,
+				87E83A901D265880000EB07F /* PictureEditorViewController.m in Sources */,
 				A975AA5C1C79B14600CACA14 /* PersonObServer.m in Sources */,
 				87E42BD61CDAEF7D0018F3CA /* GPUImageFourInputFilter.m in Sources */,
 				87E42C0F1CDAF2E30018F3CA /* IFSierraFilter.m in Sources */,
@@ -847,6 +877,7 @@
 				87EEFECD1CF4552900A6A429 /* firstScrollView.m in Sources */,
 				87DD2B9C1CCF0BA8005FA670 /* GJ_AnimationViewController.m in Sources */,
 				A975AA4C1C79A32100CACA14 /* TestKVOViewController.m in Sources */,
+				87E83A991D2663B9000EB07F /* GCycleLayer.m in Sources */,
 				87EEFED01CF4563800A6A429 /* SecondScrollView.m in Sources */,
 				748C194A1CA1315D0003D172 /* TransitionModel.m in Sources */,
 				746ACDD71C7FFA4800803FF9 /* PropeTableViewViewController.m in Sources */,
@@ -854,6 +885,7 @@
 				87DD2BA21CCF16C7005FA670 /* GJTransitionModel.m in Sources */,
 				87E42C111CDAF2E30018F3CA /* IFToasterFilter.m in Sources */,
 				87E42BD71CDAEF7D0018F3CA /* GPUImageSixInputFilter.m in Sources */,
+				87E83A931D265A38000EB07F /* EditorView.m in Sources */,
 				87EEFECA1CF4382800A6A429 /* ScrollVIewViewController.m in Sources */,
 				87E42C091CDAF2E30018F3CA /* IFInkwellFilter.m in Sources */,
 			);
