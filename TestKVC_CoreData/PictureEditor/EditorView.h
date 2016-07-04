@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define RADIUS 200.f
+
 @interface EditorView : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame;

@@ -30,6 +30,8 @@
 		871D92AC1CD897E3009DF42C /* Shader1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 871D92AB1CD897E3009DF42C /* Shader1.fsh */; };
 		872AA3CD1CDA0C2E009988DC /* shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 872AA3CC1CDA0C2E009988DC /* shader.vsh */; };
 		872BA6FC1CF2EACA00006CE1 /* LocalNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 872BA6FB1CF2EACA00006CE1 /* LocalNotificationViewController.m */; };
+		876632CC1D29FB81000BEB0D /* EditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 876632CB1D29FB81000BEB0D /* EditorView.m */; };
+		876632CF1D2A1A7A000BEB0D /* GshadowLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 876632CE1D2A1A7A000BEB0D /* GshadowLayer.m */; };
 		878032431CDB337200278B85 /* InstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 878032421CDB337200278B85 /* InstagramViewController.m */; };
 		87DD2B9C1CCF0BA8005FA670 /* GJ_AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2B9B1CCF0BA8005FA670 /* GJ_AnimationViewController.m */; };
 		87DD2B9F1CCF0D70005FA670 /* GJ_TransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87DD2B9E1CCF0D70005FA670 /* GJ_TransitionViewController.m */; };
@@ -61,7 +63,6 @@
 		87E55B1B1CF5524B000C5EE4 /* CommentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E55B1A1CF5524B000C5EE4 /* CommentScrollView.m */; };
 		87E573201CF6A571005F78F2 /* LocalNotificationViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E5731F1CF6A571005F78F2 /* LocalNotificationViewModel.m */; };
 		87E83A901D265880000EB07F /* PictureEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E83A8F1D265880000EB07F /* PictureEditorViewController.m */; };
-		87E83A931D265A38000EB07F /* EditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E83A921D265A38000EB07F /* EditorView.m */; };
 		87E83A991D2663B9000EB07F /* GCycleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E83A981D2663B9000EB07F /* GCycleLayer.m */; };
 		87E83A9C1D2663DB000EB07F /* GRectangleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E83A9B1D2663DB000EB07F /* GRectangleLayer.m */; };
 		87EEFECA1CF4382800A6A429 /* ScrollVIewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87EEFEC91CF4382800A6A429 /* ScrollVIewViewController.m */; };
@@ -146,6 +147,10 @@
 		872BA6FA1CF2EACA00006CE1 /* LocalNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalNotificationViewController.h; sourceTree = "<group>"; };
 		872BA6FB1CF2EACA00006CE1 /* LocalNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationViewController.m; sourceTree = "<group>"; };
 		872BA6FF1CF2FB6400006CE1 /* TestKVC_CoreData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TestKVC_CoreData.entitlements; sourceTree = "<group>"; };
+		876632CA1D29FB81000BEB0D /* EditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorView.h; sourceTree = "<group>"; };
+		876632CB1D29FB81000BEB0D /* EditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorView.m; sourceTree = "<group>"; };
+		876632CD1D2A1A7A000BEB0D /* GshadowLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GshadowLayer.h; sourceTree = "<group>"; };
+		876632CE1D2A1A7A000BEB0D /* GshadowLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GshadowLayer.m; sourceTree = "<group>"; };
 		878032411CDB337200278B85 /* InstagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramViewController.h; sourceTree = "<group>"; };
 		878032421CDB337200278B85 /* InstagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramViewController.m; sourceTree = "<group>"; };
 		87DD2B9A1CCF0BA8005FA670 /* GJ_AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJ_AnimationViewController.h; sourceTree = "<group>"; };
@@ -208,8 +213,6 @@
 		87E5731F1CF6A571005F78F2 /* LocalNotificationViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationViewModel.m; sourceTree = "<group>"; };
 		87E83A8E1D265880000EB07F /* PictureEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureEditorViewController.h; sourceTree = "<group>"; };
 		87E83A8F1D265880000EB07F /* PictureEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureEditorViewController.m; sourceTree = "<group>"; };
-		87E83A911D265A38000EB07F /* EditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorView.h; sourceTree = "<group>"; };
-		87E83A921D265A38000EB07F /* EditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorView.m; sourceTree = "<group>"; };
 		87E83A971D2663B9000EB07F /* GCycleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCycleLayer.h; sourceTree = "<group>"; };
 		87E83A981D2663B9000EB07F /* GCycleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCycleLayer.m; sourceTree = "<group>"; };
 		87E83A9A1D2663DB000EB07F /* GRectangleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRectangleLayer.h; sourceTree = "<group>"; };
@@ -381,10 +384,12 @@
 			children = (
 				87E83A8E1D265880000EB07F /* PictureEditorViewController.h */,
 				87E83A8F1D265880000EB07F /* PictureEditorViewController.m */,
-				87E83A911D265A38000EB07F /* EditorView.h */,
-				87E83A921D265A38000EB07F /* EditorView.m */,
+				876632CA1D29FB81000BEB0D /* EditorView.h */,
+				876632CB1D29FB81000BEB0D /* EditorView.m */,
 				87E83A971D2663B9000EB07F /* GCycleLayer.h */,
 				87E83A981D2663B9000EB07F /* GCycleLayer.m */,
+				876632CD1D2A1A7A000BEB0D /* GshadowLayer.h */,
+				876632CE1D2A1A7A000BEB0D /* GshadowLayer.m */,
 				87E83A9A1D2663DB000EB07F /* GRectangleLayer.h */,
 				87E83A9B1D2663DB000EB07F /* GRectangleLayer.m */,
 			);
@@ -829,6 +834,7 @@
 				87E42C041CDAF2E30018F3CA /* IFBrannanFilter.m in Sources */,
 				87E42C081CDAF2E30018F3CA /* IFImageFilter.m in Sources */,
 				872BA6FC1CF2EACA00006CE1 /* LocalNotificationViewController.m in Sources */,
+				876632CF1D2A1A7A000BEB0D /* GshadowLayer.m in Sources */,
 				87E83A9C1D2663DB000EB07F /* GRectangleLayer.m in Sources */,
 				A975AA1C1C799E2C00CACA14 /* ViewController.m in Sources */,
 				A975AA191C799E2C00CACA14 /* AppDelegate.m in Sources */,
@@ -865,6 +871,7 @@
 				87E42C121CDAF2E30018F3CA /* IFValenciaFilter.m in Sources */,
 				87E42C0C1CDAF2E30018F3CA /* IFNashvilleFilter.m in Sources */,
 				A975AA5F1C79B51A00CACA14 /* TestColor.m in Sources */,
+				876632CC1D29FB81000BEB0D /* EditorView.m in Sources */,
 				87E42C031CDAF2E30018F3CA /* IFAmaroFilter.m in Sources */,
 				870412361D19154300E96D56 /* CycleLayer.m in Sources */,
 				74B85CDB1C86C93000CEF778 /* CornerRadiusViewController.m in Sources */,
@@ -885,7 +892,6 @@
 				87DD2BA21CCF16C7005FA670 /* GJTransitionModel.m in Sources */,
 				87E42C111CDAF2E30018F3CA /* IFToasterFilter.m in Sources */,
 				87E42BD71CDAEF7D0018F3CA /* GPUImageSixInputFilter.m in Sources */,
-				87E83A931D265A38000EB07F /* EditorView.m in Sources */,
 				87EEFECA1CF4382800A6A429 /* ScrollVIewViewController.m in Sources */,
 				87E42C091CDAF2E30018F3CA /* IFInkwellFilter.m in Sources */,
 			);

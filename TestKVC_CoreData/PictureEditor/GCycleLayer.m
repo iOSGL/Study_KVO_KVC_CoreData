@@ -21,10 +21,8 @@
 - (instancetype)initWithboderWidthColor:(UIColor *)color borderWidth:(CGFloat)width radius:(CGFloat)radius {
     self = [super init];
     if (self) {
-//        self.borderWidth = 2;
-//        self.borderColor = [UIColor orangeColor].CGColor;
         self.fillColor = color.CGColor;
-        self.strokeColor = [UIColor orangeColor].CGColor;
+        self.strokeColor = [UIColor whiteColor].CGColor;
         self.radius = radius;
         self.lineWidth = 2;
         self.path = self.cyclePath.CGPath;
