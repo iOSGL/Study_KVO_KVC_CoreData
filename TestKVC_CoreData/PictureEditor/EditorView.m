@@ -7,9 +7,7 @@
 //
 
 #import "EditorView.h"
-#import "GCycleLayer.h"
-#import "GRectangleLayer.h"
-#import "GshadowLayer.h"
+
 
 @interface EditorView ()
 
@@ -17,25 +15,36 @@
 
 @property (nonatomic, strong) GRectangleLayer *rectangleLayer;
 
-
 @property (nonatomic, strong) GshadowLayer *custormShadowLayer;
+
+@property (nonatomic, assign) ClipType type;
 
 @end
 
 @implementation EditorView
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame clipType:(ClipType)type;
+ {
     self = [super initWithFrame:frame];
     if (self) {
-        [self loadUI];
+         self.type = type;
+        [self loadUIWith:type];
+        
+
     }
     return self;
 }
 
 #pragma mark - Private Method 
 
-- (void)loadUI {
-    [self.layer addSublayer:self.cycleLayer];
+- (void)loadUIWith:(ClipType)type {
+    if (type == ClipTypeCycle) {
+        [self.layer addSublayer:self.cycleLayer];
+    } else if (type == ClipTypeRect) {
+        [self.layer addSublayer:self.rectangleLayer];
+    } else {
+
+    }
     [self.layer addSublayer:self.custormShadowLayer];
 }
 
@@ -45,16 +54,23 @@
 
 - (GCycleLayer *)cycleLayer {
     if (_cycleLayer == nil) {
-        _cycleLayer = [[GCycleLayer alloc]initWithboderWidthColor:[UIColor clearColor] borderWidth:0.5 radius:RADIUS];
+        _cycleLayer = [[GCycleLayer alloc]initWithfillWidthColor:[UIColor clearColor] lineWidth:2 radius:RADIUS];
     }
     return _cycleLayer;
 }
 
 - (GshadowLayer *)custormShadowLayer {
     if (_custormShadowLayer == nil) {
-        _custormShadowLayer = [[GshadowLayer alloc]initWithRaidus:RADIUS / 2];
+        _custormShadowLayer = [[GshadowLayer alloc]initWithRaidus:RADIUS / 2 type:self.type rectSize:CGSizeMake(RADIUS, RADIUS)];
     }
     return _custormShadowLayer;
+}
+
+- (GRectangleLayer *)rectangleLayer {
+    if (_rectangleLayer == nil) {
+        _rectangleLayer = [[GRectangleLayer alloc]initWithfillWidthColor:[UIColor clearColor] lineWidth:2 withSiz:CGSizeMake(RADIUS, RADIUS)];
+    }
+    return _rectangleLayer;
 }
 
 @end

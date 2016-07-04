@@ -11,6 +11,11 @@
 
 @interface GshadowLayer : CAShapeLayer
 
-- (instancetype)initWithRaidus:(CGFloat)radius;
+typedef NS_ENUM(NSInteger, ClipType) {
+    ClipTypeCycle =0,
+    ClipTypeRect
+};
+
+- (instancetype)initWithRaidus:(CGFloat)radius type:(ClipType)type rectSize:(CGSize)size;
 
 @end

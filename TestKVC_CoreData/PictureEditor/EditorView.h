@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GCycleLayer.h"
+#import "GRectangleLayer.h"
+#import "GshadowLayer.h"
 
-#define RADIUS 200.f
+#define RADIUS [UIScreen mainScreen].bounds.size.width - 100
+
 
 @interface EditorView : UIView
 
-- (instancetype)initWithFrame:(CGRect)frame;
+- (instancetype)initWithFrame:(CGRect)frame clipType:(ClipType)type;
 
 @end

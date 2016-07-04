@@ -18,7 +18,7 @@
 
 @implementation GCycleLayer
 
-- (instancetype)initWithboderWidthColor:(UIColor *)color borderWidth:(CGFloat)width radius:(CGFloat)radius {
+- (instancetype)initWithfillWidthColor:(UIColor *)color lineWidth:(CGFloat)width radius:(CGFloat)radius {
     self = [super init];
     if (self) {
         self.fillColor = color.CGColor;

@@ -7,7 +7,10 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import <UIKit/UIKit.h>
 
 @interface GRectangleLayer : CAShapeLayer
+
+- (instancetype)initWithfillWidthColor:(UIColor *)color lineWidth:(CGFloat)width withSiz:(CGSize)size;
 
 @end

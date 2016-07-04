@@ -11,7 +11,7 @@
 
 @interface GCycleLayer : CAShapeLayer
 
-- (instancetype)initWithboderWidthColor:(UIColor *)color borderWidth:(CGFloat)width radius:(CGFloat)radius;
+- (instancetype)initWithfillWidthColor:(UIColor *)color lineWidth:(CGFloat)width radius:(CGFloat)radius;
 
 
 @end

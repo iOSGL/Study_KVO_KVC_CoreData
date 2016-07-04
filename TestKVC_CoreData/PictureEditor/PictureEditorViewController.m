@@ -48,7 +48,7 @@
 
 - (EditorView *)editorView {
     if (_editorView == nil) {
-        _editorView = [[EditorView alloc]initWithFrame:self.view.bounds];
+        _editorView = [[EditorView alloc]initWithFrame:self.view.bounds clipType:ClipTypeRect];
     }
     return _editorView;
 }
