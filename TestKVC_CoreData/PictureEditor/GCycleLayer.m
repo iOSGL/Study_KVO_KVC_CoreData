@@ -24,7 +24,7 @@
         self.fillColor = color.CGColor;
         self.strokeColor = [UIColor whiteColor].CGColor;
         self.radius = radius;
-        self.lineWidth = 2;
+        self.lineWidth = width;
         self.path = self.cyclePath.CGPath;
     }
     return self;

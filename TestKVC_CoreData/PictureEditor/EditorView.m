@@ -29,8 +29,6 @@
     if (self) {
          self.type = type;
         [self loadUIWith:type];
-        
-
     }
     return self;
 }
@@ -38,17 +36,21 @@
 #pragma mark - Private Method 
 
 - (void)loadUIWith:(ClipType)type {
-    if (type == ClipTypeCycle) {
-        [self.layer addSublayer:self.cycleLayer];
-    } else if (type == ClipTypeRect) {
-        [self.layer addSublayer:self.rectangleLayer];
-    } else {
+    switch (type) {
+        case ClipTypeCycle: {
+            [self.layer addSublayer:self.cycleLayer];
+        }
+            break;
+        case ClipTypeRect: {
+            [self.layer addSublayer:self.rectangleLayer];
+        }
+            break;
 
+        default:
+            break;
     }
     [self.layer addSublayer:self.custormShadowLayer];
 }
-
-
 
 #pragma mark - Setter Getter
 

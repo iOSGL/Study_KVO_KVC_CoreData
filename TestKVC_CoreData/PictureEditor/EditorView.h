@@ -11,7 +11,7 @@
 #import "GRectangleLayer.h"
 #import "GshadowLayer.h"
 
-#define RADIUS [UIScreen mainScreen].bounds.size.width - 100
+#define RADIUS ([UIScreen mainScreen].bounds.size.width - 100)
 
 
 @interface EditorView : UIView
