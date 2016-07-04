@@ -16,6 +16,10 @@
 
 @interface EditorView : UIView
 
-- (instancetype)initWithFrame:(CGRect)frame clipType:(ClipType)type;
+- (instancetype)initWithFrame:(CGRect)frame clipType:(ClipType)type zoomImage:(UIImage *)sourceImage;
+
+@property (nonatomic, strong) UIImageView *zoomImageView;
+
+@property (nonatomic, strong) UIScrollView *zoomScrollView;
 
 @end
