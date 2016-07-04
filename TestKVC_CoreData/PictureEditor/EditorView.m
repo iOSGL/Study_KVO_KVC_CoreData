@@ -82,11 +82,11 @@
 }
 
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
-    CGRect rect = self.bounds;
-    CGSize contentSize = scrollView.contentSize;
-    contentSize.height += RADIUS;
-    self.zoomScrollView.contentSize = contentSize;
-     CGPoint contentOffset = self.zoomScrollView.contentOffset;
+//    CGRect rect = self.bounds;
+//    CGSize contentSize = scrollView.contentSize;
+//    contentSize.height += RADIUS;
+//    self.zoomScrollView.contentSize = contentSize;
+//     CGPoint contentOffset = self.zoomScrollView.contentOffset;
 //    self.zoomScrollView.contentInset = UIEdgeInsetsMake(contentOffset.y, 0, 0, 0);
 }
 
@@ -150,7 +150,6 @@
         _zoomScrollView.showsHorizontalScrollIndicator = NO;
         _zoomScrollView.showsVerticalScrollIndicator = NO;
         _zoomScrollView.backgroundColor = [UIColor clearColor];
-
     }
     return _zoomScrollView;
 }
