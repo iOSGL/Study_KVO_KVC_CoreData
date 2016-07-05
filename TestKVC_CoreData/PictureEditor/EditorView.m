@@ -48,7 +48,6 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"%f   %f",scrollView.contentOffset.x,scrollView.contentOffset.y);
 }
 
 - (UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView
@@ -58,7 +57,6 @@
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-
     CGSize boundsSize = scrollView.bounds.size;
     CGRect imgFrame = self.zoomImageView.frame;
     CGSize contentSize = scrollView.contentSize;
@@ -83,6 +81,15 @@
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
 }
 
+#pragma mark - System Method
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    CGPoint scrollViewPoint = [self.zoomScrollView convertPoint:point fromView:self];
+    if ([self.zoomScrollView pointInside:scrollViewPoint withEvent:event]) {
+        return self.zoomScrollView;
+    }
+    return self.zoomScrollView;
+}
 
 #pragma mark - Private Method 
 
