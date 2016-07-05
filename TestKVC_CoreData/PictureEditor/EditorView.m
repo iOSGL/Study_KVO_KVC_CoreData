@@ -48,8 +48,7 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-
-
+    NSLog(@"%f   %f",scrollView.contentOffset.x,scrollView.contentOffset.y);
 }
 
 - (UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView
@@ -82,12 +81,6 @@
 }
 
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
-//    CGRect rect = self.bounds;
-//    CGSize contentSize = scrollView.contentSize;
-//    contentSize.height += RADIUS;
-//    self.zoomScrollView.contentSize = contentSize;
-//     CGPoint contentOffset = self.zoomScrollView.contentOffset;
-//    self.zoomScrollView.contentInset = UIEdgeInsetsMake(contentOffset.y, 0, 0, 0);
 }
 
 
@@ -117,6 +110,11 @@
     return miniScale;
 }
 
+- (CGFloat)getScreenScale {
+    CGFloat screenScale = self.bounds.size.width / RADIUS;
+    return screenScale;
+}
+
 #pragma mark - Setter Getter
 
 - (GCycleLayer *)cycleLayer {
@@ -142,14 +140,22 @@
 
 - (UIScrollView *)zoomScrollView {
     if (_zoomScrollView == nil) {
-        _zoomScrollView = [[UIScrollView alloc]initWithFrame:self.bounds];
+        CGRect rect = [UIScreen mainScreen].bounds;
+        CGFloat width = RADIUS;
+        CGFloat height = RADIUS;
+        CGFloat originX = (rect.size.width - width) / 2;
+        CGFloat originY = (rect.size.height - height) / 2;
+        _zoomScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(originX, originY, RADIUS, RADIUS)];
         _zoomScrollView.delegate = self;
         [_zoomScrollView setMaximumZoomScale:2.0];
         [_zoomScrollView setMinimumZoomScale:[self getMinimumZoomScale]];
         _zoomScrollView.bouncesZoom = YES;
+        _zoomScrollView.zoomScale = 1;
         _zoomScrollView.showsHorizontalScrollIndicator = NO;
         _zoomScrollView.showsVerticalScrollIndicator = NO;
         _zoomScrollView.backgroundColor = [UIColor clearColor];
+        _zoomScrollView.clipsToBounds = NO;
+        _zoomScrollView.contentOffset = CGPointMake(originX, originY);
     }
     return _zoomScrollView;
 }
