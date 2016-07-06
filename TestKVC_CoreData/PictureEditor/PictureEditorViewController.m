@@ -107,7 +107,7 @@
 
 - (EditorView *)editorView {
     if (_editorView == nil) {
-        _editorView = [[EditorView alloc]initWithFrame:self.view.bounds clipType:ClipTypeCycle zoomImage:[UIImage imageNamed:@"pure_girl"]];
+        _editorView = [[EditorView alloc]initWithFrame:self.view.bounds clipType:ClipTypeRect zoomImage:[UIImage imageNamed:@"pure_girl"]];
     }
     return _editorView;
 }

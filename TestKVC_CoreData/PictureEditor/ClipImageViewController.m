@@ -33,6 +33,12 @@
 - (instancetype)initWithImgae:(UIImage *)image {
     if (self) {
         self.clipImage = image;
+        NSData *data = UIImagePNGRepresentation(image);
+        NSLog(@"%f  %f    %f",data.length / 1024.0,image.size.width, image.size.height);
+        NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+        NSString *saveImagePath = [docDir stringByAppendingPathComponent:@"result.png"];
+        [data writeToFile:saveImagePath atomically:YES];
+        NSLog(@"%@",docDir);
     }
     return self;
 }
@@ -41,27 +47,25 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.bgImgaeView];
-//    [self.view addSubview:self.tabBarView];
+    [self.view addSubview:self.tabBarView];
 //    [self.tabBarView addSubview:self.hideBtn];
-//    [self.tabBarView addSubview:self.clipBtn];
-//    [self.view addSubview:self.clipImageView];
+    [self.tabBarView addSubview:self.clipBtn];
+    [self.view addSubview:self.clipImageView];
 }
 
 - (void)viewWillLayoutSubviews {
-    [self.bgImgaeView mas_makeConstraints:^(MASConstraintMaker *make) {
-         make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(0, 0, 0, 0));
+
+    [self.tabBarView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view.mas_bottom).offset(0);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.right.equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(44);
     }];
-//    [self.tabBarView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.bottom.equalTo(self.view.mas_bottom).offset(0);
-//        make.left.equalTo(self.view.mas_left).offset(0);
-//        make.right.equalTo(self.view.mas_right).offset(0);
-//        make.height.mas_equalTo(44);
-//    }];
-//    [self.clipBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.right.equalTo(self.tabBarView.mas_right).offset(-10);
-//        make.centerY.equalTo(self.tabBarView.mas_centerY);
-//        make.size.mas_equalTo(CGSizeMake(50, 30));
-//    }];
+    [self.clipBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.tabBarView.mas_right).offset(-10);
+        make.centerY.equalTo(self.tabBarView.mas_centerY);
+        make.size.mas_equalTo(CGSizeMake(50, 30));
+    }];
 //    [self.hideBtn mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.left.equalTo(self.tabBarView.mas_left).offset(10);
 //        make.centerY.equalTo(self.tabBarView.mas_centerY);
@@ -78,7 +82,9 @@
 }
 
 - (void)clopAction:(UIButton *)sender {
-    self.clipImageView.image = [self circularClipImage:self.bgImgaeView.image];
+
+
+    self.clipImageView.image = [self getImage];
 
 }
 
@@ -88,21 +94,16 @@
     }];
 }
 
--(UIImage *)circularClipImage:(UIImage *)image {
-
-    CGFloat originX = 0;
-    CGFloat originY = 0;
-
-     UIGraphicsBeginImageContext(self.bgImgaeView.bounds.size);
-     UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(originX, originY, 200 , 200)];
-     [path addClip];
-     [self.bgImgaeView.layer renderInContext:UIGraphicsGetCurrentContext()];
-     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-     UIGraphicsEndImageContext();
-     return  newImage;
-
-    return nil;
-
+- (UIImage *)getImage {
+    CGRect rect = self.view.bounds;
+    CGFloat scale = [UIScreen mainScreen].scale;
+    CGFloat X = ((rect.size.width - RADIUS) / 2 + 1) * scale;
+    CGFloat Y = ((rect.size.height - RADIUS) / 2 + 1) * scale;
+    CGFloat clipRadius = (RADIUS -2) *scale ;
+    CGRect clipRect = CGRectMake(X, Y, clipRadius, clipRadius);
+    CGImageRef imageRef = CGImageCreateWithImageInRect([self.clipImage CGImage], clipRect);
+    UIImage *endImage = [UIImage imageWithCGImage:imageRef];
+    return endImage;
 }
 
 - (void)touchBack {
@@ -145,8 +146,7 @@
 - (UIImageView *)clipImageView {
     if (_clipImageView == nil) {
         _clipImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
-        _clipImageView.contentMode = UIViewContentModeScaleAspectFill;
-        _clipImageView.clipsToBounds = YES;
+        _clipImageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return _clipImageView;
 }

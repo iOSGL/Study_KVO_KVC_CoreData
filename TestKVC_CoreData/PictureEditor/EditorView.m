@@ -21,13 +21,6 @@
 
 @property (nonatomic, strong) UIImage *image;
 
-@property (nonatomic, assign) CGFloat spaceWidth;
-
-@property (nonatomic, assign) CGFloat spaceHeight;
-
-
-
-
 @end
 
 @implementation EditorView
@@ -36,8 +29,6 @@
  {
     self = [super initWithFrame:frame];
     if (self) {
-        self.spaceWidth = (self.bounds.size.width - 2*RADIUS);
-        self.spaceHeight = (self.bounds.size.height - 2*RADIUS);
          self.type = type;
          self.image = sourceImage;
         [self loadUIWith:type];
@@ -98,8 +89,12 @@
 #pragma mark - Open Method 
 
 -(UIImage *)circularClipImage {
-    UIImage *image = [self circularClipImage:self.zoomImageView.image withType:self.type];
+    UIImage *image = [self getImage:self.zoomImageView.image];
     return image;
+}
+
+- (void)switchTypeWith:(ClipType)clipType {
+    self.type = clipType;
 }
 
 #pragma mark - Private Method 
@@ -110,9 +105,9 @@
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     CGRect rect = self.bounds;
-    CGFloat X = (rect.size.width - RADIUS) / 2;
-    CGFloat Y = (rect.size.height - RADIUS) / 2;
-    CGFloat clipRadius = RADIUS - 2 / [UIScreen mainScreen].scale;
+    CGFloat X = (rect.size.width - RADIUS) / 2 + 1;
+    CGFloat Y = (rect.size.height - RADIUS) / 2 + 1;
+    CGFloat clipRadius = RADIUS -2 ;
     CGRect clipRect = CGRectMake(X, Y, clipRadius, clipRadius);
     UIGraphicsBeginImageContext(newImage.size);
     UIBezierPath *path = nil;
@@ -130,6 +125,34 @@
 
 }
 
+- (UIImage *)getImage:(UIImage *)image {
+        // 对keyWindow截图
+    UIView *window = [UIApplication sharedApplication].keyWindow;
+    CGSize viewSize = window.bounds.size;
+    UIGraphicsBeginImageContextWithOptions(viewSize, YES, [UIScreen mainScreen].scale);
+    [window.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *shotImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    CGFloat scale = [UIScreen mainScreen].scale;
+    CGRect rect = CGRectMake(0, 0, shotImage.size.width, shotImage.size.height);
+    CGFloat X = (rect.size.width - RADIUS)/2*scale;
+    CGFloat Y = (rect.size.height - RADIUS)/2*scale;
+    CGRect clipRect = CGRectMake(X, Y, RADIUS*scale, RADIUS*scale);
+
+    CGImageRef avatarImageRef = CGImageCreateWithImageInRect([shotImage CGImage], clipRect);
+    UIImage *avatarImage = [UIImage imageWithCGImage:avatarImageRef];
+    CGImageRelease(avatarImageRef);
+    return avatarImage;
+}
+
+-(UIImage *)scaleToSize:(UIImage *)image size:(CGSize)size {
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *endImage=UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return endImage;
+}
 
 - (void)loadUIWith:(ClipType)type {
     [self addSubview:self.zoomScrollView];

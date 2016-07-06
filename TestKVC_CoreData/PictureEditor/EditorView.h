@@ -38,6 +38,12 @@
  *  @return clip image
  */
 -(UIImage *)circularClipImage;
+/**
+ *  选择不同的截图类型
+ *
+ *  @param clipType ClipType
+ */
+- (void)switchTypeWith:(ClipType)clipType;
 
 
 
