@@ -92,7 +92,7 @@
     UIImage *image = nil;
     if (self.type == ClipTypeCycle) {
         image = [self getImage:self.zoomImageView.image];
-        image = [self circleImage:image withParam:2];
+        image = [self circularClipImage:image];
     } else if (self.type == ClipTypeRect) {
         image =[self getImage:self.zoomImageView.image];
     }
@@ -104,6 +104,16 @@
 }
 
 #pragma mark - Private Method 
+
+/**
+ *  用贝塞尔曲线 获得 矩形图 和 圆
+ *  缺点是 [newImage drawAtPoint:CGPointZero]; 从屏幕左上角开始绘制，得到的图片的分辨率与手机分辨率一致。
+ *
+ *  @param image    source image
+ *  @param clipType type
+ *
+ *  @return image
+ */
 
 -(UIImage *)circularClipImage:(UIImage *)image withType:(ClipType)clipType {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, [UIScreen mainScreen].scale);
@@ -131,6 +141,14 @@
 
 }
 
+/**
+ *  截取矩形图片
+ *
+ *  @param image source image
+ *
+ *  @return image
+ */
+
 - (UIImage *)getImage:(UIImage *)image {
         // 对keyWindow截图
     UIView *window = [UIApplication sharedApplication].keyWindow;
@@ -152,21 +170,60 @@
     return avatarImage;
 }
 
+/**
+ *  为矩形图片添加边框。 做成头像 效果
+ *
+ *  @param image source image
+ *  @param inset 椭圆
+ *
+ *  @return image
+ */
+
 -(UIImage*)circleImage:(UIImage*)image withParam:(CGFloat)inset {
      UIGraphicsBeginImageContext(image.size);
      CGContextRef context = UIGraphicsGetCurrentContext();
-//     CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+     CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
      CGRect rect = CGRectMake(inset, inset, image.size.width - inset * 2.0f, image.size.height - inset * 2.0f);
      CGContextAddEllipseInRect(context, rect);
      CGContextClip(context);
      [image drawInRect:rect];
      CGContextAddEllipseInRect(context, rect);
-//     CGContextStrokePath(context);
+     CGContextStrokePath(context);
      UIImage *newimg = UIGraphicsGetImageFromCurrentImageContext();
      UIGraphicsEndImageContext();
     return newimg;
 }
+/**
+ *  切割矩形图片为圆形图片
+ *
+ *  @param image source image
+ *
+ *  @return image
+ */
+-(UIImage *)circularClipImage:(UIImage *)image {
+    CGFloat arcCenterX = image.size.width/ 2;
+    CGFloat arcCenterY = image.size.height / 2;
 
+    UIGraphicsBeginImageContext(image.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextBeginPath(context);
+    CGContextAddArc(context, arcCenterX , arcCenterY, image.size.width/ 2 , 0.0, 2*M_PI, NO);
+    CGContextClip(context);
+    CGRect myRect = CGRectMake(0 , 0, image.size.width ,  image.size.height);
+    [image drawInRect:myRect];
+
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return  newImage;
+}
+/**
+ *  改变图像尺寸
+ *
+ *  @param image source image
+ *  @param size  size
+ *
+ *  @return image
+ */
 -(UIImage *)scaleToSize:(UIImage *)image size:(CGSize)size {
     UIGraphicsBeginImageContext(size);
     [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
