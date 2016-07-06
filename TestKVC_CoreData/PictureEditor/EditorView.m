@@ -89,7 +89,13 @@
 #pragma mark - Open Method 
 
 -(UIImage *)circularClipImage {
-    UIImage *image = [self getImage:self.zoomImageView.image];
+    UIImage *image = nil;
+    if (self.type == ClipTypeCycle) {
+        image = [self getImage:self.zoomImageView.image];
+        image = [self circleImage:image withParam:2];
+    } else if (self.type == ClipTypeRect) {
+        image =[self getImage:self.zoomImageView.image];
+    }
     return image;
 }
 
@@ -100,7 +106,7 @@
 #pragma mark - Private Method 
 
 -(UIImage *)circularClipImage:(UIImage *)image withType:(ClipType)clipType {
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0);
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, [UIScreen mainScreen].scale);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -144,6 +150,21 @@
     UIImage *avatarImage = [UIImage imageWithCGImage:avatarImageRef];
     CGImageRelease(avatarImageRef);
     return avatarImage;
+}
+
+-(UIImage*)circleImage:(UIImage*)image withParam:(CGFloat)inset {
+     UIGraphicsBeginImageContext(image.size);
+     CGContextRef context = UIGraphicsGetCurrentContext();
+//     CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+     CGRect rect = CGRectMake(inset, inset, image.size.width - inset * 2.0f, image.size.height - inset * 2.0f);
+     CGContextAddEllipseInRect(context, rect);
+     CGContextClip(context);
+     [image drawInRect:rect];
+     CGContextAddEllipseInRect(context, rect);
+//     CGContextStrokePath(context);
+     UIImage *newimg = UIGraphicsGetImageFromCurrentImageContext();
+     UIGraphicsEndImageContext();
+    return newimg;
 }
 
 -(UIImage *)scaleToSize:(UIImage *)image size:(CGSize)size {
