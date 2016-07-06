@@ -27,6 +27,7 @@
 
 
 
+
 @end
 
 @implementation EditorView
@@ -48,6 +49,9 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
 }
 
 - (UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView
@@ -91,7 +95,85 @@
     return self.zoomScrollView;
 }
 
+#pragma mark - Open Method 
+
+-(UIImage *)circularClipImage {
+//    UIImage *image = [self circularClipImage:self.zoomImageView.image withType:self.type];;
+
+    UIImage *image = [self clipRectangle:self.zoomImageView.image];
+    return image;
+}
+
 #pragma mark - Private Method 
+
+-(UIImage *)circularClipImage:(UIImage *)image withType:(ClipType)clipType {
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    CGRect rect = self.bounds;
+    CGFloat X = (rect.size.width - RADIUS) / 2;
+    CGFloat Y = (rect.size.height - RADIUS) / 2;
+    CGRect clipRect = CGRectMake(X, Y, RADIUS, RADIUS);
+    UIGraphicsBeginImageContext(newImage.size);
+    UIBezierPath *path = nil;
+    if (clipType == ClipTypeCycle) {
+        path = [UIBezierPath bezierPathWithOvalInRect:clipRect];
+    } else if (clipType == ClipTypeRect) {
+        path = [UIBezierPath bezierPathWithRect:clipRect];
+    } else {
+    }
+    [path addClip];
+    [newImage drawAtPoint:CGPointZero];
+    UIImage *clipImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return  clipImage;
+
+}
+
+- (UIImage *)clipRectangle:(UIImage *)image {
+        /*
+    CGFloat imageScale = self.zoomScrollView.zoomScale;
+    CGRect rect = self.bounds;
+    CGFloat width = RADIUS;
+    CGFloat height = RADIUS;
+    CGFloat X = (rect.size.width - width) / 2;
+    CGFloat Y = (rect.size.height - height) / 2;
+    CGFloat originX = (X- self.zoomScrollView.contentOffset.x + RADIUS) / imageScale;
+    CGFloat originY = (Y - self.zoomScrollView.contentOffset.y + RADIUS) / imageScale;
+    CGFloat clipRadius = RADIUS / imageScale;
+
+    CGRect imageViewRect = [self.zoomImageView convertRect:CGRectMake(X, Y, RADIUS, RADIUS) toView:self.zoomScrollView];
+
+    CGRect myImageRect = CGRectMake(imageViewRect.origin.x, imageViewRect.origin.y, clipRadius, clipRadius);
+    CGImageRef imageRef = self.zoomImageView.image.CGImage;
+    CGImageRef subImageRef = CGImageCreateWithImageInRect(imageRef, myImageRect);
+    CGSize size;
+    size.width = myImageRect.size.width;
+    size.height = myImageRect.size.height;
+    UIGraphicsBeginImageContext(size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextDrawImage(context, myImageRect, subImageRef);
+    UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
+    UIGraphicsEndImageContext();
+    return smallImage;
+         */
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    CGRect rect = self.bounds;
+    CGFloat X = (rect.size.width - RADIUS) / 2;
+    CGFloat Y = (rect.size.height - RADIUS) / 2;
+    CGRect clipRect = CGRectMake(X, Y, RADIUS, RADIUS);
+    UIGraphicsBeginImageContext(newImage.size);
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:clipRect];
+    [path addClip];
+    [newImage drawAtPoint:CGPointZero];
+    UIImage *clipImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return clipImage;
+}
 
 - (void)loadUIWith:(ClipType)type {
     [self addSubview:self.zoomScrollView];
@@ -147,7 +229,7 @@
 
 - (UIScrollView *)zoomScrollView {
     if (_zoomScrollView == nil) {
-        CGRect rect = [UIScreen mainScreen].bounds;
+        CGRect rect = self.bounds;
         CGFloat width = RADIUS;
         CGFloat height = RADIUS;
         CGFloat originX = (rect.size.width - width) / 2;

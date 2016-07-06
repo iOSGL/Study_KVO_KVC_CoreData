@@ -16,10 +16,29 @@
 
 @interface EditorView : UIView
 
-- (instancetype)initWithFrame:(CGRect)frame clipType:(ClipType)type zoomImage:(UIImage *)sourceImage;
-
 @property (nonatomic, strong) UIImageView *zoomImageView;
 
 @property (nonatomic, strong) UIScrollView *zoomScrollView;
+
+
+
+/**
+ *  init
+ *
+ *  @param frame       viewFrame
+ *  @param type        cycle or rectangle
+ *  @param sourceImage clip source image
+ *
+ *  @return view
+ */
+- (instancetype)initWithFrame:(CGRect)frame clipType:(ClipType)type zoomImage:(UIImage *)sourceImage;
+/**
+ *  clip method
+ *
+ *  @return clip image
+ */
+-(UIImage *)circularClipImage;
+
+
 
 @end
