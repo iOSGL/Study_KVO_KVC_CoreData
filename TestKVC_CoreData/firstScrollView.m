@@ -12,11 +12,30 @@
 
 #define SECOND_TAG 1002
 
-@interface firstScrollView () <UIScrollViewDelegate>
+#define CONTENT_OFF_SET @"contentOffset"
+
+@interface firstScrollView () <UIScrollViewDelegate>{
+    CGFloat _lastOffsetY;
+}
+
+@property (nonatomic, strong) UIScrollView *contentScrollView;
+
+@property (nonatomic, strong) UIScrollView *commentScrollView;
+
+@property (nonatomic, assign) BOOL fireMove;
+
+@property (nonatomic, weak) UIScrollView *currentScrollView;
 
 @end
 
 @implementation firstScrollView
+
+#pragma mark - View Life Cycle
+
++ (instancetype)linkAgeWithScrollView:(UIScrollView *)contentScrollView commentScrollView:(UIScrollView *)commentScrollView {
+    firstScrollView *linkAgeView = [[firstScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds linkAgeWithScrollView:contentScrollView commentScrollView:commentScrollView];
+    return linkAgeView;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -30,33 +49,129 @@
     return self;
 };
 
+- (instancetype)initWithFrame:(CGRect)frame linkAgeWithScrollView:(UIScrollView *)contentScrollView commentScrollView:(UIScrollView *)commentScrollView {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.contentScrollView = contentScrollView;
+        self.contentScrollView.delegate = self;
+        self.commentScrollView = commentScrollView;
+        self.commentScrollView.delegate = self;
+//        [self.contentScrollView addObserver:self forKeyPath:CONTENT_OFF_SET options:NSKeyValueObservingOptionNew context:@"content"];
+//        [self.commentScrollView addObserver:self forKeyPath:CONTENT_OFF_SET options:NSKeyValueObservingOptionNew context:@"comment"];
+        CGSize contentSize = _contentScrollView.contentSize;
+        contentSize.height += _contentScrollView.frame.size.height;
+
+        _contentScrollView.contentSize = contentSize;
+
+        [self addSubview:self.commentScrollView];
+        [self addSubview:self.contentScrollView];
+
+
+    }
+    return self;
+}
+
+#pragma mark - SysTem Method 
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    [self setStopDeceleration];
+    CGFloat pointY = point.y;
+    CGFloat commentOffsetY = self.commentScrollView.contentOffset.y;
+    self.currentScrollView = self.contentScrollView;
+    if (self.contentScrollView.contentOffset.y > (self.contentScrollView.contentSize.height - (self.frame.size.height * 2))) {
+        if (commentOffsetY > 0 ||fabs(commentOffsetY) > self.frame.size.height) {
+            self.currentScrollView = self.commentScrollView;
+            return self.currentScrollView;
+        } else {
+        if (pointY >=  fabs(commentOffsetY)) {
+            self.currentScrollView = self.commentScrollView;
+            return self.currentScrollView;
+        } else {
+            self.currentScrollView = self.contentScrollView;
+            return self.currentScrollView;
+        }
+
+        }
+
+    }
+    return self.currentScrollView;
+}
+
+- (void)setStopDeceleration {
+     [self.contentScrollView setContentOffset:self.contentScrollView.contentOffset animated:NO];
+     [self.currentScrollView setContentOffset:self.currentScrollView.contentOffset animated:NO];
+}
+
+- (void)dealloc {
+//    if (self.contentScrollView) {
+//        [self.contentScrollView removeObserver:self forKeyPath:CONTENT_OFF_SET];
+//    }
+//    if (self.commentScrollView) {
+//        [self.commentScrollView removeObserver:self forKeyPath:CONTENT_OFF_SET];
+//    }
+}
+
+
 #pragma mark - UIScrollViewDelegate
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.currentScrollView != scrollView) {
+        return;
+    }
+    if (scrollView == self.contentScrollView) {
+        if (self.contentScrollView.contentOffset.y > (self.contentScrollView.contentSize.height - (self.frame.size.height * 2))) {
+
+            CGPoint firstOffset = self.contentScrollView.contentOffset;
+            CGPoint secondOffset = self.commentScrollView.contentOffset;
+            CGFloat y = firstOffset.y - (self.contentScrollView.contentSize.height - _contentScrollView.frame.size.height);
+            [self.commentScrollView setContentOffset:CGPointMake(secondOffset.x, y)];
+        }else {
+            CGPoint secondOffset = self.commentScrollView.contentOffset;
+            [self.commentScrollView setContentOffset:CGPointMake(secondOffset.x, -_commentScrollView.frame.size.height)];
+        }
+    } else if (scrollView == self.commentScrollView) {
+        if (self.commentScrollView.contentOffset.y >=0 || self.commentScrollView.contentOffset.y < -self.commentScrollView.frame.size.height) {
+
+            CGPoint firstOffset = self.contentScrollView.contentOffset;
+            if (self.commentScrollView.contentOffset.y < -self.commentScrollView.frame.size.height) {
+                firstOffset.y = self.contentScrollView.contentSize.height - _contentScrollView.frame.size.height*2;
+            }else {
+                firstOffset.y = self.contentScrollView.contentSize.height - _contentScrollView.frame.size.height;
+            }
+
+            [self.contentScrollView setContentOffset:firstOffset];
+
+        } else {
+
+
+            CGPoint firstOffset = self.contentScrollView.contentOffset;
+            CGPoint secondOffset = self.commentScrollView.contentOffset;
+
+            CGFloat y = self.contentScrollView.contentSize.height - _contentScrollView.frame.size.height + secondOffset.y;
+            [self.contentScrollView setContentOffset:CGPointMake(firstOffset.x, y)];
+        }
+    }
+
 
 }
 
-#pragma mark - System Method
+//- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+//    [scrollView setContentOffset:scrollView.contentOffset animated:false];
+//}
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (self.contentScrollView.contentOffset.y > self.frame.size.height) {
+#pragma mark - KVO Method
 
-    if (scrollView == self.contentScrollView) {
-            CGPoint firstOffset = self.contentScrollView.contentOffset;
-            CGPoint secondOffset = self.commentScrollView.contentOffset;
-            CGFloat y = firstOffset.y - self.frame.size.height;
-            secondOffset.y = y;
-            [self.commentScrollView setContentOffset:secondOffset];
-    } else if (scrollView == self.commentScrollView) {
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if (![keyPath isEqualToString:CONTENT_OFF_SET]) {
+        return;
+    }
+    NSString *identifier = (__bridge NSString *)(context);
+    if ([identifier isEqualToString:@"content"]) {
+        [self scrollViewDidScroll:self.contentScrollView];
+    } else if ([identifier isEqualToString:@"comment"]) {
+        [self scrollViewDidScroll:self.commentScrollView];
+    }
 
-        CGPoint secondOffset = self.commentScrollView.contentOffset;
-        CGPoint firstOffset = self.contentScrollView.contentOffset;
-        firstOffset.y = secondOffset.y + self.frame.size.height;
-        NSLog(@"scrollViewDidScroll second offset y %f  %f %f",secondOffset.y,self.contentScrollView.contentOffset.y, firstOffset.y);
-        [self.contentScrollView setContentOffset:firstOffset];
-
-     }
-   }
 
 }
 
@@ -96,28 +211,15 @@
 
 #pragma mark - Setter Getter
 
-- (ContentScrollView *)contentScrollView {
-    if (_contentScrollView == nil) {
-        _contentScrollView = [[ContentScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-        _contentScrollView.backgroundColor = [UIColor clearColor];
-        _contentScrollView.delegate = self;
-        _contentScrollView.tag = FIRST_TAG;
-        _contentScrollView.showsVerticalScrollIndicator = NO;
-    }
-    return _contentScrollView;
-}
-
-- (CommentScrollView *)commentScrollView {
-    if (_commentScrollView == nil) {
-        _commentScrollView = [[CommentScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-        _commentScrollView.delegate = self;
-        _commentScrollView.backgroundColor = [UIColor clearColor];
-        _commentScrollView.tag = SECOND_TAG;
-        _commentScrollView.showsVerticalScrollIndicator = NO;
-//        _commentScrollView.contentInset = UIEdgeInsetsMake(self.frame.size.height, 0, 0, 0);
-    }
-    return _commentScrollView;
-}
-
+//- (ContentScrollView *)contentScrollView {
+//    if (_contentScrollView == nil) {
+//        _contentScrollView = [[ContentScrollView alloc]initWithFrame:CGRectZero];
+//        _contentScrollView.backgroundColor = [UIColor clearColor];
+//        _contentScrollView.delegate = self;
+//        _contentScrollView.tag = FIRST_TAG;
+//        _contentScrollView.showsVerticalScrollIndicator = NO;
+//    }
+//    return _contentScrollView;
+//}
 
 @end

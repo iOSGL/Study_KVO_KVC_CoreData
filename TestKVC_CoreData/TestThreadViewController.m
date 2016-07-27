@@ -53,6 +53,8 @@
 
     self.lock = dispatch_semaphore_create(1);
     [self testSemaphore];
+
+  
     
 }
 

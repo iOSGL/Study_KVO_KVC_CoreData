@@ -12,12 +12,13 @@
 
 @interface firstScrollView : UIView
 
-- (instancetype)initWithFrame:(CGRect)frame;
 
-@property (nonatomic, strong) ContentScrollView *contentScrollView;
 
-@property (nonatomic, strong) CommentScrollView *commentScrollView;
++ (instancetype)linkAgeWithScrollView:(UIScrollView *)contentScrollView commentScrollView:(UIScrollView *)commentScrollView;
 
-@property (nonatomic, assign) BOOL fireMove;
+
+- (instancetype)initWithFrame:(CGRect)frame linkAgeWithScrollView:(UIScrollView *)contentScrollView commentScrollView:(UIScrollView *)commentScrollView;
+
+
 
 @end

@@ -92,7 +92,7 @@
     UIImage *image = nil;
     if (self.type == ClipTypeCycle) {
         image = [self getImage:self.zoomImageView.image];
-        image = [self circularClipImage:image];
+        image = [self autoImage:image size:image.size];
     } else if (self.type == ClipTypeRect) {
         image =[self getImage:self.zoomImageView.image];
     }
@@ -160,14 +160,20 @@
 
     CGFloat scale = [UIScreen mainScreen].scale;
     CGRect rect = CGRectMake(0, 0, shotImage.size.width, shotImage.size.height);
-    CGFloat X = (rect.size.width - RADIUS)/2*scale;
-    CGFloat Y = (rect.size.height - RADIUS)/2*scale;
-    CGRect clipRect = CGRectMake(X, Y, RADIUS*scale, RADIUS*scale);
+    CGFloat X = (rect.size.width - RADIUS)/2*scale + 1;
+    CGFloat Y = (rect.size.height - RADIUS)/2*scale + 1;
+    CGRect clipRect = CGRectMake(X, Y, RADIUS*scale - 2, RADIUS*scale - 2);
 
     CGImageRef avatarImageRef = CGImageCreateWithImageInRect([shotImage CGImage], clipRect);
-    UIImage *avatarImage = [UIImage imageWithCGImage:avatarImageRef];
+    CGRect smallBounds = CGRectMake(0, 0, CGImageGetWidth(avatarImageRef), CGImageGetHeight(avatarImageRef));
+    UIGraphicsBeginImageContextWithOptions(smallBounds.size,NO,scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextDrawImage(context, smallBounds, avatarImageRef);
+    UIImage *smallImage = [UIImage imageWithCGImage:avatarImageRef];
     CGImageRelease(avatarImageRef);
-    return avatarImage;
+    UIGraphicsEndImageContext();
+
+    return smallImage;
 }
 
 /**
@@ -201,13 +207,26 @@
  *  @return image
  */
 -(UIImage *)circularClipImage:(UIImage *)image {
+        /*
+    CGFloat arcCenterX = image.size.width/ 2;
+    CGFloat arcCenterY = image.size.height / 2;
+    CGFloat scale = [UIScreen mainScreen].scale;
+
+    UIGraphicsBeginImageContext(image.size);
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, arcCenterX * scale, arcCenterY * scale)];
+    [path addClip];
+    [image drawAtPoint:CGPointMake(20, 10)];
+    UIImage *clipImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return  clipImage;
+         */
     CGFloat arcCenterX = image.size.width/ 2;
     CGFloat arcCenterY = image.size.height / 2;
 
     UIGraphicsBeginImageContext(image.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextBeginPath(context);
-    CGContextAddArc(context, arcCenterX , arcCenterY, image.size.width/ 2 , 0.0, 2*M_PI, NO);
+    CGContextAddArc(context, arcCenterX , arcCenterY, image.size.width/ 2 - 2, 0.0, 2*M_PI, NO);
     CGContextClip(context);
     CGRect myRect = CGRectMake(0 , 0, image.size.width ,  image.size.height);
     [image drawInRect:myRect];
@@ -216,6 +235,100 @@
     UIGraphicsEndImageContext();
     return  newImage;
 }
+
+-(UIImage*)circleImage:(UIImage*)image
+{
+    CGFloat inset = 0.1f;
+    UIGraphicsBeginImageContext(image.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, 2);
+    CGContextSetStrokeColorWithColor(context, [UIColor clearColor].CGColor);
+    CGRect rect = CGRectMake(inset, inset, image.size.width - inset * 2.0f, image.size.height - inset * 2.0f);
+    CGContextAddEllipseInRect(context, rect);
+    CGContextClip(context);
+
+    [image drawInRect:rect];
+    CGContextAddEllipseInRect(context, rect);
+    CGContextStrokePath(context);
+    UIImage *newimg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newimg;
+}
+
+-(UIImage*)autoImage:(UIImage*)image size:(CGSize)theSize
+{
+    if (image == nil)
+        {
+            return nil;
+        }
+    CGSize imgSize = image.size;
+    if (imgSize.height == 0 || imgSize.width == 0 || theSize.width == 0 || theSize.height == 0)
+        {
+            return nil;
+        }
+    CGFloat nx = 0.0f;
+    CGFloat ny = 0.0f;
+    CGFloat nw = 0.0f;
+    CGFloat nh = 0.0f;
+    UIImage *autoImg = image;
+    if (imgSize.width/imgSize.height >= theSize.width/theSize.height)
+        {
+            autoImg = [self changeImageSizeWithOriginalImage:image percent:theSize.height/imgSize.height];
+
+            nw = theSize.width;
+            nh = autoImg.size.height;
+            ny = 0;
+            nx = ABS(autoImg.size.width -  theSize.width)/2;
+
+        }
+    else
+        {
+            autoImg = [self changeImageSizeWithOriginalImage:image percent:theSize.width/imgSize.width];
+            nh = theSize.height;
+            nw = autoImg.size.width;
+            nx = 0;
+            ny = ABS(autoImg.size.height -  theSize.height)/2;
+        }
+
+
+    CGRect rect = CGRectMake(nx, ny, nw, nh);
+    CGImageRef subImageRef = CGImageCreateWithImageInRect(autoImg.CGImage, rect);
+    CGRect smallBounds = CGRectMake(0, 0, CGImageGetWidth(subImageRef), CGImageGetHeight(subImageRef));
+
+    UIGraphicsBeginImageContext(smallBounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextDrawImage(context, smallBounds, subImageRef);
+    UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
+    UIGraphicsEndImageContext();
+    
+    CGImageRelease(subImageRef);  
+    return smallImage;  
+    
+}
+
+-(UIImage*)changeImageSizeWithOriginalImage:(UIImage*)image percent:(float)percent
+{
+        // change the image size
+    UIImage *changedImage=nil;
+    float iwidth=image.size.width*percent;
+    float iheight=image.size.height*percent;
+    if (image.size.width != iwidth && image.size.height != iheight)
+        {
+            CGSize itemSize = CGSizeMake(iwidth, iheight);
+            UIGraphicsBeginImageContext(itemSize);
+            CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+            [image drawInRect:imageRect];
+            changedImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+        }
+    else
+        {
+            changedImage = image;
+        }
+    
+    return changedImage;  
+}
+
 /**
  *  改变图像尺寸
  *

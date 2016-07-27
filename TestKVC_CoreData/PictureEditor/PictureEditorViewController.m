@@ -116,7 +116,7 @@
     if (_bgImgaeView == nil) {
         _bgImgaeView = [[UIImageView alloc]initWithFrame:self.view.bounds];
         _bgImgaeView.contentMode = UIViewContentModeScaleAspectFill;
-        _bgImgaeView.image = [UIImage imageNamed:@"pure_girl"];
+        _bgImgaeView.image = [UIImage imageNamed:@"timg1"];
     }
     return _bgImgaeView;
 }

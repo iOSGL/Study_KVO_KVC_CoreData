@@ -26,6 +26,8 @@
 		8704123C1D19217F00E96D56 /* TriangleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8704123B1D19217F00E96D56 /* TriangleLayer.m */; };
 		8704123F1D19293400E96D56 /* RectangleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8704123E1D19293400E96D56 /* RectangleLayer.m */; };
 		870412421D192B3200E96D56 /* WaveLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 870412411D192B3200E96D56 /* WaveLayer.m */; };
+		870A91E41D460D700038E396 /* StarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 870A91E31D460D700038E396 /* StarViewController.m */; };
+		870A91E71D460DDA0038E396 /* DrawStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 870A91E61D460DDA0038E396 /* DrawStarView.m */; };
 		871D92A71CD851BC009DF42C /* GJFiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871D92A61CD851BC009DF42C /* GJFiltersViewController.m */; };
 		871D92AC1CD897E3009DF42C /* Shader1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 871D92AB1CD897E3009DF42C /* Shader1.fsh */; };
 		872AA3CD1CDA0C2E009988DC /* shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 872AA3CC1CDA0C2E009988DC /* shader.vsh */; };
@@ -141,6 +143,10 @@
 		8704123E1D19293400E96D56 /* RectangleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectangleLayer.m; sourceTree = "<group>"; };
 		870412401D192B3200E96D56 /* WaveLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveLayer.h; sourceTree = "<group>"; };
 		870412411D192B3200E96D56 /* WaveLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaveLayer.m; sourceTree = "<group>"; };
+		870A91E21D460D700038E396 /* StarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarViewController.h; sourceTree = "<group>"; };
+		870A91E31D460D700038E396 /* StarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarViewController.m; sourceTree = "<group>"; };
+		870A91E51D460DDA0038E396 /* DrawStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawStarView.h; sourceTree = "<group>"; };
+		870A91E61D460DDA0038E396 /* DrawStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawStarView.m; sourceTree = "<group>"; };
 		871D92A51CD851BC009DF42C /* GJFiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJFiltersViewController.h; sourceTree = "<group>"; };
 		871D92A61CD851BC009DF42C /* GJFiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJFiltersViewController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		871D92AB1CD897E3009DF42C /* Shader1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader1.fsh; sourceTree = "<group>"; };
@@ -513,6 +519,10 @@
 				A975AA5B1C79B14600CACA14 /* PersonObServer.m */,
 				A975AA5D1C79B51A00CACA14 /* TestColor.h */,
 				A975AA5E1C79B51A00CACA14 /* TestColor.m */,
+				870A91E21D460D700038E396 /* StarViewController.h */,
+				870A91E31D460D700038E396 /* StarViewController.m */,
+				870A91E51D460DDA0038E396 /* DrawStarView.h */,
+				870A91E61D460DDA0038E396 /* DrawStarView.m */,
 				87E83A8D1D265850000EB07F /* PictureEditor */,
 				8704122B1D18EFBB00E96D56 /* welcormeAnimation */,
 				A975AA201C799E2C00CACA14 /* image.xcassets */,
@@ -882,9 +892,11 @@
 				870412361D19154300E96D56 /* CycleLayer.m in Sources */,
 				74B85CDB1C86C93000CEF778 /* CornerRadiusViewController.m in Sources */,
 				87E42C0B1CDAF2E30018F3CA /* IFLordKelvinFilter.m in Sources */,
+				870A91E41D460D700038E396 /* StarViewController.m in Sources */,
 				87DD2B9F1CCF0D70005FA670 /* GJ_TransitionViewController.m in Sources */,
 				870412321D190CB400E96D56 /* AnimationView.m in Sources */,
 				87E55B181CF5521C000C5EE4 /* ContentScrollView.m in Sources */,
+				870A91E71D460DDA0038E396 /* DrawStarView.m in Sources */,
 				A975AA161C799E2C00CACA14 /* main.m in Sources */,
 				A94BAFD71C829A0C00FC7D4D /* StudyViewController.m in Sources */,
 				87EEFECD1CF4552900A6A429 /* firstScrollView.m in Sources */,
@@ -1023,6 +1035,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TestKVC_CoreData/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.genju.66yxq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1038,6 +1051,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TestKVC_CoreData/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.genju.66yxq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
