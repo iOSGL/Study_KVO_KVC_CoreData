@@ -34,6 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.title = @"custorm ScrollView";
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.firstView];
@@ -91,8 +92,9 @@
 
 - (firstScrollView *)firstView {
     if (_firstView == nil) {
-        [self configFirstScrollView];
+//        [self configFirstScrollView];
         _firstView = [[firstScrollView alloc]initWithFrame:CGRectMake(0, 64, MAIN_BOUNDS_WIDTH, MAIN_BOUNDS_HEIGHT - 64) linkAgeWithScrollView:self.testScrollView commentScrollView:self.commentTableView];
+
     }
     return _firstView;
 }
@@ -106,7 +108,7 @@
 
 - (UIScrollView *)testScrollView {
     if (_testScrollView == nil) {
-        _testScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, MAIN_BOUNDS_WIDTH, MAIN_BOUNDS_HEIGHT)];
+        _testScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, MAIN_BOUNDS_WIDTH, 300)];
         self.testScrollView.backgroundColor = [UIColor clearColor];
 
     }
@@ -116,10 +118,9 @@
 - (UITableView *)commentTableView {
     if (_commentTableView == nil) {
         _commentTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, MAIN_BOUNDS_WIDTH, MAIN_BOUNDS_HEIGHT) style:UITableViewStylePlain];
-        _commentTableView.backgroundColor = [UIColor clearColor];
+        _commentTableView.backgroundColor = [UIColor orangeColor];
         _commentTableView.dataSource = self;
         _commentTableView.delegate = self;
-        _commentTableView.contentInset = UIEdgeInsetsMake(MAIN_BOUNDS_HEIGHT, 0, 0, 0);
     }
     return _commentTableView;
 }
