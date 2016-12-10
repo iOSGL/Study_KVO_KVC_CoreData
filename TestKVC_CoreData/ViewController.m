@@ -20,8 +20,6 @@
 #import "CoreAnimationViewController.h"
 #import "TransitionsViewController.h"
 #import "GJ_AnimationViewController.h"
-#import "GJFiltersViewController.h"
-#import "InstagramViewController.h"
 #import "POPViewController.h"
 #import "LocalNotificationViewController.h"
 #import "ScrollVIewViewController.h"
@@ -76,9 +74,9 @@
         return a +b;
     };
 
-    self.classNmaeArray = @[@"TestKVOViewController", @"PropeScroViewViewController", @"PropeTableViewViewController", @"StudyViewController", @"TestThreadViewController", @"CornerRadiusViewController", @"CoreAnimationViewController", @"TransitionsViewController", @"GJ_AnimationViewController", @"GJFiltersViewController", @"InstagramViewController", @"POPViewController", @"LocalNotificationViewController", @"ScrollVIewViewController", @"WelcormeViewController", @"PictureEditorViewController", @"StarViewController"];
+    self.classNmaeArray = @[@"TestKVOViewController", @"PropeScroViewViewController", @"PropeTableViewViewController", @"StudyViewController", @"TestThreadViewController", @"CornerRadiusViewController", @"CoreAnimationViewController", @"TransitionsViewController", @"GJ_AnimationViewController", @"GJFiltersViewController", @"InstagramViewController", @"POPViewController", @"LocalNotificationViewController", @"ScrollVIewViewController", @"WelcormeViewController", @"PictureEditorViewController", @"StarViewController", @"FirstViewController"];
     
-    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions", @"66_Transition", @"Filters", @"Instagram", @"POP", @"LocalNotification", @"ScrollVIewViewController", @"guideAnimation", @"image Editor", @"star"];
+    self.dataSourceArray = @[@"next control", @"study ScrollView", @"study TableView", @"如何正确地写好一个界面", @"Test Thread", @"高效添加圆角", @"Core Animation", @"Transitions", @"66_Transition", @"Filters", @"Instagram", @"POP", @"LocalNotification", @"ScrollVIewViewController", @"guideAnimation", @"image Editor", @"star",@"FirstViewController"];
     
     dispatch_queue_t queue = dispatch_queue_create("com.fengche.com", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();

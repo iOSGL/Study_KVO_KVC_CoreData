@@ -1,6 +1,4 @@
 PODS:
-  - 66Barrage (0.0.2)
-  - DateTools (1.7.0)
   - GPUImage (0.1.7)
   - Masonry (0.6.4)
   - pop (1.0.9)
@@ -13,8 +11,6 @@ PODS:
   - YYImage/Core (1.0.1)
 
 DEPENDENCIES:
-  - 66Barrage
-  - DateTools
   - GPUImage (~> 0.1.7)
   - Masonry
   - pop (~> 1.0)
@@ -23,8 +19,6 @@ DEPENDENCIES:
   - YYImage
 
 SPEC CHECKSUMS:
-  66Barrage: a80cfb36a8d87ad108c49d5fe65744b52134e88d
-  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
@@ -32,6 +26,6 @@ SPEC CHECKSUMS:
   YYCategories: 7319e4ba4f4d4dbcec0094abaab540e98f04a65f
   YYImage: b41b45bc5f32bfcdf67bdfb9c09da9e9832357c0
 
-PODFILE CHECKSUM: e63cce6c3abee2485c8d454192e5ff5cef40c869
+PODFILE CHECKSUM: abc73cad0b80214c51542301a961c2bcb7f2d354
 
 COCOAPODS: 1.0.1
